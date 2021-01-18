@@ -40,3 +40,91 @@ Original wireframes from the 17/01/2021 can be found here:
 - <a href="assets/wireframes/desktop-wireframes-recipes-without.pdf" target="_blank">For Desktop</a>
 - <a href="assets/wireframes/tablet-wireframes-recipes-without.pdf" target="_blank">For Tablet</a>
 - <a href="assets/wireframes/smartphone-wireframes-recipes-without.pdf" target="_blank">For Smartphone</a>
+
+
+## Deployment: 
+
+The project was written in Gitpod, pushed to a repository in Github for version control, and deployed to Heroku 
+by following these steps:
+
+1. Ensure that the requirements.txt, Procfile and gitignore files exist in your repository, and that they are up to date.
+
+If not present, add them by typing the following commands into the CLI:
+
+```
+touch .gitignore
+```
+
+```
+pip3 freeze --local > requirements.txt
+```
+for the requirements file.
+
+```
+echo web: python app.py > Procfile
+```
+for the Prcofile. Ensure that the Procfile has an upper-case P in the filename.
+
+2. Inside the Procfile, make sure that it contains the following line:
+```
+web: python app.py
+```
+3. Delete any blank lines below the first line in the Procfile.
+
+4. Inside the gitignore file, make sure that it contains the following lines of code so that the sensitive 
+information contained within the env.py file and pycache directory will not be pushed to Github and made public:
+```
+env.py
+__pycache__/
+```
+
+4. Login to Heroku, or sign up if you don't already have an account.
+![heroku-login-page](assets/readme-images/heroku-login.jpg)
+
+5. In the top right hand corner click on the 'new' button, and from the dropdown select 'create new app'.
+![heroku-create-new-app-dropdown](assets/readme-images/heroku-new-dropdown.jpg)
+
+6. On the next screen, choose a unique name for your app, and select your region, and click 'Create app'.
+![heroku-create-new-app](assets/readme-images/heroku-create-new-app.jpg)
+
+7. On the next page, click on 'connect to gitHub' next to the Github icon and search for your repository in the search box. 
+![heroku-connect-github](assets/readme-images/heroku-connect-github.jpg)
+
+8.  When your repository is listed, click on connect.
+![heroku-connect-github-repository](assets/readme-images/heroku-connect-repository.jpg)
+
+9. If successful, the text next to the Github icon will turn green, and say 'connected' 
+![heroku-successfully-connected](assets/readme-images/heroku-github-connected.jpg)
+
+10. Click on 'Settings' tab at the top of the page:
+![heroku-settings-tab](assets/readme-images/heroku-settings-tab.jpg)
+
+11. Scroll down the page and click on 'Reveal Config Vars'. Enter the following information as key/value pairs
+into the empty input fields. They should match the content of your env.py file. Click 'add' after entering each key/value
+pair in order to reveal new blank input fields.
+
+```
+IP = 0.0.0.0
+PORT = 5000
+SECRET_KEY = YOUR_SECRET_KEY
+MONGO_URI = YOUR_MONGODB_URI
+MONGO_DBNAME = DATABASE_NAME
+```
+The value for 'YOUR_SECRET_KEY' should match the one in your env.py file. 
+
+12. Return to the deployment page, by clicking on the 'deploy' tab at the top of the page.
+![heroku-deploy-tab](assets/readme-images/heroku-deploy-tab.jpg)
+
+13. Click on 'Enable Automatic Deploys'. Select the branch you would like to deploy, in this case 'master',
+and click 'Deploy Branch'.
+![heroku-deploy-tab](assets/readme-images/heroku-automatic-deploys.jpg)
+
+14. If successful, 'Your app was successfully deployed' should be displayed.
+![heroku-deploy-tab](assets/readme-images/heroku-app-deployed.jpg)
+
+
+
+
+
+
+
