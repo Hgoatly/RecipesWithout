@@ -16,7 +16,7 @@ It has two main objectives:
 ## Business Owner Goals:
 
 - The site has one main goal, which is to collect recipies in order to publish them in a physical book at a later date.
-The 
+The site will be populated by recipes uploaded by users, using the CRUD functionality. 
 
 - The secondary goal is for the site to be monetised through the advertising of appropriate allergen-free ingredients
 by appropriate companies. This will be implemented at a later date. 
@@ -41,6 +41,14 @@ Original wireframes from the 17/01/2021 can be found here:
 - <a href="assets/wireframes/desktop-wireframes-recipes-without.pdf" target="_blank">For Desktop</a>
 - <a href="assets/wireframes/tablet-wireframes-recipes-without.pdf" target="_blank">For Tablet</a>
 - <a href="assets/wireframes/smartphone-wireframes-recipes-without.pdf" target="_blank">For Smartphone</a>
+
+## Technologies Used:
+
+### languages Used:
+- HTML5
+- CSS3
+- Javascript
+- Python
 
 
 ## Deployment: 
