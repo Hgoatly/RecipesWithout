@@ -16,6 +16,7 @@ It has two main objectives:
 ## Business Owner Goals:
 
 - The site has one main goal, which is to collect recipies in order to publish them in a physical book at a later date.
+The 
 
 - The secondary goal is for the site to be monetised through the advertising of appropriate allergen-free ingredients
 by appropriate companies. This will be implemented at a later date. 
