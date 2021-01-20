@@ -13,38 +13,44 @@
 <header>
     <!--navbar-->
     <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
+  <li><a href="#!">Gluten Free</a></li>
   <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><a href="#!">Dairy Free</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Egg Free</a></li>
 </ul>
   <ul id="dropdown2" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
+  <li><a href="#!">Gluten Free</a></li>
   <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><a href="#!">Dairy Free</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Egg Free</a></li>
 </ul>
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="{{ url_for('home') }}" class="brand-logo">Recipes Without</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-        <!--dropdown trigger-->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="fas fa-angle-down right"></i></a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+         <!--dropdown trigger-->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipes<i class="fas fa-angle-down right"></i></a></li>
+        <li><a href="badges.html">Login</a></li>
+        <li><a href="collapsible.html">Register</a></li>
+        <li><a href="mobile.html">My Recipes</a></li>
+        <li><a href="mobile.html">Logout</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="fas fa-angle-down right"></i></a></li>
+    <li><h4 class="center-align">Recipes Without</h4></li>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <!--dropdown trigger-->
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Recipes<i class="fas fa-angle-down right"></i></a></li>
+    <li><a href="badges.html">Login</a></li>
+    <li><a href="collapsible.html">Register</a></li>
+    <li><a href="mobile.html">My Recipes</a></li>
+    <li><a href="mobile.html">Logout</a></li>
   </ul>
 
  
