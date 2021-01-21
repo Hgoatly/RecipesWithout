@@ -24,7 +24,6 @@ def home():
     return render_template("home.html")
 
 
-
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
@@ -33,6 +32,37 @@ def recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if user is already registered and in database
+        registered_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if registered_user:
+            flash("Sorry, that username is already taken!")
+            return redirect(url_for("register"))
+
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+
+        print(confirm_password)
+
+        if password != confirm_password:
+            flash("Please ensure that your passwords match.")
+            return redirect(url_for("register"))
+
+        if password == confirm_password:
+
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password").lower())
+                    }
+
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Thank you for registering with Recipes Without.")
+
     return render_template("register.html")
 
 
