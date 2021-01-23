@@ -30,6 +30,7 @@ def recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+# code copied and adapted from 'Task Manager' mini project.  
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -66,7 +67,7 @@ def register():
 
     return render_template("register.html")
 
-
+# code copied from 'Task Manager' mini project
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -95,13 +96,26 @@ def login():
 
     return render_template("login.html")
 
-
+# code copied from 'Task Manager' mini project
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
     # get the session user's username from the db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("my_recipes.html", username=username)
+
+    if session["user"]:
+        return render_template("my_recipes.html", username=username)
+
+    return redirect(url_for(login))
+
+
+# code copied from 'Task Manager' mini project
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have successfully logged out.")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
