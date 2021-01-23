@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="co s12">Gluten Free Recipes</h3>
+    {% for recipes in recipes %}
+        {{ recipes.category_name }}<br>
+        {{ recipes.equipment_needed }}<br>
+        {{ recipes.ingredients }}<br>
+        {{ recipes.method }}
+     {% endfor%}
+{% endblock %}
+
+

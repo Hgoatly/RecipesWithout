@@ -96,6 +96,7 @@ def login():
 
     return render_template("login.html")
 
+
 # code copied from 'Task Manager' mini project
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
@@ -121,7 +122,8 @@ def logout():
 # recipe page
 @app.route("/recipe")
 def recipe():
-    return render_template("recipe.html")
+    recipes = mongo.db.recipes.find()
+    return render_template("recipe.html", recipes=recipes)
 
 
 if __name__ == "__main__":
