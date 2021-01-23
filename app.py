@@ -24,13 +24,13 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/recipes")
-def recipes():
+@app.route("/gluten_free")
+def gluten_free():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("gluten_free.html", recipes=recipes)
 
 
-# code copied and adapted from 'Task Manager' mini project.  
+# code copied and adapted from 'Task Manager' mini project.
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -116,6 +116,12 @@ def logout():
     flash("You have successfully logged out.")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# recipe page
+@app.route("/recipe")
+def recipe():
+    return render_template("recipe.html")
 
 
 if __name__ == "__main__":

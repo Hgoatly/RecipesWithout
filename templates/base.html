@@ -13,14 +13,14 @@
 <header>
     <!--navbar copied from Materialize-->
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Gluten Free</a></li>
+        <li><a href="{{ url_for('gluten_free') }}">Gluten Free</a></li>
         <li class="divider"></li>
         <li><a href="#!">Dairy Free</a></li>
         <li class="divider"></li>
         <li><a href="#!">Egg Free</a></li>
     </ul>
     <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">Gluten Free</a></li>
+        <li><a href="{{ url_for('gluten_free') }}">Gluten Free</a></li>
         <li class="divider"></li>
         <li><a href="#!">Dairy Free</a></li>
         <li class="divider"></li>
@@ -33,7 +33,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <!--dropdown trigger-->
-                <li><a class="dropdown-trigger" href="{{ url_for('recipes') }}" data-target="dropdown1">Recipes<i
+                <li><a class="dropdown-trigger" data-target="dropdown1">Recipes<i
                             class="fas fa-angle-down right"></i></a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
@@ -51,7 +51,7 @@
     <li><h4 class="center-align">Recipes Without</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
     <!--dropdown trigger-->
-    <li><a class="dropdown-trigger" href="{{ url_for('recipes') }}" data-target="dropdown2">Recipes<i class="fas fa-angle-down right"></i></a></li>
+    <li><a class="dropdown-trigger" data-target="dropdown2">Recipes<i class="fas fa-angle-down right"></i></a></li>
     {% if session.user %}
         <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
