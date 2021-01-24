@@ -126,7 +126,7 @@ def recipe():
     recipes = mongo.db.recipes.find()
     return render_template("recipe.html", recipes=recipes)
 
-
+# code copied from 'Task Manager' mini project
 @app.route("/add_recipes")
 def add_recipes():
     categories = mongo.db.categories.find().sort("category_name", 1)
