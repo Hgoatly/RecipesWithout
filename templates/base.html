@@ -36,6 +36,7 @@
                 <li><a class="dropdown-trigger" data-target="dropdown1">Recipes<i
                             class="fas fa-angle-down right"></i></a></li>
                 {% if session.user %}
+                    <li><a href="{{ url_for('add_recipes') }}">Add Recipes</a></li>
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
@@ -53,6 +54,7 @@
     <!--dropdown trigger-->
     <li><a class="dropdown-trigger" data-target="dropdown2">Recipes<i class="fas fa-angle-down right"></i></a></li>
     {% if session.user %}
+        <li><a href="{{ url_for('add_recipes') }}">Add Recipes</a></li>
         <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
     {% else %}
