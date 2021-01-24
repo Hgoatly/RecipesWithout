@@ -2,5 +2,6 @@
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('#method').val('');
-  M.textareaAutoResize($('#method'));
+    M.textareaAutoResize($('#method'));
+    $('select').formSelect();
   });
