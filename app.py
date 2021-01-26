@@ -24,12 +24,6 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/gluten_free")
-def gluten_free():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("gluten_free.html", recipes=recipes)
-
-
 # code copied and adapted from 'Task Manager' mini project.
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -118,6 +112,27 @@ def logout():
     flash("You have successfully logged out.")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# gluten free page
+@app.route("/gluten_free")
+def gluten_free():
+    recipes = mongo.db.recipes.find()
+    return render_template("gluten_free.html", recipes=recipes)
+
+
+# dairy free page
+@app.route("/dairy_free")
+def dairy_free():
+    recipes = mongo.db.recipes.find()
+    return render_template("dairy_free.html", recipes=recipes)
+
+
+# dairy free page
+@app.route("/egg_free")
+def egg_free():
+    recipes = mongo.db.recipes.find()
+    return render_template("egg_free.html", recipes=recipes)
 
 
 # recipe page
