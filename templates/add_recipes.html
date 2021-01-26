@@ -5,7 +5,8 @@
 
 <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
     <div class="row">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_recipes') }}">
+            <!-- recipe category -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
@@ -18,6 +19,7 @@
                     <label for="category_name"></label>
                 </div>
             </div>
+            <!-- recipe name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix"></i>
@@ -25,6 +27,7 @@
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
+            <!-- equipment needed -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -32,6 +35,7 @@
                     <label for="equpiment_needed">Equipment Needed</label>
                 </div>
             </div>
+            <!-- recipe ingredients -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -39,11 +43,20 @@
                         <label for="ingredients">Ingredients</label>
                         </div>
             </div>
+            <!-- recipe method -->
             <div class="row">
                 <div class="input-field col s12">
                         <i class="fas fa-align-left prefix"></i>
                         <textarea id="method" name="method" minlength="20" maxlength="500" class="materialize-textarea validate" required></textarea>
                         <label for="method">Method</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large">
+                        Add Recipe <i class="fas fa-plus-square-right"></i>
+                    </button>
                 </div>
             </div>
         </form>

@@ -126,9 +126,22 @@ def recipe():
     recipes = mongo.db.recipes.find()
     return render_template("recipe.html", recipes=recipes)
 
+
 # code copied from 'Task Manager' mini project
-@app.route("/add_recipes")
+@app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
+    if request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "equipment_needed": request.form.get("equipment_needed"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "added_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Thank you for adding a new recipe!")
+        return redirect(url_for("gluten_free"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
 
