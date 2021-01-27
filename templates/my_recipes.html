@@ -5,12 +5,48 @@
 
 <h3 class="center-align">My Recipes</h3>
     <div class="row">
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12 m8 offset-m2 center-align">
             {{ username }}'s profile
-            <div class="card-panel">
             </div>
+        </div>
+        <div class="row"> 
+            <div class="col s12 m8 offset-m2 center-align">     
+            <div class="card-panel">
+            {% for recipes in recipes %}
+             <div class="row">
+    <div class="col s12 m8 offset-m2 center-align">
+      <div class="card center-align">
+                {% if recipes.added_by == session["user"] %}
+                <div class="card-image">
+          <img src="images/sample-1.jpg">
+          <div class="card-title col s12 m8 offset-m2 center-align">{{ recipes.recipe_name }}</div>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+         
+        </div>
+             </div>
+        <div class="card-action">
+          <a href="{{ url_for('recipe') }}">This is a link</a>
+        </div>
+            {% endif %}
+            </div>
+            </div>
+    </div>
+  </div>
+  </div>  
+            {% endfor %}    
+           
+
         </div>
     </div>
 
+    
 
+    
+        
+   
+
+    
 {% endblock %}
