@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="co s12">Gluten Free Recipes</h3>
-    {% for recipe in recipes %}
+    {% for recipes in recipes %}
         {{ recipes.equipment_needed }}<br>
      {% endfor%}
 {% endblock %}

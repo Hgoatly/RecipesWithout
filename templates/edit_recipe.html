@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit Recipe</h3>
+
+<!--form copied and adapted from Materialize and 'Task Manager' mini project-->
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <!-- recipe category -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix"></i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose category</option>
+                        {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="category_name"></label>
+                </div>
+            </div>
+            <!-- recipe name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <!-- equipment needed -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix"></i>
+                    <input id="equipment_needed" name="equipment_needed" minlength="10" maxlength="100" type="tel" class="validate" required>
+                    <label for="equpiment_needed">Equipment Needed</label>
+                </div>
+            </div>
+            <!-- recipe ingredients -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix"></i>
+                        <textarea id="ingredients" name="ingredients" minlength="10" maxlength="200" class="materialize-textarea validate" required></textarea>
+                        <label for="ingredients">Ingredients</label>
+                        </div>
+            </div>
+            <!-- recipe method -->
+            <div class="row">
+                <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix"></i>
+                        <textarea id="method" name="method" minlength="20" maxlength="500" class="materialize-textarea validate" required></textarea>
+                        <label for="method">Method</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large">
+                        Edit Recipe <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
