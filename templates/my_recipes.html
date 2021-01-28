@@ -25,10 +25,11 @@
           <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
 
-          <a href="{{ url_for('recipe') }}">View Recipe</a>
+          <a href="{{ url_for('recipe', username=session['user'], recipe_id=recipes._id) }}">View Recipe</a>
 
         <div class="row">
             <div class="col s12 m8 offset-m2 center-align">
+<a href="{{ url_for('delete_recipe', recipe_id=recipes._id) }}" class="waves-effect waves-light btn center-align">Delete Recipe</a>
 <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="waves-effect waves-light btn center-align">Edit Recipe</a>
         </div>
         </div>

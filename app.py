@@ -119,11 +119,20 @@ def edit_recipe(recipe_id):
             }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
         flash("Your recipe has been edited.")
-        
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe deleted!")
+    return redirect(url_for("my_recipes", username=username))
 
 
 # code copied from 'Task Manager' mini project
@@ -157,9 +166,10 @@ def egg_free():
 
 
 # recipe page
-@app.route("/recipe")
-def recipe():
-    recipes = mongo.db.recipes.find()
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    
     return render_template("recipe.html", recipes=recipes)
 
 

@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="co s12">Gluten Free Recipes</h3>
-    {% for recipes in recipes %}
-        {{ recipes.equipment_needed }}<br>
-     {% endfor%}
+<h3 class="co s12"></h3>
+    {{ recipes.category_name }}<br>
+    {{ recipes.recipe_name }}<br>
+    {{ recipes.equipment_needed }}<br>
+    {% for ingredient in recipes.ingredients.split(",")%}
+        <p>{{ ingredient }}</p>
+
+    {% endfor %}
+    {% for sentences in recipes.method.split(",") %}
+        <p>{{ sentences }}</p>
+    {% endfor %}
+     
 {% endblock %}
 
 
