@@ -3,7 +3,7 @@
     // code copied from materialize
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
-    $('#method').val('');
+    $('#method').val();
     M.textareaAutoResize($('#method'));
     $('select').formSelect();
 
