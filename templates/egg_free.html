@@ -17,7 +17,7 @@
          
         </div>
         <div class="card-action">
-          <a href="{{ url_for('recipe') }}">This is a link</a>
+          <a href="{{ url_for('recipe', recipe_id=recipes._id) }}">This is a link</a>
         </div>
          {% endif %}
       </div>

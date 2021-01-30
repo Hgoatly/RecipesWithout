@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="co s12"></h3>
+    
     {{ recipes.category_name }}<br>
     {{ recipes.recipe_name }}<br>
-    {{ recipes.equipment_needed }}<br>
-    {% for ingredient in recipes.ingredients.split(",")%}
+    <img src="{{ recipes.image }}">
+    {% for equipment in recipes.equipment_needed.split(",") %}
+    {{ equipment }}<br>
+    {% endfor %}
+    {% for ingredient in recipes.ingredients.title().split(",")%}
         <p>{{ ingredient }}</p>
 
     {% endfor %}

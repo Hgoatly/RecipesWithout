@@ -7,7 +7,15 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
+cloudinary.config(
+  cloud_name=os.environ.get("CLOUD_NAME"),
+  api_key=os.environ.get("API_KEY"),
+  api_secret=os.environ.get("API_SECRET")
+)
 
 app = Flask(__name__)
 
@@ -115,7 +123,8 @@ def edit_recipe(recipe_id):
             "equipment_needed": request.form.get("equipment_needed"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
-            "added_by": session["user"]
+            "added_by": session["user"],
+            "image": request.form.get("image")
             }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
         flash("Your recipe has been edited.")
@@ -169,7 +178,6 @@ def egg_free():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    
     return render_template("recipe.html", recipes=recipes)
 
 
@@ -183,7 +191,8 @@ def add_recipes():
             "equipment_needed": request.form.get("equipment_needed"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
-            "added_by": session["user"]
+            "added_by": session["user"],
+            "image": request.form.get("image_url")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for adding a new recipe!")
