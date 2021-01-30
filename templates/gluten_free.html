@@ -14,7 +14,7 @@
       <div class="card">
           {% if recipes.category_name == "Gluten Free" %}
         <div class="card-image">
-          <img src="images/sample-1.jpg">
+          <img src="{{ recipes.image }}">
           <span class="card-title">{{ recipes.recipe_name }}</span>
         </div>
         <div class="card-content">
