@@ -1,7 +1,15 @@
+body {
+    overflow-x: hidden;
+}
+
 .card .card-image .card-title {
     color: black;
 }
 
  a {
     margin : 0px;
+}
+
+.container {
+    width: 100vw;
 }

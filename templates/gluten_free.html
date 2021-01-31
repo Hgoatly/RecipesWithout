@@ -1,17 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="co s12">Gluten Free Recipes</h3>
-        
-        {{ recipes.category_name }}<br>
-        {{ recipes.equipment_needed }}<br>
-        {{ recipes.ingredients }}<br>
-        {{ recipes.method }}
-    
-    <br>
+<div class="row">
+<div class="col s12 center-align">
+<h3>Gluten Free Recipes</h3>
+</div>    
+</div>    
     {% for recipes in recipes %}
      <div class="row">
-    <div class="col s6 m7">
-      <div class="card">
+    <div class="col s6 m8 offset-m2 center-align">
+      <div class="card center-align">
           {% if recipes.category_name == "Gluten Free" %}
         <div class="card-image">
           <img src="{{ recipes.image }}">

@@ -6,6 +6,7 @@
     $('#method').val();
     M.textareaAutoResize($('#method'));
     $('select').formSelect();
+    $('.slider').slider({full_width: true});
 
     // code copied from CI 'Task Manager' mini project
     // custom code for Materialize select dropdown element

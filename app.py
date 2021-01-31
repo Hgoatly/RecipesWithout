@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    recipes = recipes = mongo.db.recipes.find()
+    return render_template("home.html", recipes=recipes)
 
 
 # code copied and adapted from 'Task Manager' mini project.

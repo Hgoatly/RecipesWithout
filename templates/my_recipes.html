@@ -16,7 +16,7 @@
              <div class="row">
     <div class="col s12 m8 offset-m2 center-align">
       <div class="card center-align">
-                {% if recipes.added_by == session["user"] %}
+                {% if recipes.added_by == session["user"] or session.user|lower == "admin"|lower %}
                 <div class="card-image">
           <img src="{{ recipes.image }}">
           <div class="card-title col s12 m8 offset-m2 center-align">{{ recipes.recipe_name }}</div>
@@ -43,13 +43,4 @@
   </div>  
             {% endfor %}    
            
-
-
-    
-
-    
-        
-   
-
-    
 {% endblock %}
