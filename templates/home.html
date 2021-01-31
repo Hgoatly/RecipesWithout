@@ -1,18 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div class="slider">
-    <ul class="slides">
-        {% for recipes in recipes %}
-      <li>
-        <img src="{{ recipes.image }}"> 
-        <div class="caption center-align">
-          <h3>Recipes Without</h3>
-          <h5 class="light grey-text text-lighten-3">Your online resource for allergen-free dining.</h5>
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>  
+  <div class="container-fluid overflow-hidden" id="landing-page">
+		<div class="callout-container-fluid overflow-hidden">
+			<div class="section-text" id="main-heading">
+				<span class="border">Recipes Without</span>
+			</div>
+		</div>
+	</div> 
 
 {% endblock %}
