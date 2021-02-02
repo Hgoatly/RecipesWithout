@@ -159,7 +159,7 @@ def dairy_free():
     return render_template("dairy_free.html", recipes=recipes)
 
 
-# dairy free page
+# egg free page
 @app.route("/egg_free")
 def egg_free():
     recipes = mongo.db.recipes.find()

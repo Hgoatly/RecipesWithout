@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="center-align">Add Your Recipe</h3>
-
+ 
+<div class="add-recipes brown-text">            
 <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
-    <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipes') }}">
-            <!-- recipe category -->
+
+    <form id="add-recipes-form" method="POST" action="{{ url_for('add_recipes') }}">
+     
+     <div class="row card-panel add-recipes-panel">
+        <!-- recipe category -->
+       
+            <h3 class="center-align">Add Your Recipe</h3>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
@@ -23,7 +26,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -31,7 +35,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
-                    <input id="equipment_needed" name="equipment_needed" minlength="10" maxlength="200" type="tel" class="validate" required>
+                    <input id="equipment_needed" name="equipment_needed" minlength="10" maxlength="200" type="tel"
+                        class="validate" required>
                     <label for="equpiment_needed">Equipment Needed</label>
                 </div>
             </div>
@@ -39,36 +44,42 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
-                        <textarea id="ingredients" name="ingredients" minlength="10" maxlength="1000" class="materialize-textarea validate" required></textarea>
-                        <label for="ingredients">Ingredients</label>
-                        </div>
+                    <textarea id="ingredients" name="ingredients" minlength="10" maxlength="1000"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="ingredients">Ingredients</label>
+                </div>
             </div>
             <!-- recipe method -->
             <div class="row">
                 <div class="input-field col s12">
-                        <i class="fas fa-align-left prefix"></i>
-                        <textarea id="method" name="method" minlength="20" maxlength="500" class="materialize-textarea validate" required></textarea>
-                        <label for="method">Method</label>
+                    <i class="fas fa-align-left prefix"></i>
+                    <textarea id="method" name="method" minlength="20" maxlength="500"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="method">Method</label>
                 </div>
             </div>
             <!-- image -->
             <div class="row">
-            <div class="input-field col s12">
-                <i id="add-image" class=" fas fa-align-left prefix"></i>
-                <input id="image_url" name="image_url" type="text" minlength="5" pattern="https://.*" required>
-                <label for="image_url">Add an image</label>
-            </div>
+                <div class="input-field col s12">
+                    <i id="add-image" class=" fas fa-align-left prefix"></i>
+                    <input id="image_url" name="image_url" type="text" minlength="5" pattern="https://.*" required>
+                    <label for="image_url">Add an image</label>
+                </div>
             </div>
 
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large">
+                    <button type="submit" class="btn-large teal lighten-3">
                         Add Recipe <i class="fas fa-plus-square-right"></i>
                     </button>
                 </div>
             </div>
-        </form>
-    </div>
+         </div>   
+    </form>
+
+		
+	
+ 
 
 {% endblock %}

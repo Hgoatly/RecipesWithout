@@ -30,3 +30,23 @@ body {
    position: relative;
    }
 
+   
+   .add-recipes {
+    height: 160vh;
+    width: 100%;
+    background: url("../images/platter.jpg") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   display: flex;
+  
+   justify-content: center;
+   font-family: 'Roboto', sans-serif;
+   position: relative;
+   }
+
+.add-recipes-panel {
+    width: 75vw;
+    margin-top: 40px;
+}
