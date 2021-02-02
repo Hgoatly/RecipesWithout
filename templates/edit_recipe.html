@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Edit Recipe</h3>
-
+<div class="edit-recipes brown-text"> 
 <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <div class="row card-panel edit-recipes-panel">
+                <h3 class="center-align">Edit Recipe</h3>
             <!-- recipe category -->
             <div class="row">
                 <div class="input-field col s12">
@@ -34,7 +35,7 @@
             <!-- equipment needed -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix"></i>
+                    <i class="fas fa-utensils prefix"></i>
                     <input id="equipment_needed" name="equipment_needed" minlength="10" maxlength="100" value="{{ recipe.equipment_needed }}" type="tel" class="validate" required>
                     <label for="equpiment_needed">Equipment Needed</label>
                 </div>
@@ -42,7 +43,7 @@
             <!-- recipe ingredients -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix"></i>
+                    <i class="fas fa-seedling prefix"></i>
                         <textarea id="ingredients" name="ingredients" minlength="10" maxlength="200" class="materialize-textarea validate" required>
                             {{- recipe.ingredients -}}
                         </textarea>
@@ -62,7 +63,7 @@
             <!-- image -->
                         <div class="row">
             <div class="input-field col s12">
-                <i id="add-image" class=" fas fa-align-left prefix"></i>
+                <i id="add-image" class=" fas fa-camera prefix"></i>
                 <input id="image_url" name="image_url" type="text" minlength="5" pattern="https://.*" required>
                 <label for="image_url">Add an image</label>
             </div>
@@ -70,11 +71,12 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large">
+                    <button type="submit" class="btn-large teal lighten-3">
                         Edit Recipe <i class="fas fa-edit"></i>
                     </button>
-                    <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn-large">Cancel</a>
+                    <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn-large teal lighten-3">Cancel</a>
                 </div>
+            </div>
             </div>
         </form>
     </div>

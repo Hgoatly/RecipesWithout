@@ -30,9 +30,8 @@ body {
    position: relative;
    }
 
-   
    .add-recipes {
-    height: 160vh;
+    height: auto;
     width: 100%;
     background: url("../images/platter.jpg") no-repeat center center fixed; 
    -webkit-background-size: cover;
@@ -40,13 +39,27 @@ body {
    -o-background-size: cover;
    background-size: cover;
    display: flex;
-  
    justify-content: center;
    font-family: 'Roboto', sans-serif;
    position: relative;
    }
 
-.add-recipes-panel {
+.add-recipes-panel, .edit-recipes-panel {
     width: 75vw;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
+
+.edit-recipes {
+    height: auto;
+    width: 100%;
+    background: url("../images/herbs.jpg") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   font-family: 'Roboto', sans-serif;
+   position: relative;
+   }

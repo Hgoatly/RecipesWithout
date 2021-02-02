@@ -4,7 +4,7 @@
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('#method').val();
-    M.textareaAutoResize($('#method'));
+    
     $('select').formSelect();
     $('.slider').slider({full_width: true});
 
