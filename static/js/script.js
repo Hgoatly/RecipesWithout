@@ -4,9 +4,9 @@
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('#method').val();
-    
     $('select').formSelect();
     $('.slider').slider({full_width: true});
+    $('.modal').modal();
 
     // code copied from CI 'Task Manager' mini project
     // custom code for Materialize select dropdown element

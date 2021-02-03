@@ -188,7 +188,7 @@ def add_recipes():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for adding a new recipe!")
-        return redirect(url_for("gluten_free"))
+        return redirect(url_for("my_recipes", username=session["user"]))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
 

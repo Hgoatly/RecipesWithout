@@ -28,6 +28,7 @@ body {
    justify-content: center;
    font-family: 'Roboto', sans-serif;
    position: relative;
+   margin-bottom: 0px;
    }
 
    .add-recipes {
@@ -42,6 +43,7 @@ body {
    justify-content: center;
    font-family: 'Roboto', sans-serif;
    position: relative;
+   margin-bottom: 0px;
    }
 
 .edit-recipes {
@@ -70,12 +72,13 @@ body {
    justify-content: center;
    font-family: 'Roboto', sans-serif;
    position: relative;
+   margin-bottom: 0px;
    }
 
     .register {
     height: auto;
     width: 100%;
-    background: url("../images/bruschetta.jpg") no-repeat center center fixed; 
+    background: url("../images/plates.jpg") no-repeat center center fixed; 
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -84,6 +87,7 @@ body {
    justify-content: center;
    font-family: 'Roboto', sans-serif;
    position: relative;
+   margin-bottom: 0px;
    }
 
 .add-recipes-panel, .edit-recipes-panel, 
@@ -93,6 +97,3 @@ body {
     margin-bottom: 40px;
 }
 
-.row {
-    margin-bottom: 0px;
-}
