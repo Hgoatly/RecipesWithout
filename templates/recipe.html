@@ -23,6 +23,14 @@
     <h5 class="col s12">Method</h5>
     
         <p>{{ recipes.method }}</p>
+
+    <h5 class="col s12">Added By</h5>
+    
+        <p>{{ recipes.added_by }}</p>
+
+    <h5 class="col s12">Added On</h5>
+    
+        <p>{{ recipes.added_on }}</p>
     
     <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">Back to My Recipes</a> 
 {% endblock %}

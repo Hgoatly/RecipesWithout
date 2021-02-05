@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -15,6 +16,8 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+now = datetime.now() 
+date_time = now.strftime("%d%m%y")
 
 
 @app.route("/")
@@ -113,10 +116,11 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "equipment_needed": request.form.get("equipment_needed"),
+            "portions": request.form.get("portions"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
+            "image": request.form.get("image_url"),
             "added_by": session["user"],
-            "image": request.form.get("image_url")
             }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
         flash("Your recipe has been edited.")
@@ -181,10 +185,12 @@ def add_recipes():
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "equipment_needed": request.form.get("equipment_needed"),
+            "portions": request.form.get("portions"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "added_by": session["user"],
-            "image": request.form.get("image_url")
+            "image": request.form.get("image_url"),
+            "added_on": date_time
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for adding a new recipe!")

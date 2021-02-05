@@ -12,14 +12,14 @@
             </div>
         </div>
  </div>
+ {% for recipes in recipes %}
         <div class="row"> 
             <div class="col s12 m8 offset-m2 center-align">     
-            {% for recipes in recipes %}
              <div class="row">
     <div class="col s12 m8 offset-m2 center-align">
       <div class="card center-align">
                 {% if recipes.added_by == session["user"] or session.user|lower == "admin"|lower %}
-                <div class="card-image">
+                <div class="square image">
           <img src="{{ recipes.image }}">
           
         </div>

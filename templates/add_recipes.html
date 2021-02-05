@@ -35,16 +35,17 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix"></i>
-                    <input id="equipment_needed" name="equipment_needed" minlength="10" maxlength="200" type="text"
-                        class="validate" required>
-                    <label for="equpiment_needed">Equipment Needed</label>
-                </div>
+                    <textarea id="equipment_needed" name="equipment_needed" minlength="10" maxlength="200"
+                        class="materialize-textarea validate" required>
+                </textarea>
+                <label for="equpiment_needed">Equipment Needed</label>
             </div>
+
             <!-- number of portions -->
                         <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pizza-slice prefix"></i>
-                    <input id="portions" name="portions" minlength="10" maxlength="200" type="text"
+                    <input id="portions" name="portions" minlength="1" maxlength="200" type="text"
                         class="validate" required>
                     <label for="portions">Number of portions</label>
                 </div>
@@ -59,11 +60,12 @@
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
+
             <!-- recipe method -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
-                    <textarea id="method" name="method" minlength="20" maxlength="500"
+                    <textarea id="method" name="method" minlength="20" maxlength="1000"
                         class="materialize-textarea validate" required></textarea>
                     <label for="method">Method</label>
                 </div>
@@ -73,7 +75,7 @@
                 <div class="input-field col s12">
                     <i id="add-image" class=" fas fa-camera prefix"></i>
                     <input id="image_url" name="image_url" type="text" minlength="5" pattern="https://.*" required>
-                    <label for="image_url">Add an image</label>
+                    <label for="image_url">Add an image url</label>
                 </div>
             </div>
 

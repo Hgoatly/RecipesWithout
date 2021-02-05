@@ -36,17 +36,20 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix"></i>
-                    <input id="equipment_needed" name="equipment_needed" minlength="10" maxlength="100" value="{{ recipe.equipment_needed }}" type="tel" class="validate" required>
+                    <textarea id="equipment_needed" name="equipment_needed" minlength="10" maxlength="100" class="materialize-textarea validate" required>
+                    {{- recipe.equipment_needed }}
+                    </textarea>
                     <label for="equpiment_needed">Equipment Needed</label>
-                </div>
+                  </div>  
             </div>
+            <!-- portion size -->
                                     <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pizza-slice prefix"></i>
-                    <input id="portions" name="portions" minlength="10" maxlength="200" value="{{ recipe.portions }}" type="text"
+                    <input id="portions" name="portions" minlength="1" maxlength="200" pattern="^{5,10}$" value="{{ recipe.portions }}" type="text"
                         class="validate" required>
-                    <label for="portions">Number of portions</label>
                 </div>
+                <label for="portions">Number of portions</label>
             </div>
             <!-- recipe ingredients -->
             <div class="row">
