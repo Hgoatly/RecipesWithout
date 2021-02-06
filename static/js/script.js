@@ -7,6 +7,7 @@
     $('select').formSelect();
     $('.slider').slider({full_width: true});
     $('.modal').modal();
+    // end of copied code
 
     // code copied from CI 'Task Manager' mini project
     // custom code for Materialize select dropdown element
