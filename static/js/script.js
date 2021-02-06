@@ -8,7 +8,11 @@
     $('.slider').slider({full_width: true});
     $('.modal').modal();
     // end of copied code
-
+   
+    //setTimout method removes flashed messages after 10 seconds.
+    setTimeout(function() {
+    $('.flash-messages').remove();
+    }, 10000); 
     // code copied from CI 'Task Manager' mini project
     // custom code for Materialize select dropdown element
      validateMaterializeSelect();
@@ -39,3 +43,6 @@
         });
     }
   });
+
+
+  
