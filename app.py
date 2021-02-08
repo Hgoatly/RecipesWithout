@@ -153,7 +153,8 @@ def logout():
 @app.route("/gluten_free")
 def gluten_free():
     recipes = mongo.db.recipes.find()
-    return render_template("gluten_free.html", recipes=recipes)
+    return render_template(
+        "gluten_free.html", recipes=recipes)
 
 
 # dairy free page
@@ -174,7 +175,8 @@ def egg_free():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipes=recipes)
+    return render_template(
+        "recipe.html", recipes=recipes)
 
 
 # code copied from 'Task Manager' mini project

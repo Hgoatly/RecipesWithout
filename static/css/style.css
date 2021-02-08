@@ -20,10 +20,6 @@ html {
    position: relative;
 }
 
-.card .card-image .card-title {
-    color: black;
-}
-
 .card-image {
     height: 100%;
     width: 100%;

@@ -32,7 +32,12 @@
     
         <p>{{ recipes.added_on }}</p>
     
+        {% if session['user']%}
     <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">Back to My Recipes</a> 
-{% endblock %}
+        {% elif gluten_free_page %}
+    <a href="{{ url_for('gluten_free') }}" class="btn teal lighten-3">Back to Gluten Free Recipes</a> 
+    {% endif %}
+
+    {% endblock %}
 
 
