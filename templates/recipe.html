@@ -4,57 +4,55 @@
     <div class="row">
         <div class="col s12 m10 offset-m1 center-align">
             <div class="card-panel title-panel">
-            <h3 class="center-align brown-text">{{ recipes.recipe_name }}</h3>
+                <h3 class="center-align brown-text">{{ recipes.recipe_name }}</h3>
             </div>
         </div>
- </div>
+    </div>
     <div class="row">
         <div class="col s12 m10 offset-m1 center-align">
-            <div class="card-panel"> 
-    <img src="{{ recipes.image }}" class="recipe-page-image">
-    <hr>
-    <h5 class="col s12 recipe-instructions">Equipment Needed</h5>
-    
-    {% for equipment in recipes.equipment_needed.split(",") %}
-    <ul class="left-align">
-        <li><i class="fas fa-dot-circle"></i>{{ equipment.title() }}</li>
-    </ul>
-    {% endfor %}
-<hr>
-    <h5 class="col s12 recipe-instructions">Ingredients</h5>
-    {% for ingredient in recipes.ingredients.title().split(",")%}
-    <ul class="left-align">
-        <li><i class="fas fa-dot-circle"></i>
-            {{ ingredient.title() }}</li>
-    </ul>
-    {% endfor %}
-<hr>
-    <h5 class="col s12 recipe-instructions">Method</h5>
-    
-        <p>{{ recipes.method }}</p>
-<hr>
+            <div class="card-panel">
+                <img src="{{ recipes.image }}" class="recipe-page-image">
+                <hr>
+                <h5 class="col s12 recipe-instructions">Equipment Needed</h5>
 
-    <h5 class="col s12 recipe-instructions">Portions</h5>
-    
-        <p>{{ recipes.portions }}</p>
-<hr>
-    <h5 class="col s12 recipe-instructions">Added By</h5>
-    
-        <p>{{ recipes.added_by.title() }}</p>
-<hr>
-    <h5 class="col s12 recipe-instructions">Added On</h5>
-    
-        <p>{{ recipes.added_on }}</p>
-     
-        {% if session['user']%}
-    <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">Back to My Recipes</a> 
-        {% else %}
-    <a href="{{ url_for('gluten_free') }}" class="btn teal lighten-3">Back to Gluten Free Recipes</a> 
-    {% endif %}
-  </div>
+                {% for equipment in recipes.equipment_needed.split(",") %}
+                <ul class="left-align">
+                    <li><i class="fas fa-dot-circle"></i>{{ equipment.title() }}</li>
+                </ul>
+                {% endfor %}
+                <hr>
+                <h5 class="col s12 recipe-instructions">Ingredients</h5>
+                {% for ingredient in recipes.ingredients.title().split(",")%}
+                <ul class="left-align">
+                    <li><i class="fas fa-dot-circle"></i>
+                        {{ ingredient.title() }}</li>
+                </ul>
+                {% endfor %}
+                <hr>
+                <h5 class="col s12 recipe-instructions">Method</h5>
+
+                <p>{{ recipes.method }}</p>
+                <hr>
+                <h5 class="col s12 recipe-instructions">Portions</h5>
+
+                <p>{{ recipes.portions }}</p>
+                <hr>
+                <h5 class="col s12 recipe-instructions">Added By</h5>
+
+                <p>{{ recipes.added_by.title() }}</p>
+                <hr>
+                <h5 class="col s12 recipe-instructions">Added On</h5>
+
+                <p>{{ recipes.added_on }}</p>
+
+                {% if session['user']%}
+                <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">Back to My
+                    Recipes</a>
+                {% else %}
+                <a href="{{ url_for('gluten_free') }}" class="btn teal lighten-3">Back to Gluten Free Recipes</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
-    </div> 
-    </div>
-    {% endblock %}
-
-
+</div>
+{% endblock %}
