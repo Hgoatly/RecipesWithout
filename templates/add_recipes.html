@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
- 
-<div class="add-recipes brown-text">            
-<!--form copied and adapted from Materialize and 'Task Manager' mini project-->
+
+<div class="add-recipes brown-text">
+    <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
 
     <form id="add-recipes-form" method="POST" action="{{ url_for('add_recipes') }}">
-     
-     <div class="row card-panel add-recipes-panel">
-        <!-- recipe category -->
-       
+
+        <div class="row card-panel add-recipes-panel">
+            <!-- recipe category -->
+
             <h3 class="center-align">Add Your Recipe</h3>
             <div class="row">
                 <div class="input-field col s12">
@@ -38,60 +38,61 @@
                     <textarea id="equipment_needed" name="equipment_needed" minlength="10" maxlength="200"
                         class="materialize-textarea validate" required>
                 </textarea>
-                <label for="equpiment_needed">Equipment Needed</label>
-            </div>
+                    <label for="equpiment_needed">Equipment Needed</label>
+                </div>
 
-            <!-- number of portions -->
-                        <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pizza-slice prefix"></i>
-                    <input id="portions" name="portions" minlength="1" maxlength="200" type="text"
-                        class="validate" required>
-                    <label for="portions">Number of portions</label>
+                <!-- number of portions -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pizza-slice prefix"></i>
+                        <input id="portions" name="portions" minlength="1" maxlength="200" type="text" class="validate"
+                            required>
+                        <label for="portions">Number of portions</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- recipe ingredients -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-seedling prefix"></i>
-                    <textarea id="ingredients" name="ingredients" minlength="10" maxlength="1000"
-                        class="materialize-textarea validate" required></textarea>
-                    <label for="ingredients">Ingredients</label>
+                <!-- recipe ingredients -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-seedling prefix"></i>
+                        <textarea id="ingredients" name="ingredients" minlength="10" maxlength="1000"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="ingredients">Ingredients</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- recipe method -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix"></i>
-                    <textarea id="method" name="method" minlength="20" maxlength="2000"
-                        class="materialize-textarea validate" required></textarea>
-                    <label for="method">Method</label>
+                <!-- recipe method -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix"></i>
+                        <textarea id="method" name="method" minlength="20" maxlength="2000"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="method">Method</label>
+                    </div>
                 </div>
-            </div>
-            <!-- image -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i id="add-image" class=" fas fa-camera prefix"></i>
-                    <input id="image_url" name="image_url" type="text" minlength="5" pattern="https://.*" required>
-                    <label for="image_url">Add an image url</label>
+                <!-- image -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i id="add-image" class=" fas fa-camera prefix"></i>
+                        <input id="image_url" name="image_url" type="text" minlength="5" pattern="https://.*" required>
+                        <label for="image_url">Add an image url</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large teal lighten-3">
-                        Add Recipe <i class="fas fa-plus-square-right"></i>
-                    </button>
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large teal lighten-3">
+                            Add Recipe <i class="fas fa-plus-square-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-         </div>   
+        </div>
     </form>
 
-		
-	
- 
 
-{% endblock %}
+
+
+
+    {% endblock %}

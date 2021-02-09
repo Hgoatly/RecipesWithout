@@ -16,14 +16,16 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-now = datetime.now() 
+now = datetime.now()
 date_time = now.strftime("%d %B %Y")
 
 
 @app.route("/")
 @app.route("/home")
 def home():
-    recipes = recipes = mongo.db.recipes.find()
+    recipes = list(
+        [recipe for recipe in mongo.db.recipes.aggregate(
+            [{"$sample": {"size": 9}}])])
     return render_template("home.html", recipes=recipes)
 
 

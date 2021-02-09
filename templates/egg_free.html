@@ -4,17 +4,18 @@
         <div class="col s12 m10 offset-m1 center-align">
             <div class="card-panel title-panel">
             <h3 class="center-align brown-text">Egg Free Recipes</h3>
+             
             </div>
         </div>
  </div>
-
-<div class="row">
-{% for recipes in recipes %}
-     
+   
+ <div class="row">
+    {% for recipes in recipes %}
+    
     <div class="col s4 center-align">
       <div class="card">
           {% if recipes.category_name == "Egg Free" %}
-          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(20, True) }}</span>
+          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
         <div class="card-image">
           <img src="{{ recipes.image }}">
           
@@ -22,6 +23,7 @@
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
+         
         </div>
         <div class="card-action">
           <a href="{{ url_for('recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
@@ -30,7 +32,7 @@
       </div>
     </div>
     {% endfor%}
-    </div>
+     </div>
 {% endblock %}
 
 
