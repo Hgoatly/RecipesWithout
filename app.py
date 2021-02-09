@@ -17,7 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 now = datetime.now() 
-date_time = now.strftime("%d%m%y")
+date_time = now.strftime("%d %B %Y")
 
 
 @app.route("/")
