@@ -4,7 +4,6 @@
         <div class="col s12 m10 offset-m1 center-align">
             <div class="card-panel title-panel">
             <h3 class="center-align brown-text">Dairy Free Recipes</h3>
-             
             </div>
         </div>
  </div>
@@ -15,7 +14,7 @@
     <div class="col s4 center-align">
       <div class="card">
           {% if recipes.category_name == "Dairy Free" %}
-          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
+          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(20, True) }}</span>
         <div class="card-image">
           <img src="{{ recipes.image }}">
           

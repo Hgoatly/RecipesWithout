@@ -13,6 +13,7 @@
     setTimeout(function() {
     $('.flash-messages').remove();
     }, 10000); 
+    
     // code copied from CI 'Task Manager' mini project
     // custom code for Materialize select dropdown element
      validateMaterializeSelect();
