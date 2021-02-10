@@ -68,7 +68,7 @@ ul {
    margin-bottom: 0px;
    }
 
-   .add-recipes {
+.add-recipes {
     height: auto;
     width: 100%;
     background: url("../images/platter.jpg") no-repeat center center fixed; 
@@ -97,7 +97,7 @@ ul {
    position: relative;
    }
 
- .login {
+.login {
     height: auto;
     width: 100%;
     background: url("../images/burger.jpg") no-repeat center center fixed; 
@@ -112,7 +112,7 @@ ul {
    margin-bottom: 0px;
    }
 
-    .register {
+.register {
     height: auto;
     width: 100%;
     background: url("../images/plates.jpg") no-repeat center center fixed; 
@@ -125,6 +125,21 @@ ul {
    font-family: 'Roboto', sans-serif;
    position: relative;
    margin-bottom: 0px;
+   }
+
+.recipe {
+    height: auto;
+    width: 100%;
+    background: url("../images/table-vegetable-border.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    margin-bottom: 0px;
    }
 
 .add-recipes-panel, .edit-recipes-panel, 
