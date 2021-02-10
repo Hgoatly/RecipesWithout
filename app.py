@@ -154,7 +154,8 @@ def logout():
 # gluten free page
 @app.route("/gluten_free")
 def gluten_free():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find(
+        {"category_name": "Gluten Free"})
     return render_template(
         "gluten_free.html", recipes=recipes)
 
@@ -162,14 +163,17 @@ def gluten_free():
 # dairy free page
 @app.route("/dairy_free")
 def dairy_free():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find(
+        {"category_name": "Dairy Free"}
+    )
     return render_template("dairy_free.html", recipes=recipes)
 
 
 # egg free page
 @app.route("/egg_free")
 def egg_free():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find(
+        {"category_name": "Egg Free"})
     return render_template("egg_free.html", recipes=recipes)
 
 
