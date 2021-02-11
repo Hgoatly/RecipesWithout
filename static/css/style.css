@@ -20,6 +20,11 @@ html {
    position: relative;
 }
 
+.welcome-text {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
 .card-image {
     height: 100%;
     width: 100%;
@@ -45,6 +50,10 @@ ul {
 
  a {
     margin : 0px;
+}
+
+h5 {
+    font-size: 30px;
 }
 
 .container {
