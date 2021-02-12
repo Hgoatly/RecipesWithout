@@ -162,6 +162,12 @@ h5 {
     margin-top: 40px;
 }
 
+.title-panel, .content-panel {
+    width: 75vw;
+    margin-right: 80px;
+    margin-left: 80px;
+}
+
 footer ul li{
   display: inline;
   margin: 5px;
