@@ -38,6 +38,8 @@ html {
 
 .recipe-page-image {
     margin-bottom: 24px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .recipe-instructions {
@@ -150,6 +152,21 @@ h5 {
     position: relative;
     margin-bottom: 0px;
    }
+  
+.my_recipes {
+    height: auto;
+    width: 100%;
+    background: url("../images/wooden-table.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    margin-bottom: 0px;
+   }   
 
 .add-recipes-panel, .edit-recipes-panel, 
 .login-panel, .register-panel {
@@ -164,10 +181,11 @@ h5 {
 
 .title-panel, .content-panel {
     width: 75vw;
-    margin-right: 80px;
-    margin-left: 80px;
 }
 
+.category-title {
+    margin-top: 40px;
+}
 footer ul li{
   display: inline;
   margin: 5px;
