@@ -20,6 +20,25 @@
                 </p>
             </div>
         </div>
+
+<div class="row card-panel">
+<form action="{{ url_for('search') }}" method="post" class="col s12">
+    <div class="row valign-wrapper center-align">
+        <div class="input-field col s12 m8">
+            <i class="fas fa-search prefix"></i>
+            <input type="text" name="query" id="query" minlength="3" class="validate" required> 
+            <label for="query">Search Recipes</label>
+        </div>
+        <div class="col s12 m8">
+            <a href="{{ url_for('home') }}" class="red">Reset</a>
+            <button type="submit" class="teal lighten-3">
+                <i class="fas fa-search left"></i>Search
+            </button>
+        </div>
+    </div>
+</form>
+</div>
+
     <div class="row">
            {% for recipes in recipes %}
            <div class="col s4 center-align">

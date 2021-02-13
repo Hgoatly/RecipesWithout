@@ -39,7 +39,7 @@ html {
 .recipe-page-image {
     margin-bottom: 24px;
     max-width: 400px;
-    max-height: 400px;
+    max-height: 400px; 
 }
 
 .recipe-instructions {
@@ -186,7 +186,8 @@ h5 {
 .category-title {
     margin-top: 40px;
 }
-footer ul li{
+
+footer ul li {
   display: inline;
   margin: 5px;
 }

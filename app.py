@@ -29,6 +29,13 @@ def home():
     return render_template("home.html", recipes=recipes)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("home.html", recipes=recipes)
+
+
 # code copied and adapted from 'Task Manager' mini project.
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -155,7 +162,7 @@ def logout():
 @app.route("/gluten_free")
 def gluten_free():
     recipes = mongo.db.recipes.find(
-        {"category_name": "Gluten Free"})
+        {"category_name": "gluten_free"})
     return render_template(
         "gluten_free.html", recipes=recipes)
 
@@ -164,7 +171,7 @@ def gluten_free():
 @app.route("/dairy_free")
 def dairy_free():
     recipes = mongo.db.recipes.find(
-        {"category_name": "Dairy Free"}
+        {"category_name": "dairy_free"}
     )
     return render_template("dairy_free.html", recipes=recipes)
 
@@ -173,7 +180,7 @@ def dairy_free():
 @app.route("/egg_free")
 def egg_free():
     recipes = mongo.db.recipes.find(
-        {"category_name": "Egg Free"})
+        {"category_name": "egg_free"})
     return render_template("egg_free.html", recipes=recipes)
 
 
