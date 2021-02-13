@@ -30,8 +30,8 @@
             <label for="query">Search Recipes</label>
         </div>
         <div class="col s12 m8">
-            <a href="{{ url_for('home') }}" class="red">Reset</a>
-            <button type="submit" class="teal lighten-3">
+            <a href="{{ url_for('home') }}" class="btn red">Reset</a>
+            <button type="submit" class="btn teal lighten-3">
                 <i class="fas fa-search left"></i>Search
             </button>
         </div>
@@ -39,10 +39,11 @@
 </form>
 </div>
 
+{% if recipes|length > 0 %}
     <div class="row">
            {% for recipes in recipes %}
            <div class="col s4 center-align">
-            <div class="card medium">   
+            <div class="card medium home-recipes">  
           <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
         <div class="card-image">
           <img src="{{ recipes.image }}">
@@ -60,5 +61,7 @@
     </div>      
            {% endfor %}
     </div>
-
+{% else %}
+<h3 class="red-text">Sorry. No Recipes Found.</h3>
+{% endif %}
 {% endblock %}
