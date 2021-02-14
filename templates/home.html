@@ -21,7 +21,8 @@
             </div>
         </div>
 
-<div class="row card-panel">
+<div class="row">
+    <div class="col card-panel s12 m8 offset-m2">
 <form action="{{ url_for('search') }}" method="post" class="col s12">
     <div class="row valign-wrapper center-align">
         <div class="input-field col s12 m8">
@@ -38,12 +39,12 @@
     </div>
 </form>
 </div>
-
-{% if recipes|length > 0 %}
+</div>
+{% if recipes|length > 2 %}
     <div class="row">
            {% for recipes in recipes %}
-           <div class="col s4 center-align">
-            <div class="card medium home-recipes">  
+           <div class="col s4 center-align home-recipes">
+            <div class="card medium">  
           <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
         <div class="card-image">
           <img src="{{ recipes.image }}">
@@ -61,6 +62,54 @@
     </div>      
            {% endfor %}
     </div>
+
+    {% elif recipes|length == 1 %}
+        <div class="row">
+           {% for recipes in recipes %}
+           <div class="col s12 m6 offset-m3 center-align home-recipes">
+            <div class="card">  
+          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
+        <div class="card-image">
+          <img src="{{ recipes.image }}">
+          
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+         
+        </div>
+        <div class="card-action">
+          <a href="{{ url_for('recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+{% elif recipes|length == 2 %}
+        
+            
+           {% for recipes in recipes %}
+           <div class="row">
+           <div class="col s12 m4 offset-m1 center-align">
+            <div class="card medium">  
+          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
+        <div class="card-image">
+          <img src="{{ recipes.image }}">
+          
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+         
+        </div>
+        <div class="card-action">
+          <a href="{{ url_for('recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+        </div>
+      </div>
+      </div>
+      {% endfor %}
+   
+
 {% else %}
 <h3 class="red-text">Sorry. No Recipes Found.</h3>
 {% endif %}

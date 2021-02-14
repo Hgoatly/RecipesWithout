@@ -24,7 +24,10 @@ html {
     font-size: 20px;
     margin-top: 40px;
 }
-
+.home-recipes {
+    width: 75vw;
+    
+}
 .card-image {
     height: 100%;
     width: 100%;
