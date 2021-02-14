@@ -26,8 +26,12 @@ html {
 }
 .home-recipes {
     width: 75vw;
-    
 }
+
+.two-search-results {
+    margin-left: 14%;
+}
+
 .card-image {
     height: 100%;
     width: 100%;
