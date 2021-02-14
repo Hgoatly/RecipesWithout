@@ -45,5 +45,11 @@
     }
   });
 
+document.getElementById("search-box").style.display = "none";
+
+document.getElementById("search").addEventListener("click", function() {
+    document.getElementById("search-box").style.display = "block";
+
+});
 
   
