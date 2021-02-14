@@ -30,10 +30,10 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger brown-text darken-4"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}" class="brown-text darken-3">Home</a></li>
-                <li><a href="{{ url_for('search') }}" class="brown-text darken-3">Search</a></li>
                 <!--dropdown trigger-->
                 <li><a class="dropdown-trigger brown-text darken-3" data-target="dropdown1">Recipes<i
                             class="fas fa-angle-down right brown-text darken-3"></i></a></li>
+                <li><a href="{{ url_for('search') }}" class="brown-text darken-3">Search</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('add_recipes') }}" class="brown-text darken-3">Add Recipes</a></li>
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text darken-3">My Recipes</a></li>
@@ -50,9 +50,9 @@
   <ul class="sidenav" id="mobile-demo">
     <li><h4 class="center-align">Recipes Without</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
-    <li><a href="{{ url_for('search') }}" class="brown-text darken-3">Search</a></li>
     <!--dropdown trigger-->
     <li><a class="dropdown-trigger" data-target="dropdown2">Recipes<i class="fas fa-angle-down right"></i></a></li>
+    <li><a href="{{ url_for('search') }}" class="brown-text darken-3">Search</a></li>
     {% if session.user %}
         <li><a href="{{ url_for('add_recipes') }}">Add Recipes</a></li>
         <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
