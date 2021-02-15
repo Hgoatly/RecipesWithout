@@ -20,6 +20,10 @@ html {
    position: relative;
 }
 
+.search-card {
+    border-radius: 25px;
+}
+
 .welcome-text {
     font-size: 20px;
     margin-top: 40px;

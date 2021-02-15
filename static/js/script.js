@@ -44,11 +44,11 @@
         });
     }
   });
+/*
+document.getElementById("search-results").style.display = "none";
 
-document.getElementById("search-box").style.display = "none";
-
-document.getElementById("search").addEventListener("click", function() {
-    document.getElementById("search-box").style.display = "block";
+document.getElementById("search-button").addEventListener("click", function() {
+    document.getElementById("search-results").style.display = "block";
 
 });
 
