@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 from datetime import datetime
+import smtplib, ssl
 
 app = Flask(__name__)
 
@@ -18,6 +19,25 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 now = datetime.now()
 date_time = now.strftime("%d %B %Y")
+
+smtp_server = "smtp.gmail.com"
+port = 465
+sender = "recipetest17@gmail.com"
+password = os.environ.get("PASSWORD")
+
+receiver = "helengoatly@me.com"
+message = """\
+From: {}
+To: {}
+Subject: Hi There!
+
+This Message was sent from Python!
+    """.format(sender, receiver)
+context = ssl.create_default_context()
+
+with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+    server.login(sender, password)
+    server.sendmail(sender, receiver, message)
 
 
 @app.route("/")
@@ -219,6 +239,7 @@ def contact():
     if request.method == "POST":
         print(request.form.get("name"))
         print(request.form["email"])
+        flash("Thank you. Your email has been sent.")
     return render_template("contact.html")
 
 
