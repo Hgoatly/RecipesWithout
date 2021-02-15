@@ -192,7 +192,7 @@ def recipe(recipe_id):
         "recipe.html", recipes=recipes)
 
 
-# code copied from 'Task Manager' mini project
+# code copied and adapted from 'Task Manager' mini project
 @app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
     if request.method == "POST":
@@ -212,6 +212,14 @@ def add_recipes():
         return redirect(url_for("my_recipes", username=session["user"]))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
+
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        print(request.form.get("name"))
+        print(request.form["email"])
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
