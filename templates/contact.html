@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col s12">
-        <form method="POST" name="sentMessage" id="contactForm" class="col s12" novalidate>
+        <form method="POST" action="{{ url_for('contact') }}" novalidate>
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="Name" id="name" name="name" type="text" class="validate" required>

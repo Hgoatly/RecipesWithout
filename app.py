@@ -20,24 +20,39 @@ mongo = PyMongo(app)
 now = datetime.now()
 date_time = now.strftime("%d %B %Y")
 
-smtp_server = "smtp.gmail.com"
-port = 465
-sender = "recipetest17@gmail.com"
-password = os.environ.get("PASSWORD")
 
-receiver = "helengoatly@me.com"
-message = """\
-From: {}
-To: {}
-Subject: Hi There!
+# This section copied and adapted from https://realpython.com/lessons/sending-plaintext-emails-python/
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        smtp_server = "smtp.gmail.com"
+        port = 465
+        sender = "recipetest17@gmail.com"
+        password = os.environ.get("PASSWORD")
 
-This Message was sent from Python!
-    """.format(sender, receiver)
-context = ssl.create_default_context()
+        name = request.form["name"]
+        email = request.form["email"]
+        message = request.form["message"]
 
-with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-    server.login(sender, password)
-    server.sendmail(sender, receiver, message)
+        receiver = "helengoatly@me.com"
+        statement = """\
+        From: {}
+        To: {}
+        Subject: Hi There!
+        Body:
+        """.format(sender, receiver, name)
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            print(f"sender is: {sender};")
+            print(f"receiver is: {receiver};")
+            print(f"statement is: {statement};")
+
+            server.login(sender, password)
+            server.sendmail(sender, receiver, statement)
+
+    return render_template("contact.html")
 
 
 @app.route("/")
@@ -234,13 +249,7 @@ def add_recipes():
     return render_template("add_recipes.html", categories=categories)
 
 
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        print(request.form.get("name"))
-        print(request.form["email"])
-        flash("Thank you. Your email has been sent.")
-    return render_template("contact.html")
+
 
 
 if __name__ == "__main__":
