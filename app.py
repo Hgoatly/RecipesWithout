@@ -32,25 +32,25 @@ def contact():
 
         name = request.form["name"]
         email = request.form["email"]
-        message = request.form["message"]
 
-        receiver = "helengoatly@me.com"
-        statement = """\
-        From: {}
-        To: {}
-        Subject: Hi There!
-        Body:
-        """.format(sender, receiver, name)
+        receiver = "recipetest579@gmail.com"
+
+        message = f"""\
+        From: "{name}"
+
+        Email from {email}
+        {request.form['message']}
+        """
 
         context = ssl.create_default_context()
 
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
             print(f"sender is: {sender};")
             print(f"receiver is: {receiver};")
-            print(f"statement is: {statement};")
+            print(f"statement is: {message};")
 
             server.login(sender, password)
-            server.sendmail(sender, receiver, statement)
+            server.sendmail(sender, receiver, message)
 
     return render_template("contact.html")
 
