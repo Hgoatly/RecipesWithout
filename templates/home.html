@@ -2,16 +2,14 @@
 {% block content %}
 <div class="row">
   <div class="col s12" id="landing-page">
-		
 			<div class="section-text brown-text" id="main-heading">
                 <span class="s12 center-align"><h1>Recipes Without</h1></span>
                 <span class="s12 center-align"><h4>Your online resource for allergen-free dining</h4></span>
-			
         </div>
     </div> 
 </div>
     <div class="row">
-        <div class="col s12 m10 offset-m1 center-align brown-text">
+        <div class="col s12 center-align offset-l2 brown-text demo">
                 <p class="welcome-text">
                     Welcome to Recipes Without. Here you can find a range of recipes suitable for those with
                     Gluten, Dairy or Egg allergies. As well as being able to search and view other people's recipes, you can
@@ -22,7 +20,7 @@
         </div>
 
 <div class="row" id="search-box">
-    <div class="col card-panel s12 m6 offset-m3 search-card">
+    <div class="col card-panel s12 m6 offset-m3 offset-l5 search-card">
 <form action="{{ url_for('search') }}" method="post" class="col s12 m10 center-align">
     <div class="row valign-wrapper center-align">
         <div class="input-field col s12 m10 offset-m1">

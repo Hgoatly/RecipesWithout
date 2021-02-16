@@ -44,12 +44,6 @@
         });
     }
   });
-/*
-document.getElementById("search-results").style.display = "none";
 
-document.getElementById("search-button").addEventListener("click", function() {
-    document.getElementById("search-results").style.display = "block";
-
-});
 
   
