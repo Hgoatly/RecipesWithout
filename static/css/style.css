@@ -38,12 +38,6 @@ html
     margin-top: 40px;
 }
 
-.demo {
-        width:75%;
-   
-    justify-content: center;
-    
-}
 
 #main-heading{
     position: absolute;
@@ -101,32 +95,15 @@ h5 {
 }
 
 /*-------This section is copied from css.tricks.com/perfect-full-page-background-image------*/
-landing-page {
-    min-height: 100vh;
-    min-width: 100vw;
-    background: url("../images/landing-page.jpg") no-repeat center center fixed; 
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-family: 'Roboto', sans-serif;
-   position: relative;
-   margin-bottom: 0px;
-   background-attachment: scroll;
-   }
 
-    #landing-page {   
-            position: relative;
+#landing-page {   
+    position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-        background-image:url('../images/landing-page.jpg');
-        min-height: 100vh;
-        min-width: 100vw; 
-
+    background-image:url('../images/landing-page.jpg');
+    min-height: 100vh;
+    min-width: 100vw; 
     }
 
 .add-recipes {
