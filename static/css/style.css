@@ -54,10 +54,20 @@ html
     margin-left: 14%;
 }
 
+img {
+    width: 400px;
+    height: 400px;
+}
+
+
 .card-image {
-    height: 100%;
-    width: 100%;
+    max-height: 100vh;
+    max-width: 100%;
     object-fit:cover;
+}
+
+.card-buttons {
+    margin-top: 12.5%;
 }
 
 .recipe-image {

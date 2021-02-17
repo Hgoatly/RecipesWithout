@@ -17,13 +17,14 @@
             {% if recipes.added_by == session["user"] or session.user|lower == "admin"|lower %}
 
             <div class="col s4 center-align">
-                <div class="card medium">
+                <div class="card large">
                     <div class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</div>
-                    <div class="card-image">
-                        <img class="recipe-image" src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}">
-
-                    </div>
-                    <div class="card-action">
+                    
+                    
+                        <img class="card-image" src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}">
+                        
+                    
+                    <div class="card-buttons">
 
                         <a href="{{ url_for('recipe', username=session['user'], recipe_id=recipes._id) }}"
                             class="btn teal lighten-3">View Recipe</a>
