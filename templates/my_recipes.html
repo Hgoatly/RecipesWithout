@@ -23,7 +23,7 @@
                         <img class="recipe-image" src="{{ recipes.image }}">
 
                     </div>
-                    <div class="card-content">
+                    <div class="card-action">
 
                         <a href="{{ url_for('recipe', username=session['user'], recipe_id=recipes._id) }}"
                             class="btn teal lighten-3">View Recipe</a>
@@ -52,5 +52,5 @@
             {% endif %}
 
             {% endfor %}
-            
+
         {% endblock %}
