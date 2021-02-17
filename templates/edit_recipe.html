@@ -28,55 +28,63 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{ recipe.recipe_name }}" type="text" class="validate" required>
-                    <label for="recipe_name">Recipe Name</label>
+                    <input id="edit_recipe_name" name="edit_recipe_name" minlength="5" maxlength="50" value="{{ recipe.recipe_name.title() }}" type="text" class="validate" required>
+                    <label for="edit_recipe_name">Edit recipe Name</label>
                 </div>
             </div>
             <!-- equipment needed -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix"></i>
-                    <textarea id="equipment_needed" name="equipment_needed" minlength="10" maxlength="100" class="materialize-textarea validate" required>
+                    <textarea id="edit_equipment_needed" name="edit_equipment_needed" minlength="10" maxlength="100" class="materialize-textarea validate" required>
                     {{- recipe.equipment_needed }}
                     </textarea>
-                    <label for="equpiment_needed">Equipment Needed</label>
+                    <label for="edit_equpiment_needed">Edit equipment Needed</label>
                   </div>  
             </div>
             <!-- portion size -->
                                     <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pizza-slice prefix"></i>
-                    <input id="portions" name="portions" minlength="1" maxlength="200" pattern="^{5,10}$" value="{{ recipe.portions }}" type="text"
-                        class="validate" required>
-                </div>
-                <label for="portions">Number of portions</label>
+                    <input id="edit_portions" name="edit_portions" minlength="1" maxlength="200" pattern="^{5,10}$" value="{{ recipe.portions }}" type="text"
+                        class="validate" required>              
+                <label for="edit_portions"> Edit number of portions</label>
+                 </div>
             </div>
             <!-- recipe ingredients -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-seedling prefix"></i>
-                        <textarea id="ingredients" name="ingredients" minlength="10" maxlength="200" class="materialize-textarea validate" required>
+                        <textarea id="edit_ingredients" name="edit_ingredients" minlength="10" maxlength="200" class="materialize-textarea validate" required>
                             {{- recipe.ingredients -}}
                         </textarea>
-                        <label for="ingredients">Ingredients</label>
+                        <label for="edit_ingredients">Edit ingredients</label>
                         </div>
             </div>
             <!-- recipe method -->
               <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
-                        <textarea id="method" name="method" minlength="10" maxlength="500" class="materialize-textarea validate" required>
+                        <textarea id="edit_method" name="edit_method" minlength="10" maxlength="500" class="materialize-textarea validate" required>
                             {{- recipe.method -}}
                         </textarea>
-                        <label for="method">Method</label>
+                        <label for="edit_method">Edit method</label>
                         </div>
             </div>
             <!-- image -->
                         <div class="row">
             <div class="input-field col s12">
-                <i id="add-image" class=" fas fa-camera prefix"></i>
-                <input id="image_url" name="image_url" value="{{ recipe.image }}" type="text" minlength="5" pattern="https://.*" required>
-                <label for="image_url">Add an image</label>
+                <i id="edit-image" class=" fas fa-camera prefix"></i>
+                <input id="edit_image_url" name="edit_image_url" value="{{ recipe.image }}" type="text" minlength="5" pattern="https://.*" required>
+                <label for="edit_image_url">Edit image url</label>
+            </div>
+            </div>
+            <!-- image description -->
+                        <div class="row">
+            <div class="input-field col s12">
+                <i id="edit-image-description" class=" fas fa-pencil-alt prefix"></i>
+                <input id="image_description" name="image_description" value="{{ recipe.alt }}" type="text" minlength="5" required>
+                <label for="image_description">Edit image description</label>
             </div>
             </div>
             <!-- submit button -->
