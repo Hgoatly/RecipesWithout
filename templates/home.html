@@ -47,7 +47,7 @@
             <div class="card medium">  
           <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
         <div class="card-image">
-          <img src="{{ recipes.image }}">
+          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}">
           
         </div>
         <div class="card-content">

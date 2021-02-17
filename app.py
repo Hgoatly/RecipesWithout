@@ -240,7 +240,8 @@ def add_recipes():
             "method": request.form.get("method"),
             "added_by": session["user"],
             "image": request.form.get("image_url"),
-            "added_on": date_time
+            "added_on": date_time,
+            "alt": request.form.get("image_description")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for adding a new recipe!")

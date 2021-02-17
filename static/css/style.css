@@ -199,9 +199,10 @@ h5 {
    }   
 
 .add-recipes-panel, .edit-recipes-panel {
-    width: 75vw;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    width: 40vw;
+    margin-top: 15%;
+    margin-bottom: 15%;;
+    border-radius: 25px;
 }
 
 .title-panel {
