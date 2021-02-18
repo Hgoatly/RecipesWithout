@@ -14,7 +14,7 @@
     <div class="col s12 m4 center-align">
       <div class="card-panel large">
           {% if recipes %}
-          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
+          <span class="card-title brown-text truncate">{{ recipes.recipe_name }}</span>
        
           <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image"> 
           
