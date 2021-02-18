@@ -73,12 +73,6 @@ img {
     object-fit:cover;
 }
 
-.no-results-home {
-    top: 10%;
-}
-
-
-
 .card-buttons {
     margin-top: 12.5%;
 }
@@ -115,6 +109,7 @@ h5 {
     margin-left: 0px;
     margin-right: 0px;
 }
+
 
 /*-------This section is copied from css.tricks.com/perfect-full-page-background-image------*/
 
