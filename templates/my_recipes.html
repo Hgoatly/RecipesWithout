@@ -17,7 +17,7 @@
             {% if recipes.added_by == session["user"] or session.user|lower == "admin"|lower %}
 
             <div class="col s4 center-align">
-                <div class="card large">
+                <div class="card-panel large">
                     <div class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</div>
                     
                     
