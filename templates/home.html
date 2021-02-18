@@ -44,7 +44,7 @@
     <div class="row">
            {% for recipes in recipes %}
            <div class="col s4 center-align">
-            <div class="card large">  
+            <div class="card-panel large">  
           <div class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</div>
 
           <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">

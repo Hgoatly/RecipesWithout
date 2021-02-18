@@ -10,12 +10,11 @@
     <div class="row">
            {% for recipes in recipes %}
            <div class="col s4 center-align home-recipes">
-            <div class="card medium">  
-          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
-        <div class="card-image">
-          <img src="{{ recipes.image }}">
+            <div class="card-panel medium">  
+          <div class="card-title brown-text"><h4>{{ recipes.recipe_name|truncate(25, True) }}</h4></div>
+        
+          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">
           
-        </div>
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
@@ -33,10 +32,10 @@
         <div class="row">
            {% for recipes in recipes %}
            <div class="col s12 m6 offset-m3 center-align home-recipes">
-            <div class="card">  
-          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
+            <div class="card-panel medium">  
+          <div class="card-title brown-text"><h4>{{ recipes.recipe_name|truncate(25, True) }}</h4></div>
         <div class="card-image">
-          <img src="{{ recipes.image }}">
+          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">
           
         </div>
         <div class="card-content">
@@ -58,12 +57,12 @@
 
            <div class="col s4 m5 center-align home-recipes">
            
-            <div class="card medium">  
-          <span class="card-title brown-text">{{ recipes.recipe_name|truncate(25, True) }}</span>
-        <div class="card-image">
-          <img src="{{ recipes.image }}">
+            <div class="card-panel medium">  
+          <div class="card-title brown-text"><h4>{{ recipes.recipe_name|truncate(25, True) }}</h4></div>
+        
+          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">
           
-        </div>
+        
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
