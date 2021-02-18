@@ -18,6 +18,16 @@ html
     overflow-x: hidden; 
 }
 
+/*
+.row .col.s4 {
+  padding-left: 0;
+  padding-right: 10px;
+}
+*/
+.drag-target {
+    width: 0px;
+}
+
  .content {
     flex: 1;
 }
@@ -43,7 +53,6 @@ html
     top: 35%;
     width: 100%;
     text-align: center;
-  
 }
 
 .two-search-results {
@@ -190,17 +199,13 @@ h5 {
    }
   
 .my_recipes {
-    height: auto;
-    width: 100%;
-    background: url("../images/wooden-table.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
     position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('../images/wooden-table.jpg');
+    min-height: 95vh;
+    min-width: 95vw;
     margin-bottom: 0px;
    }   
 
@@ -209,6 +214,10 @@ h5 {
     margin-top: 15%;
     margin-bottom: 15%;;
     border-radius: 25px;
+}
+
+.my-recipes-cards {
+    margin-bottom: 0px;
 }
 
 .title-panel {
@@ -227,6 +236,7 @@ h5 {
 
 .category-title {
     margin-top: 40px;
+    border-radius: 25px;
 }
 
 footer ul li {
