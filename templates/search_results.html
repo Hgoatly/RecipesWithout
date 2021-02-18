@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row">
-    <div class="col s12 center-align brown-text">
+    <div class="col s12 m6 offset-m3 center-align brown-text">
+        <div class="card-panel category-title">
 <h3>Search Results</h3>
+</div>
 </div>
 </div>
 {% if recipes|length > 2 %}
@@ -80,7 +82,7 @@
 {% else %}
 <div class="row">
     <div class="col s12 m6 offset-m3 center-align">
-        <div class="card-panel">
+        <div class="card-panel category-title">
 <h3 class="teal-text lighten-3">Sorry. No Recipes Found.</h3>
 </div>
 </div>

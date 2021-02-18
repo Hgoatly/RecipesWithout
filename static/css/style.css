@@ -73,9 +73,11 @@ img {
     object-fit:cover;
 }
 
-search-result-image {
-    display: inline;
+.no-results-home {
+    top: 10%;
 }
+
+
 
 .card-buttons {
     margin-top: 12.5%;
