@@ -139,16 +139,18 @@ def login():
     return render_template("login.html")
 
 
-# code copied from 'Task Manager' mini project
+# code copied and adapted from 'Task Manager' mini project
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
     # get the session user's username from the db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = list(mongo.db.recipes.find())
+    added_recipes = mongo.db.recipes.find({"added_by": username})
     if session["user"]:
         return render_template(
-            "my_recipes.html", username=username, recipes=recipes)
+            "my_recipes.html", username=username,
+            recipes=recipes, added_recipes=added_recipes)
 
     return redirect(url_for(login))
 
@@ -227,6 +229,27 @@ def recipe(recipe_id):
         "recipe.html", recipes=recipes)
 
 
+@app.route("/gluten_free_recipe/<recipe_id>")
+def gluten_free_recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template(
+        "gluten_free_recipe.html", recipes=recipes)
+
+
+@app.route("/dairy_free_recipe/<recipe_id>")
+def dairy_free_recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template(
+        "dairy_free_recipe.html", recipes=recipes)
+
+
+@app.route("/egg_free_recipe/<recipe_id>")
+def egg_free_recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template(
+        "egg_free_recipe.html", recipes=recipes)
+
+
 # code copied and adapted from 'Task Manager' mini project
 @app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
@@ -248,9 +271,6 @@ def add_recipes():
         return redirect(url_for("my_recipes", username=session["user"]))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
-
-
-
 
 
 if __name__ == "__main__":
