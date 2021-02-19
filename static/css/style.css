@@ -202,15 +202,16 @@ h5 {
    }
   
 .my_recipes {
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image:url('../images/wooden-table.jpg');
-    min-height: 95vh;
-    min-width: 95vw;
-    margin-bottom: 0px;
-   }   
+    height: auto;
+    width: 100%;
+    background: url("../images/herbs.jpg") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   justify-content: center;
+   position: relative; 
+}
 
 .add-recipes-panel, .edit-recipes-panel {
     width: 40vw;
