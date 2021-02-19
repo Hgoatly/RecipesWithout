@@ -12,10 +12,10 @@
     </div>
 
         <div class="row my-recipes-cards">
-            {% for recipes in recipes %}
+            {% for recipes in recipes %}            
 
             {% if recipes.added_by == session["user"] or session.user|lower == "admin"|lower %}
-
+            {% if recipes|length > 0 %}
             <div class="col s4 center-align">
                 <div class="card-panel large">
                     <div class="card-title brown-text truncate">{{ recipes.recipe_name }}</div>
@@ -49,10 +49,15 @@
                     </div>
                 </div>
             </div>
-
+  {% elif recipes|length == 0 %}
+            <h3>Please add a Recipe</h3>
+            {% endif %}
             {% endif %}
 
             {% endfor %}
+            
+
 </div>
-   
+               
+            
         {% endblock %}

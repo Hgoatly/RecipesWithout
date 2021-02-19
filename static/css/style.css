@@ -24,13 +24,16 @@ html
 
  .content {
     flex: 1;
+    margin-bottom: 200px;
 }
 
 #footer {
    left:0px;
-   bottom:0px;
-   position: relative;
+   right: 0px;
+   bottom: 0%;
+   position: absolute;
 }
+
 
 .search-card {
     border-radius: 25px;

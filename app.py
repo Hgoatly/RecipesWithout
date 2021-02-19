@@ -145,7 +145,7 @@ def my_recipes(username):
     # get the session user's username from the db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     if session["user"]:
         return render_template(
             "my_recipes.html", username=username, recipes=recipes)
