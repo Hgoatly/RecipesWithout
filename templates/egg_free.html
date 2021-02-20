@@ -8,16 +8,16 @@
             </div>
         </div>
  </div>
-   
+   {% if recipes %}
  <div class="row">
-    {% for recipes in recipes %}
+    {% for recipe in recipes %}
     
     <div class="col s4 center-align">
       <div class="card-panel large">
-          {% if recipes %}
-          <span class="card-title brown-text truncate">{{ recipes.recipe_name }}</span>
+          
+          <span class="card-title brown-text truncate">{{ recipe.recipe_name }}</span>
         <div class="card-image">
-          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}">
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}">
           
         </div>
         <div class="card-content">
@@ -26,14 +26,14 @@
          
         </div>
         <div class="card-action">
-          <a href="{{ url_for('egg_free_recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+          <a href="{{ url_for('egg_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
         </div>
-         {% endif %}
+         
       </div>
     </div>
     {% endfor%}
      </div>
-   
+    {% endif %}
 {% endblock %}
 
 

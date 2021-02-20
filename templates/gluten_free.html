@@ -7,16 +7,16 @@
             </div>
         </div>
  </div>
-   
+   {% if recipes %}
  <div class="row">
-    {% for recipes in recipes %}
+    {% for recipe in recipes %}
     
     <div class="col s12 m4 center-align">
       <div class="card-panel large">
-          {% if recipes %}
-          <span class="card-title brown-text truncate">{{ recipes.recipe_name }}</span>
+          
+          <span class="card-title brown-text truncate">{{ recipe.recipe_name }}</span>
        
-          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image"> 
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image"> 
           
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
@@ -24,17 +24,16 @@
          
         </div>
         <div class="card-action">
-          <a href="{{ url_for('gluten_free_recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+          <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
         </div>
-        
-         {% endif %}
          
       </div>
     </div>
 
     {% endfor%}
     </div>
-
+    {% endif %}
+    
         <div class="row">
             <button onclick="topFunction()" id="myBtn" title="Go to top" class="brown"><i class="fas fa-chevron-up medium white-text"></i></button>
         </div>
