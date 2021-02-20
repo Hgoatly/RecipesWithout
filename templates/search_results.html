@@ -10,12 +10,12 @@
 {% if recipes|length > 2 %}
 
     <div class="row">
-           {% for recipes in recipes %}
+           {% for recipe in recipes %}
            <div class="col s4 center-align home-recipes">
             <div class="card-panel large">  
-          <div class="card-title brown-text"><h4>{{ recipes.recipe_name|truncate(25, True) }}</h4></div>
+          <div class="card-title brown-text"><h4>{{ recipe.recipe_name|truncate(25, True) }}</h4></div>
         
-          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
           
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
@@ -23,7 +23,7 @@
          
         </div>
         <div class="card-action">
-          <a href="{{ url_for('recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
         </div>
       </div>
     </div>      
@@ -32,12 +32,12 @@
 
     {% elif recipes|length == 1 %}
         <div class="row">
-           {% for recipes in recipes %}
+           {% for recipe in recipes %}
            <div class="col s12 m6 offset-m3 center-align home-recipes">
             <div class="card-panel large">  
-          <div class="card-title brown-text"><h4>{{ recipes.recipe_name|truncate(25, True) }}</h4></div>
+          <div class="card-title brown-text"><h4>{{ recipe.recipe_name|truncate(25, True) }}</h4></div>
         <div class="card-image">
-          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
           
         </div>
         <div class="card-content">
@@ -46,7 +46,7 @@
          
         </div>
         <div class="card-action">
-          <a href="{{ url_for('recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
         </div>
       </div>
       {% endfor %}
@@ -55,14 +55,14 @@
 {% elif recipes|length == 2 %}
 
     <div class="row two-search-results">
-           {% for recipes in recipes %}
+           {% for recipe in recipes %}
 
            <div class="col s4 m5 center-align home-recipes">
            
             <div class="card-panel">  
-          <div class="card-title brown-text"><h4>{{ recipes.recipe_name|truncate(25, True) }}</h4></div>
+          <div class="card-title brown-text"><h4>{{ recipe.recipe_name|truncate(25, True) }}</h4></div>
         
-          <img src="{{ recipes.image }}" loading="lazy" alt="{{ recipes.alt }}" class="card-image">
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
           
         
         <div class="card-content">
@@ -71,7 +71,7 @@
          
         </div>
         <div class="card-action">
-          <a href="{{ url_for('recipe', recipe_id=recipes._id) }}" class="btn teal lighten-3">View Recipe</a>
+          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
         </div>
       </div>
        </div>
