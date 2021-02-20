@@ -9,6 +9,7 @@ body {
     padding: 0px;
 }
 
+
 html
 {
     width: 100%;
@@ -22,16 +23,18 @@ html
     width: 0px;
 }
 
- .content {
-    flex: 1;
-    margin-bottom: 200px;
+#content {
+    flex: 1 0 auto;
+    padding-bottom: 215px;
 }
+
 
 #footer {
    left:0px;
    right: 0px;
    bottom: 0%;
    position: absolute;
+   flex-shrink: 0;
 }
 
 
