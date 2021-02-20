@@ -10,11 +10,11 @@
             </div>
         </div>
     </div>
-
+    {% if recipes %}
         <div class="row my-recipes-cards">
-            {% for recipe in added_recipes %}            
+            {% for recipe in recipes %}            
 
-            {% if recipe %}
+            
             
             <div class="col s4 center-align">
                 <div class="card-panel large">
@@ -49,14 +49,15 @@
                     </div>
                 </div>
             </div>
-  
-{% else %}
-            <h3>Please add a recipe</h3>
 
-            {% endif %}
             
            
             {% endfor %}
+
+            {% else %}
+            <h3>Please add a recipe</h3>
+
+            {% endif %}
             
 </div>
                

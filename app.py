@@ -142,17 +142,15 @@ def login():
 # code copied and adapted from 'Task Manager' mini project
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
-    # get the session user's username from the db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    recipes = list(mongo.db.recipes.find())
-    added_recipes = mongo.db.recipes.find({"added_by": username})
-    if session["user"]:
+    if "user" in session:
+        # get the session user's username from the db
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        recipes = list(mongo.db.recipes.find({"added_by": username}))
         return render_template(
             "my_recipes.html", username=username,
-            recipes=recipes, added_recipes=added_recipes)
-
-    return redirect(url_for(login))
+            recipes=recipes)
+    return redirect(url_for("login"))
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
