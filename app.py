@@ -205,9 +205,9 @@ def gluten_free():
 # dairy free page
 @app.route("/dairy_free")
 def dairy_free():
-    recipes = mongo.db.recipes.find(
+    recipes = list(mongo.db.recipes.find(
         {"category_name": "dairy_free"}
-    )
+    ))
     return render_template("dairy_free.html", recipes=recipes)
 
 

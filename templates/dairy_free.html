@@ -8,17 +8,14 @@
         </div>
  </div>
  {% if recipes %}
-<div class="row">
+<div class="row hide-on-med-and-down">
 {% for recipe in recipes %}
      
     <div class="col s4 center-align">
       <div class="card-panel large">
          
           <span class="card-title brown-text truncate">{{ recipe.recipe_name }}</span>
-        <div class="card-image">
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}">
-          
-        </div>
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
@@ -33,6 +30,21 @@
     {% endfor%}
     </div>
      {% endif %}
+
+
+    {% if recipes %}     
+    <div class="hide-on-large-only">
+        <ul class="collapsible">
+        {% for recipe in recipes %}
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>hello</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  {% endfor %}
+  </ul>
+  </div>
+  {% endif %}
+  
 {% endblock %}
 
 

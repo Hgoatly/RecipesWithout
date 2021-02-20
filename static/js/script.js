@@ -7,6 +7,7 @@
     $('select').formSelect();
     $('.slider').slider({full_width: true});
     $('.modal').modal();
+    $('.collapsible').collapsible();
     // end of copied code
    
     //setTimout method removes flashed messages after 10 seconds.
@@ -66,4 +67,6 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
   
