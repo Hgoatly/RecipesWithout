@@ -37,8 +37,23 @@
         <ul class="collapsible">
         {% for recipe in recipes %}
     <li>
-      <div class="collapsible-header">{{ recipe.recipe_name }}</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class=""></i>{{ recipe.recipe_name }}</div>
+      <div class="collapsible-body">
+          <div class="col s12 center-align">
+      <div class="card-panel large">
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+         
+        </div>
+        <div class="card-action">
+          <a href="{{ url_for('dairy_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+        </div>
+       
+      </div>
+    </div>
+      </div>
     </li>
   {% endfor %}
   </ul>
