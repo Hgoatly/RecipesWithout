@@ -55,8 +55,16 @@
             {% endfor %}
 
             {% else %}
-            <h3>Please add a recipe</h3>
 
+            <div class="row no-recipes">
+        <div class="col s12 m6 offset-m3 center-align">
+            <div class="card-panel category-title">
+                <h3 class="center-align brown-text">No recipes found</h3>
+                <a href="{{ url_for('add_recipes') }}"
+                            class="btn teal lighten-3">Add Recipe</a>
+            </div>
+        </div>
+</div>
             {% endif %}
             
 </div>

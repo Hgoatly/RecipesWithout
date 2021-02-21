@@ -149,7 +149,6 @@ h5 {
    background-size: cover;
    display: flex;
    justify-content: center;
-   font-family: 'Roboto', sans-serif;
    position: relative;
    margin-bottom: 0px;
    }
@@ -164,7 +163,6 @@ h5 {
    background-size: cover;
    display: flex;
    justify-content: center;
-   font-family: 'Roboto', sans-serif;
    position: relative;
    }
 
@@ -201,22 +199,20 @@ h5 {
     background-size: cover;
     display: flex;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
     position: relative;
     margin-bottom: 0px;
    }
   
-.my_recipes {
-    height: auto;
-    width: 100%;
-    background: url("../images/herbs.jpg") no-repeat center center fixed; 
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   justify-content: center;
-   position: relative; 
-}
+.my_recipes {   
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('../images/herbs.jpg');
+    min-height: 90vh;
+    min-width: 100vw;
+    margin-bottom: 0px; 
+    }
 
 .add-recipes-panel, .edit-recipes-panel {
     width: 40vw;
@@ -246,6 +242,10 @@ h5 {
 .category-title {
     margin-top: 40px;
     border-radius: 25px;
+}
+.no-recipes {
+    padding-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 footer ul li {
