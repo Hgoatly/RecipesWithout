@@ -36,6 +36,10 @@ html
    flex-shrink: 0;
 }
 
+#landing-page {
+    padding-left: 0px;
+    padding-right: 0px;
+}
 
 .search-card {
     border-radius: 25px;
@@ -277,4 +281,19 @@ footer ul li {
 
 #myBtn:hover {
     opacity: 1;
+}
+
+
+/*---------------- Media Queries ---------------*/
+
+@media screen and (max-width: 600px) {
+ nav .brand-logo {
+    font-size: 1.5rem;
+  }
+  h1 {
+      font-size: 3.5rem;
+  }
+  .subtitle {
+      font-size: 1.5rem;
+  }
 }
