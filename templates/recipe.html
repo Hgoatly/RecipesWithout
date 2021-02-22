@@ -20,14 +20,15 @@
                 <ul class="left-align">
                     <div class="row">
                         <div class="col s8 m6 offset-m2">
-                    <li><i class="fas fa-utensils teal-text lighten-3"></i>{{ equipment.title() }}</li>
+                    <li><i class="fas fa-utensils teal-text lighten-3"></i>
+                        {{ equipment.title() }}</li>
                     </div>
                     </div>
                 </ul>
                 {% endfor %}
                 <hr>
                 <h5 class="col s12 recipe-instructions teal-text lighten-3">Ingredients</h5>
-                {% for ingredient in recipes.ingredients.title().split(",")%}
+                {% for ingredient in recipes.ingredients.title().split(",") %}
                 <ul class="left-align recipe-list">
                     <div class="row">
                         <div class="col s8 m6 offset-m2">

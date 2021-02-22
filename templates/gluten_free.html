@@ -1,67 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row">
-        <div class="col s12 m10 offset-m1">
-            <div class="card-panel category-title">
-            <h3 class="center-align brown-text">Gluten Free Recipes</h3>
-            </div>
+<div class="brown-text">
+<div class="row">
+    <div class="col s12 m10 offset-m1">
+        <div class="card-panel category-title">
+            <h3 class="center-align">Gluten Free Recipes</h3>
         </div>
- </div>
-   {% if recipes %}
- <div class="row hide-on-med-and-down">
+    </div>
+</div>
+{% if recipes %}
+<div class="row hide-on-small-only">
     {% for recipe in recipes %}
-    
-    <div class="col s12 m4 center-align">
-      <div class="card-panel large">
-          
-          <span class="card-title brown-text truncate">{{ recipe.recipe_name }}</span>
-       
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image"> 
-          
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-         
+
+    <div class="col s12 m6 l4 center-align">
+        <div class="card-panel large">
+
+            <span class="card-title truncate">{{ recipe.recipe_name }}</span>
+
+            <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+
+            <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View
+                    Recipe</a>
+            </div>
+
         </div>
-        <div class="card-action">
-          <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
-        </div>
-         
-      </div>
     </div>
 
     {% endfor%}
-    </div>
-    {% endif %}
-    
-     {% if recipes %}     
-    <div class="hide-on-large-only">
-        <ul class="collapsible">
+</div>
+{% endif %}
+
+{% if recipes %}
+<div class="hide-on-med-and-up">
+    <ul class="collapsible">
         {% for recipe in recipes %}
-    <li>
-      <div class="collapsible-header"><i class=""></i>{{ recipe.recipe_name }}</div>
-      <div class="collapsible-body">
-          <div class="col s12 center-align">
-      <div class="card-panel large">
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-         
-        </div>
-        <div class="card-action">
-          <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
-        </div>
-       
-      </div>
-    </div>
-      </div>
-    </li>
-  {% endfor %}
-  </ul>
-  </div>
-  {% endif %}
-   
+        <li>
+            <div class="collapsible-header"><i
+                    class="fas fa-concierge-bell teal-text lighten-3"></i>{{ recipe.recipe_name }}</div>
+            <div class="collapsible-body">
+                <div class="col s12 center-align">
+                    <div class="card-panel large">
+                        <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}"
+                                class="btn teal lighten-3">View Recipe</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+</div>
 {% endblock %}
-
-
