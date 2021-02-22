@@ -204,15 +204,18 @@ h5 {
    }
   
 .my_recipes {   
-    position: relative;
+/*    position: relative;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     background-image:url('../images/herbs.jpg');
     min-height: 90vh;
     min-width: 100vw;
     margin-bottom: 0px; 
-    }
+    margin-top: 0px;
+    } 
+
+
 
 .add-recipes-panel, .edit-recipes-panel {
     width: 40vw;
