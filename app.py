@@ -68,7 +68,30 @@ def home():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("search_results.html", recipes=recipes)
+    return render_template(
+        "search_results.html", recipes=recipes)
+
+
+@app.route("/advanced_search", methods=["GET", "POST"])
+def advanced_search():
+    if request.method == "POST":
+        gluten_free_search = mongo.db.recipes.find(
+            {"category_name": "Gluten Free"})
+        dairy_free_search = mongo.db.recipes.find(
+            {"category_name": "Dairy Free"})
+        egg_free_search = mongo.db.recipes.find(
+            {"category_name": "Egg Free"})
+        query = request.form.get("advanced-query")
+        recipes = list(mongo.db.recipes.find(
+            {"$text": {"$search": query}}))
+
+        return render_template(
+            "search_results.html", recipes=recipes,
+            gluten_free_search=gluten_free_search,
+            egg_free_search=egg_free_search,
+            dairy_free_search=dairy_free_search)
+    
+
 
 
 # code copied and adapted from 'Task Manager' mini project.
@@ -181,11 +204,15 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe deleted!")
-    return redirect(url_for("my_recipes", username=username))
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if recipe['added_by'] == session["user"]:
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        flash("Recipe deleted!")
+        return redirect(url_for("my_recipes", username=username))
+    else:
+        return redirect(url_for("home"))
 
 
 # code copied from 'Task Manager' mini project
@@ -201,7 +228,7 @@ def logout():
 @app.route("/gluten_free")
 def gluten_free():
     recipes = list(mongo.db.recipes.find(
-        {"category_name": "gluten_free"}))
+        {"category_name": "Gluten Free"}))
     return render_template(
         "gluten_free.html", recipes=recipes)
 
@@ -210,7 +237,7 @@ def gluten_free():
 @app.route("/dairy_free")
 def dairy_free():
     recipes = list(mongo.db.recipes.find(
-        {"category_name": "dairy_free"}
+        {"category_name": "Dairy Free"}
     ))
     return render_template("dairy_free.html", recipes=recipes)
 
@@ -219,7 +246,7 @@ def dairy_free():
 @app.route("/egg_free")
 def egg_free():
     recipes = list(mongo.db.recipes.find(
-        {"category_name": "egg_free"}))
+        {"category_name": "Egg Free"}))
     return render_template("egg_free.html", recipes=recipes)
 
 
