@@ -46,7 +46,7 @@
     }
   });
 
-// scroll to top button for my_recipes.html, gluten_free.html, dairy_free.html and egg_free.html
+// scroll to top button for all pages. To be found on 'base.html' template.
 
 //Get the button:
 mybutton = document.getElementById("myBtn");
@@ -69,4 +69,9 @@ function topFunction() {
 }
 
 
-  
+document.getElementById("advanced-search-box").style.display = "none";
+document.getElementById("show-advanced-search").addEventListener("click", function() {
+document.getElementById("search-box").style.display = "none";
+document.getElementById("advanced-search-box").style.display = "block";
+
+});  
