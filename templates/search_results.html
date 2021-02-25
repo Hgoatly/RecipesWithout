@@ -11,9 +11,9 @@
 
     <div class="row">
            {% for recipe in recipes %}
-           <div class="col s4 center-align home-recipes">
+           <div class="col s12 m6 center-align home-recipes">
             <div class="card-panel large">  
-          <div class="card-title brown-text"><h4>{{ recipe.recipe_name|truncate(25, True) }}</h4></div>
+            <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
         
           <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
           
@@ -35,7 +35,7 @@
            {% for recipe in recipes %}
            <div class="col s12 m6 offset-m3 center-align home-recipes">
             <div class="card-panel large">  
-          <div class="card-title brown-text"><h4>{{ recipe.recipe_name|truncate(25, True) }}</h4></div>
+            <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
         <div class="card-image">
           <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
           
@@ -57,10 +57,10 @@
     <div class="row two-search-results">
            {% for recipe in recipes %}
 
-           <div class="col s4 m5 center-align home-recipes">
+           <div class="col s12 m6 l5 center-align">
            
             <div class="card-panel">  
-          <div class="card-title brown-text"><h4>{{ recipe.recipe_name|truncate(25, True) }}</h4></div>
+          <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
         
           <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
           

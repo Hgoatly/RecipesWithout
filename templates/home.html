@@ -20,6 +20,7 @@
             </div>
         </div>
 
+        <!-- search -->
 <div class="row" id="search-box">
     <div class="col card-panel s12 offest-s1 m6 offset-m3 search-card">
 <form action="{{ url_for('search') }}" method="post" class="col s12 m10 center-align">
@@ -38,45 +39,58 @@
 </div>
 
 <!-- advanced search -->
-
+<div class="row" id="advanced-search-box">
+<div class="col card-panel s12 offest-s1 m6 offset-m3 search-card">
+    <h4 class="col s12 m10 offset-m1 center-align">Advanced Search</h4>
  <form action="{{ url_for('advanced_search') }}" method="post">
-    <p>
-        <div class="input-field col s12 m10 offset-m1">
+            <div class="input-field col s12 m10 offset-m1">
             <i class="fas fa-search prefix"></i>
             <input type="text" name="advanced-query" id="advanced-query" minlength="3" class="validate" required> 
             <label for="advanced-query">Search Recipes</label>
         </div>
+<div class="col s12 m10 offset-m1">
+    <p>    
         <label for="gluten_free_search">
             <input type="checkbox" name="gluten_free-search" id="gluten_free_search"/>
             <span>Gluten Free</span>
         </label>
     </p>
     <p>
-        <label>
-            <input type="checkbox" />
+        <label for="dairy_free_search">
+            <input type="checkbox" name="dairy_free_search" id="dairy_free_search"/>
             <span>Dairy Free</span>
         </label>
     </p>
     <p>
-        <label>
-            <input type="checkbox" />
+        <label for="egg_free_search">
+            <input type="checkbox" name="egg_free_search" id="egg_free_search"/>
             <span>Egg Free</span>
         </label>
     </p>
-  
+  </div>
         <div class="row">
     <div class="col s12 center-align">
-<button type="submit" class="btn teal lighten-3" id="advanced-search-button" aria-label="search">Search</button>
+<button type="submit" class="btn teal lighten-3" id="advanced-search-button" aria-label="advanced-search">Search</button>
 </div>
 </div>
 </form>
+</div>
+</div>
 
+ <div class="row">
+    <div class="col s12 center-align">
+<button class="btn teal lighten-3" id="show-advanced-search" aria-label="show-advanced-search">Search</button>
+</div>
+</div>
+
+<!-- home button -->
 <div class="row">
     <div class="col s12 center-align">
 <a href="{{ url_for('home') }}" class="btn teal lighten-3">Cancel</a>
 </div>
 </div>
 
+<!-- recipe cards -->
     <div class="row hide-on-small-only">
            {% for recipe in recipes %}
            <div class="col s12 m6 l4 center-align">

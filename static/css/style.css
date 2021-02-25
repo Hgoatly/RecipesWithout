@@ -296,4 +296,7 @@ footer ul li {
   .subtitle {
       font-size: 1.5rem;
   }
+  .two-search-results {
+    margin-left: 0%;
+}
 }
