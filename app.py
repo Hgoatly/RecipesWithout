@@ -90,8 +90,16 @@ def advanced_search():
             gluten_free_search=gluten_free_search,
             egg_free_search=egg_free_search,
             dairy_free_search=dairy_free_search)
-    
 
+
+@app.route("/upvotes/<recipe_id>")
+def upvotes(recipe_id):
+    mongo.db.recipes.find_one_and_update(
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"upvotes": 1}}
+        )
+
+    return render_template("home.html")
 
 
 # code copied and adapted from 'Task Manager' mini project.
