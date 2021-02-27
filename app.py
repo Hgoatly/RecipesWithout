@@ -101,6 +101,15 @@ def upvotes(recipe_id):
     return redirect(url_for("home"))
 
 
+@app.route("/downvotes/<recipe_id>")
+def downvotes(recipe_id):
+    mongo.db.recipes.find_one_and_update(
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"downvotes": 1}}
+        )
+    return redirect(url_for("home"))
+
+
 # code copied and adapted from 'Task Manager' mini project.
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -301,7 +310,8 @@ def add_recipes():
             "image": request.form.get("image_url"),
             "added_on": date_time,
             "alt": request.form.get("image_description"),
-            "upvotes": 0
+            "upvotes": 0,
+            "downvotes": 0
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for adding a new recipe!")
