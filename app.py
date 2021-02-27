@@ -243,6 +243,7 @@ def delete_user(user_id):
     else:
         return redirect(url_for("login"))
 
+
 # code copied from 'Task Manager' mini project
 @app.route("/logout")
 def logout():
