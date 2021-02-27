@@ -98,8 +98,7 @@ def upvotes(recipe_id):
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"upvotes": 1}}
         )
-
-    return render_template("home.html")
+    return redirect(url_for("home"))
 
 
 # code copied and adapted from 'Task Manager' mini project.
@@ -301,7 +300,8 @@ def add_recipes():
             "added_by": session["user"],
             "image": request.form.get("image_url"),
             "added_on": date_time,
-            "alt": request.form.get("image_description")
+            "alt": request.form.get("image_description"),
+            "upvotes": 0
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for adding a new recipe!")
