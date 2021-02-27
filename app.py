@@ -231,6 +231,18 @@ def delete_recipe(recipe_id):
         return redirect(url_for("home"))
 
 
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    if user == session["user"] or user == "admin":
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        mongo.db.users.remove({"_id": ObjectId(user_id)})
+        flash("Your account has been deleted")
+        return redirect(url_for("register", username=username))
+    else:
+        return redirect(url_for("login"))
+
 # code copied from 'Task Manager' mini project
 @app.route("/logout")
 def logout():
