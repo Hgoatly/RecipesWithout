@@ -243,7 +243,7 @@ def delete_recipe(recipe_id):
 @app.route("/delete_user/<username>")
 def delete_user(username):
     username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
+        {"username": session["user"]})["username"]
     if username == session["user"] or username == "admin":
         mongo.db.users.remove({"username": session["user"]})
         session.pop("user")
