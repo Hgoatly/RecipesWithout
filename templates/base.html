@@ -43,6 +43,7 @@
                     <li><a href="{{ url_for('add_recipes') }}" class="brown-text darken-3">Add Recipes</a></li>
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text darken-3">My
                             Recipes</a></li>
+                    <li><a href="{{ url_for('manage_account', username=session['user']) }}" class="brown-text darken-3">Manage Account</a></li>
                     <li><a href="{{ url_for('logout') }}" class="brown-text darken-3">Logout</a></li>
                     {% else %}
                     <li><a href="{{ url_for('login') }}" class="brown-text darken-3">Log In</a></li>

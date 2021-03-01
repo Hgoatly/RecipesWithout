@@ -9,7 +9,6 @@ body {
     padding: 0px;
 }
 
-
 html
 {
     width: 100%;
@@ -253,6 +252,10 @@ h5 {
 .no-recipes {
     padding-bottom: 20px;
     margin-bottom: 0px;
+}
+
+.manage-account-panel {
+    margin-top: 50%;
 }
 
 footer ul li {

@@ -61,7 +61,6 @@ def home():
     recipes = list(
         [recipe for recipe in mongo.db.recipes.aggregate(
             [{"$sample": {"size": 9}}])])
-    print(session["user"])
     return render_template("home.html", recipes=recipes)
 
 
@@ -177,6 +176,15 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/manage_account/<username>")
+def manage_account(username):
+    if "user" in session:
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+
+        return render_template("manage_account.html", username=username)
 
 
 # code copied and adapted from 'Task Manager' mini project
