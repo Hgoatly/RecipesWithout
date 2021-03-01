@@ -254,6 +254,24 @@ def delete_user(username):
         return redirect(url_for("login"))
 
 
+@app.route("/admin/<username>")
+def admin(username):
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+    if username == "admin":
+        users = mongo.db.users.find()
+        return render_template("admin.html", username=username, users=users)
+
+
+@app.route("/admin_delete<username>")
+def admin_delete(username):
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+    if username == "admin":
+        mongo.db.users.remove_one()
+        return render_template("admin.html", username=username)
+
+
 # code copied from 'Task Manager' mini project
 @app.route("/logout")
 def logout():
