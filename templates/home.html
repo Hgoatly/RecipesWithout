@@ -109,8 +109,8 @@
           <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
           </div>
     
-          <button class="btn teal lighten-3"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i> {{ recipe.upvotes }}</a></button>
-          <button class="btn teal lighten-3"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i> {{ recipe.downvotes }}</a></button>
+          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i> {{ recipe.upvotes }}</a></button>
+          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i> {{ recipe.downvotes }}</a></button>
          
       </div>
     </div>      

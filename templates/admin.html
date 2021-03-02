@@ -16,17 +16,17 @@
     </div>
     {% for user in users %}
     <p>{{ user.username }}</p>
-    <button class="btn teal lighten-3"><a href="#modal-id" class="white-text">Delete Account</a></button>
+    <a href="#modal-id{{ loop.index }}" class="btn teal lighten-3 white-text modal-trigger">Delete Account</a>
 
-<div id="modal-id" class="modal">
+<div id="modal-id{{ loop.index }}" class="modal">
     <div class="modal-content">
         <h4>Confirm Delete</h4>
         <p>Are you sure you want to delete your account?</p>
     
     <div class="modal-footer">
-        <a href="{{ url_for('admin_delete', username=['admin']) }}" class="btn red lighten-2">Yes
+        <a href="{{ url_for('admin_delete', username=['admin'], user_id=user._id) }}" class="btn red lighten-2">Yes
             I'm Sure</a>
-        <a href="{{ url_for('admin', username=['admin']) }}" class="btn teal lighten-2">Cancel</a>
+        <a href="{{ url_for('admin', username=['admin'], user_id=user._id) }}" class="btn teal lighten-2">Cancel</a>
     </div>
 </div>
 </div>

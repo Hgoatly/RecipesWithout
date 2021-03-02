@@ -263,13 +263,16 @@ def admin(username):
         return render_template("admin.html", username=username, users=users)
 
 
-@app.route("/admin_delete<username>")
-def admin_delete(username):
+@app.route("/admin_delete/<username>/<user_id>")
+def admin_delete(username, user_id):
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
     if username == "admin":
-        mongo.db.users.remove_one()
-        return render_template("admin.html", username=username)
+        users = mongo.db.users.find({"_id": ObjectId(user_id)})
+        for user in users:
+            # mongo.db.users.remove({"_id": ObjectId(user_id)})
+            mongo.db.users.delete_one(user)
+        return redirect(url_for("admin", username=username, users=users))
 
 
 # code copied from 'Task Manager' mini project
