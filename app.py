@@ -74,10 +74,11 @@ def home():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template(
-        "search_results.html", recipes=recipes)
+    if request.method == "POST":
+        query = request.form.get("query")
+        recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+        return render_template(
+            "search_results.html", recipes=recipes)
 
 
 @app.route("/advanced_search", methods=["GET", "POST"])
@@ -395,6 +396,13 @@ def add_recipes():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
 
+
+# Error handlers:
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
