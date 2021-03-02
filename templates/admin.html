@@ -11,10 +11,7 @@
                         class="white-text">My Recipes</a></button>
 
             </div>
-
-        </div>
-    </div>
-    {% for user in users %}
+{% for user in users %}
     <p>{{ user.username }}</p>
     <a href="#modal-id{{ loop.index }}" class="btn teal lighten-3 white-text modal-trigger">Delete Account</a>
 
@@ -33,5 +30,8 @@
 </div>
 
 {% endfor %}
+        </div>
+    </div>
+    
 
 {% endblock %}

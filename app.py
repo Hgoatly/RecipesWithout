@@ -61,7 +61,15 @@ def home():
     recipes = list(
         [recipe for recipe in mongo.db.recipes.aggregate(
             [{"$sample": {"size": 9}}])])
-    return render_template("home.html", recipes=recipes)
+    if "user" in session:
+        try:
+            user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
+            user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
+        except:
+            user_upvotes = []
+
+    return render_template(
+        "home.html", recipes=recipes, user_upvotes=user_upvotes)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -96,9 +104,19 @@ def advanced_search():
 def upvotes(recipe_id):
     mongo.db.recipes.find_one_and_update(
         {"_id": ObjectId(recipe_id)},
-        {"$inc": {"upvotes": 1}}
-        )
-    return redirect(url_for("home"))
+        {"$inc": {"upvotes": 1}},
+      )
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"]},
+        {"$push": {"upvotes": ObjectId(recipe_id)}})
+
+    if "user" in session:
+        try:
+            user_upvotes = mongo.db.users.find(
+                {"username": session["user"]})["upvotes"]
+        except:
+            user_upvotes = []
+    return redirect(url_for("home", user_upvotes=user_upvotes))
 
 
 @app.route("/downvotes/<recipe_id>")
@@ -107,7 +125,20 @@ def downvotes(recipe_id):
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"downvotes": 1}}
         )
-    return redirect(url_for("home"))
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"]},
+        {"$push": {"downvotes": ObjectId(recipe_id)}})
+
+    if "user" in session:
+        try:
+            user_downvotes = mongo.db.users.find(
+                {"username": session["user"]})["upvotes"]
+            mongo.db.users.find_one_and_update({"username": session["user"]},
+                {"$pull": {"upvotes": ObjectId(recipe_id)}})
+
+        except:
+            user_downvotes = []
+    return redirect(url_for("home", user_downvotes=user_downvotes))
 
 
 # code copied and adapted from 'Task Manager' mini project.
@@ -136,7 +167,8 @@ def register():
             register = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
-                    request.form.get("password").lower())
+                    request.form.get("password").lower()),
+                "upvotes": []
                     }
 
         mongo.db.users.insert_one(register)
