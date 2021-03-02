@@ -25,7 +25,9 @@ html
 #content {
     flex: 1 0 auto;
 }
-
+.nav-items {
+    font-weight: 600;
+}
 
 #footer {
    left:0px;
