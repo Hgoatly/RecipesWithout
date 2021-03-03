@@ -67,9 +67,12 @@ def home():
             user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
         except:
             user_upvotes = []
+            user_downvotes = []
+        return render_template(
+            "home.html", recipes=recipes,
+            user_upvotes=user_upvotes, user_downvotes=user_downvotes)
 
-    return render_template(
-        "home.html", recipes=recipes, user_upvotes=user_upvotes)
+    return render_template("home.html", recipes=recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -107,17 +110,18 @@ def upvotes(recipe_id):
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"upvotes": 1}},
       )
-    mongo.db.users.find_one_and_update(
-        {"username": session["user"]},
-        {"$push": {"upvotes": ObjectId(recipe_id)}})
 
     if "user" in session:
+        mongo.db.users.find_one_and_update(
+        {"username": session["user"]},
+        {"$push": {"upvotes": ObjectId(recipe_id)}})
         try:
             user_upvotes = mongo.db.users.find(
                 {"username": session["user"]})["upvotes"]
         except:
             user_upvotes = []
-    return redirect(url_for("home", user_upvotes=user_upvotes))
+        return redirect(url_for("home", user_upvotes=user_upvotes))
+    return redirect(url_for("home"))
 
 
 @app.route("/downvotes/<recipe_id>")
@@ -134,12 +138,10 @@ def downvotes(recipe_id):
         try:
             user_downvotes = mongo.db.users.find(
                 {"username": session["user"]})["upvotes"]
-            mongo.db.users.find_one_and_update({"username": session["user"]},
-                {"$pull": {"upvotes": ObjectId(recipe_id)}})
-
         except:
             user_downvotes = []
-    return redirect(url_for("home", user_downvotes=user_downvotes))
+        return redirect(url_for("home", user_downvotes=user_downvotes))
+    return redirect(url_for("home"))
 
 
 # code copied and adapted from 'Task Manager' mini project.
@@ -156,11 +158,18 @@ def register():
 
         password = request.form.get("password")
         confirm_password = request.form.get("confirm-password")
-
-        print(confirm_password)
+        memorable_name = request.form.get("memorable-name")
+        username = request.form.get("username")
 
         if password != confirm_password:
             flash("Please ensure that your passwords match.")
+            return redirect(url_for("register"))
+
+        if memorable_name == username:
+            flash("Please chose a unique Memorable Name")
+
+        elif memorable_name == password:
+            flash("Please chose a unique Memorable Name")
             return redirect(url_for("register"))
 
         if password == confirm_password:
@@ -169,7 +178,8 @@ def register():
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
                     request.form.get("password").lower()),
-                "upvotes": []
+                "upvotes": [],
+                "memorable-name": request.form.get("memorable_name").lower()
                     }
 
         mongo.db.users.insert_one(register)
@@ -293,7 +303,8 @@ def admin(username):
             {"username": session["user"]})["username"]
     if username == "admin":
         users = mongo.db.users.find()
-        return render_template("admin.html", username=username, users=users)
+        return render_template(
+            "admin.html", username=username, users=users)
 
 
 @app.route("/admin_delete/<username>/<user_id>")
@@ -403,6 +414,7 @@ def add_recipes():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

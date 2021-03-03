@@ -2,17 +2,18 @@
 {% block content %}
 
 <!--form copied from Materialize. Code referneced from the 'task manager' mini project-->
-<div class="my_recipes">
+<div class="admin_section">
     <div class="row">
         <div class="col s12 m6 offset-m3 center-align">
-            <div class="card-panel category-title manage-account-panel">
-                <h3 class="center-align brown-text">{{ username.title() }}'s Account</h3>
+            <div class="manage-account-panel">
+                <h3 class="center-align brown-text title-text">Admin Section</h3>
                 <button class="btn teal lighten-3"><a href="{{ url_for('my_recipes', username=session['user']) }}"
                         class="white-text">My Recipes</a></button>
-
             </div>
-{% for user in users %}
-    <p>{{ user.username }}</p>
+{% for user in users%}
+<div class="card-panel">
+    <h5 class="brown-text">{{ user.username.title() }}</h5>
+    <a href="{{ url_for('my_recipes', username=username) }}" class="btn teal lighten-3 white-text modal-trigger">User's Recipes</a>
     <a href="#modal-id{{ loop.index }}" class="btn teal lighten-3 white-text modal-trigger">Delete Account</a>
 
 <div id="modal-id{{ loop.index }}" class="modal">
@@ -27,11 +28,12 @@
     </div>
 </div>
 </div>
-</div>
 
+</div>
 {% endfor %}
+
         </div>
     </div>
-    
+    </div>
 
 {% endblock %}

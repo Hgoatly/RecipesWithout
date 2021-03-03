@@ -18,6 +18,11 @@ html
     overflow-x: hidden; 
 }
 
+.row {
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+
 .drag-target {
     width: 0px;
 }
@@ -213,7 +218,7 @@ h5 {
    }
 
 .error-page {
-      position: relative;
+    position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -232,6 +237,17 @@ h5 {
     margin-top: 0px;
     } 
 
+.admin_section {   
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('../images/herbs.jpg');
+    min-height: 100vh;
+    min-width: 100vw;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    } 
 
 .add-recipes-panel, .edit-recipes-panel {
     width: 40vw;
@@ -270,7 +286,7 @@ h5 {
 }
 
 .manage-account-panel {
-    margin-top: 50%;
+    margin-top: 10%;
 }
 
 footer ul li {
