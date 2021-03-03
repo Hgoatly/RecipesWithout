@@ -258,9 +258,10 @@ h5 {
     border-radius: 25px;
 }
 
-.category-title {
+.title-text {
     margin-top: 40px;
-    border-radius: 25px;
+    font-weight: 700;
+    font-size: 50px;
 }
 
 .no-recipes {
