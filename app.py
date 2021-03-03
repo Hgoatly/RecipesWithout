@@ -168,6 +168,7 @@ def register():
         confirm_password = request.form.get("confirm-password")
         memorable_name = request.form.get("memorable-name")
         username = request.form.get("username")
+        email_address = request.form.get("email-address")
 
         if password != confirm_password:
             flash("Please ensure that your passwords match.")
@@ -187,7 +188,8 @@ def register():
                 "password": generate_password_hash(
                     request.form.get("password").lower()),
                 "upvotes": [],
-                "memorable-name": request.form.get("memorable_name").lower()
+                "memorable-name": request.form.get("memorable-name").lower(),
+                "email-address": request.form.get("email-address").lower()
                     }
 
         mongo.db.users.insert_one(register)
