@@ -113,8 +113,12 @@ def upvotes(recipe_id):
 
     if "user" in session:
         mongo.db.users.find_one_and_update(
-        {"username": session["user"]},
-        {"$push": {"upvotes": ObjectId(recipe_id)}})
+            {"username": session["user"]},
+            {"$push": {"upvotes": ObjectId(recipe_id)}})
+
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$pull": {"upvotes": ObjectId(recipe_id)}})
         try:
             user_upvotes = mongo.db.users.find(
                 {"username": session["user"]})["upvotes"]
@@ -130,11 +134,15 @@ def downvotes(recipe_id):
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"downvotes": 1}}
         )
-    mongo.db.users.find_one_and_update(
-        {"username": session["user"]},
-        {"$push": {"downvotes": ObjectId(recipe_id)}})
 
     if "user" in session:
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$push": {"downvotes": ObjectId(recipe_id)}})
+
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$pull": {"upvotes": ObjectId(recipe_id)}})
         try:
             user_downvotes = mongo.db.users.find(
                 {"username": session["user"]})["upvotes"]
