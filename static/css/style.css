@@ -211,19 +211,26 @@ h5 {
     position: relative;
     margin-bottom: 0px;
    }
-  
-.my_recipes {   
-/*    position: relative;
+
+.error-page {
+      position: relative;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
+    background-image:url('../images/cover.jpg');
+    min-height: 100vh;
+    min-width: 100vw;
+    margin-bottom: 0px;
+    margin-top: 0px;
+   }
+  
+.my_recipes {   
     background-image:url('../images/herbs.jpg');
     min-height: 90vh;
     min-width: 100vw;
     margin-bottom: 0px; 
     margin-top: 0px;
     } 
-
 
 
 .add-recipes-panel, .edit-recipes-panel {
@@ -255,6 +262,7 @@ h5 {
     margin-top: 40px;
     border-radius: 25px;
 }
+
 .no-recipes {
     padding-bottom: 20px;
     margin-bottom: 0px;
@@ -274,6 +282,7 @@ footer ul li {
     width: 40px;
 }
 
+/* Scroll to top button from w3 Schools */
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -292,6 +301,9 @@ footer ul li {
     opacity: 1;
 }
 
+.error-button {
+    margin-top: 600px;
+}
 
 /*---------------- Media Queries ---------------*/
 

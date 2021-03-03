@@ -14,7 +14,13 @@
     <meta content="Recipe site including gluten free, dairy free and egg free recipes" name="Description">
 </head>
 <body>
-    <p>Nothing here!</p>
-    <a href="{{ url_for('home') }}" class="btn teal lighten-3">Back to Safety!</a>
+<div class="error-page">
+    <div class="row">
+        <div class="col s12 m6 offset-m3 center-align">
+    <h3 class="error-text card-panel category-title brown-text">Nothing here!</h3>
+    <a href="{{ url_for('home') }}" class="btn teal lighten-3 error-button">Back to Recipes Without!</a>
+    </div>
+    </div>
+</div>
 </body>
 </html>
