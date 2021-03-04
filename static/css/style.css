@@ -42,11 +42,12 @@ html
    flex-shrink: 0;
 }
 
-#landing-page {
+/*
+#landing-page, #error-page {
     padding-left: 0px;
     padding-right: 0px;
 }
-
+*/
 .search-card {
     border-radius: 25px;
 }
@@ -62,7 +63,7 @@ html
     margin: 1.52rem 0 .912rem 0;
 }
 
-#main-heading{
+#main-heading, #error-heading {
     position: absolute;
     top: 35%;
     width: 100%;
@@ -140,6 +141,8 @@ h5 {
     background-image:url('../images/landing-page.jpg');
     min-height: 100vh;
     min-width: 100vw; 
+    padding-left: 0px;
+    padding-right: 0px;
     }
 
 .contact {   
@@ -217,7 +220,7 @@ h5 {
     margin-bottom: 0px;
    }
 
-.error-page {
+#error-page {
     position: relative;
     background-position: center;
     background-size: cover;
@@ -227,8 +230,11 @@ h5 {
     min-width: 100vw;
     margin-bottom: 0px;
     margin-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
    }
-  
+
+/*
 .my_recipes {   
     background-image:url('../images/herbs.jpg');
     min-height: 90vh;
@@ -236,6 +242,7 @@ h5 {
     margin-bottom: 0px; 
     margin-top: 0px;
     } 
+*/
 
 .admin_section {   
     position: relative;
@@ -289,6 +296,10 @@ h5 {
     margin-top: 10%;
 }
 
+.error-text {
+    margin-top: 50%;
+}
+
 footer ul li {
   display: inline;
   margin: 5px;
@@ -316,10 +327,6 @@ footer ul li {
 
 #myBtn:hover {
     opacity: 1;
-}
-
-.error-button {
-    margin-top: 600px;
 }
 
 /*---------------- Media Queries ---------------*/
