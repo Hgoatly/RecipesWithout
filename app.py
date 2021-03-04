@@ -55,6 +55,54 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route("/send_password_reset", methods=["GET", "POST"])
+def send_password_reset():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username1").lower()})
+        email = mongo.db.users.find_one(
+            {"email-address": request.form.get("email1")})
+        if existing_user and email:
+            smtp_server = "smtp.gmail.com"
+            port = 465
+            sender = "recipetest17@gmail.com"
+            password = os.environ.get("PASSWORD")
+
+            name = request.form["username1"]
+            email = "recipetest579@gmail.com"
+
+            receiver = request.form["email1"]
+
+            message = f"""\
+            From: "Recipes Without"
+
+            Email from {email}
+            Hello {name},
+            Please Click the link to reset your password:
+            https://8080-f4360024-3059-4858-adc7-9d6490572673.ws-eu03.gitpod.io/reset_password
+            """
+            context = ssl.create_default_context()
+
+            with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+                print(f"sender is: {sender};")
+                print(f"receiver is: {receiver};")
+                print(f"statement is: {message};")
+
+                server.login(sender, password)
+                server.sendmail(sender, receiver, message)
+            flash("Password reset link has been sent")
+        else:
+            flash("Incorrect Username or Password")
+    return render_template("send_password_reset.html")
+
+
+@app.route("/reset_password_form", methods=["GET", "POST"])
+def reset_password_form():
+    if request.method == "GET":
+
+        return render_template("reset_password")
+
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -168,7 +216,6 @@ def register():
         confirm_password = request.form.get("confirm-password")
         memorable_name = request.form.get("memorable-name")
         username = request.form.get("username")
-        email_address = request.form.get("email-address")
 
         if password != confirm_password:
             flash("Please ensure that your passwords match.")
@@ -188,7 +235,8 @@ def register():
                 "password": generate_password_hash(
                     request.form.get("password").lower()),
                 "upvotes": [],
-                "memorable-name": request.form.get("memorable-name").lower(),
+                "memorable-name": generate_password_hash(
+                    request.form.get("memorable-name").lower()),
                 "email-address": request.form.get("email-address").lower()
                     }
 
@@ -212,7 +260,8 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                existing_user["password"],
+                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -229,6 +278,40 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/reset_password", methods=["GET", "POST"])
+def reset_password():
+    if request.method == "POST":
+        # check if username exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        new_password = {
+            "password": generate_password_hash(
+                    request.form.get("password").lower())
+        }
+        if existing_user:
+            if check_password_hash(
+                existing_user["memorable-name"],
+                    request.form.get("memorable-name")):
+                session["user"] = request.form.get("username").lower()
+                mongo.db.users.update(
+                    {"password": request.form.get(
+                        "password").lower()}, new_password)
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                        "my_recipes", username=session["user"]))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("reset_password.html")
 
 
 @app.route("/manage_account/<username>")
