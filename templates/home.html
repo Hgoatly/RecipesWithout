@@ -22,11 +22,11 @@
 
         <!-- search -->
 <div class="row" id="search-box">
-    <div class="col card-panel s12 offest-s1 m6 offset-m3 search-card">
+    <div class="col card-panel s12 offest-s1 m6 offset-m3 search-card grey lighten-5">
 <form action="{{ url_for('search') }}" method="post" class="col s12 m10 center-align">
     <div class="row valign-wrapper center-align">
         <div class="input-field col s12 m10 offset-m1">
-            <i class="fas fa-search prefix"></i>
+            <i class="fas fa-search prefix brown-text"></i>
             <input type="text" name="query" id="query" minlength="3" class="validate" required> 
             <label for="query">Search Recipes</label>
         </div>
@@ -40,11 +40,11 @@
 
 <!-- advanced search -->
 <div class="row" id="advanced-search-box">
-<div class="col card-panel s12 offest-s1 m6 offset-m3 search-card">
-    <h4 class="col s12 m10 offset-m1 center-align">Advanced Search</h4>
+<div class="col card-panel s12 offest-s1 m6 offset-m3 search-card grey lighten-5">
+    <h4 class="col s12 m10 offset-m1 center-align brown-text">Advanced Search</h4>
  <form action="{{ url_for('advanced_search') }}" method="post">
             <div class="input-field col s12 m10 offset-m1">
-            <i class="fas fa-search prefix"></i>
+            <i class="fas fa-search prefix brown-text"></i>
             <input type="text" name="advanced-query" id="advanced-query" minlength="3" class="validate" required> 
             <label for="advanced-query">Search Recipes</label>
         </div>
@@ -100,7 +100,7 @@
     <div class="row hide-on-small-only">
            {% for recipe in recipes %}
            <div class="col s12 m6 l4 center-align">
-            <div class="card-panel large">  
+            <div class="card-panel large grey lighten-5">  
           <div class="card-title brown-text truncate">{{ recipe.recipe_name }}</div>
 
           <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
