@@ -71,6 +71,9 @@
             <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text darken-3">My
                     Recipes</a></li>
             <li><a href="{{ url_for('logout') }}" class="brown-text darken-3">Logout</a></li>
+            {% if session.user == "admin" %}
+            <li><a href="{{ url_for('admin', username=['admin']) }}" class="brown-text darken-3">Admin Section</a></li>
+            {% endif %}
             {% else %}
             <li><a href="{{ url_for('login') }}" class="brown-text darken-3">Log In</a></li>
             <li><a href="{{ url_for('register') }}" class="brown-text darken-3">Register</a></li>

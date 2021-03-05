@@ -10,12 +10,11 @@
                 <button class="btn teal lighten-3"><a href="{{ url_for('my_recipes', username=session['user']) }}"
                         class="white-text">My Recipes</a></button>
             </div>
-{% for user in users%}
+{% for user in users %}
 <div class="card-panel">
     <h5 class="brown-text">{{ user.username.title() }}</h5>
-    <a href="{{ url_for('my_recipes', username=username) }}" class="btn teal lighten-3 white-text modal-trigger">User's Recipes</a>
+    <a href="{{ url_for('my_recipes', username=user.username) }}" class="btn teal lighten-3 white-text">User's Recipes</a>
     <a href="#modal-id{{ loop.index }}" class="btn teal lighten-3 white-text modal-trigger">Delete Account</a>
-
 <div id="modal-id{{ loop.index }}" class="modal">
     <div class="modal-content">
         <h4>Confirm Delete</h4>

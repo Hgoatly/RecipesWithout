@@ -33,6 +33,8 @@ recipes so that I can safely cook them a tasty meal.
 be suitable for diners with intolerances to gluten, dairy or eggs.
 4. I am any of the above users, and I would like to be able to upload, edit and delete my own recipes, without other 
 users being able to tamper with them. 
+5. I am the site owner, and I would like to be able to delete other users recipes if I decide that they are not 
+appropriate material for the site.
 
 ## Wireframes:
 

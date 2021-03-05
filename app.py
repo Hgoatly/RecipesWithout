@@ -328,8 +328,6 @@ def manage_account(username):
 def my_recipes(username):
     if "user" in session:
         # get the session user's username from the db
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
         recipes = list(mongo.db.recipes.find({"added_by": username}))
         return render_template(
             "my_recipes.html", username=username,
@@ -394,10 +392,12 @@ def delete_user(username):
 def admin(username):
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+    recipe = list(mongo.db.recipes.find({"added_by": username}))
+    print(recipe)
     if username == "admin":
         users = mongo.db.users.find()
         return render_template(
-            "admin.html", username=username, users=users)
+            "admin.html", username=username, users=users, recipe=recipe)
 
 
 @app.route("/admin_delete/<username>/<user_id>")
