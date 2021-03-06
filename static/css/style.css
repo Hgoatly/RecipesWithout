@@ -363,16 +363,4 @@ footer ul li {
     border-radius: 25px;
 }
 
-#landing-page {   
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image:url('../images/hero-mobile.jpg');
-    min-height: 100vh;
-    min-width: 100vw; 
-    padding-left: 0px;
-    padding-right: 0px;
-    }
-
 }
