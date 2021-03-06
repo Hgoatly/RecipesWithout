@@ -298,6 +298,10 @@ h5 {
     margin-top: 10%;
 }
 
+.reset-paragraph {
+    margin-top: 20px;
+}
+
 .error-text {
     margin-top: 50%;
 }
@@ -346,4 +350,12 @@ footer ul li {
   .two-search-results {
     margin-left: 0%;
 }
+
+.contact-card, .login-panel,
+.register-panel {
+    margin-top: 17.5%;
+    margin-bottom: 0%;
+    border-radius: 25px;
+}
+
 }
