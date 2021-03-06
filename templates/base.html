@@ -18,39 +18,39 @@
     <header>
         <!--navbar copied from Materialize-->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="{{ url_for('gluten_free') }}" class="brown-text darken-3">Gluten Free</a></li>
-            <li><a href="{{ url_for('dairy_free') }}" class="brown-text darken-3">Dairy Free</a></li>
-            <li><a href="{{ url_for('egg_free') }}" class="brown-text darken-3">Egg Free</a></li>
+            <li><a href="{{ url_for('gluten_free') }}" class="brown-text text-darken-3">Gluten Free</a></li>
+            <li><a href="{{ url_for('dairy_free') }}" class="brown-text text-darken-3">Dairy Free</a></li>
+            <li><a href="{{ url_for('egg_free') }}" class="brown-text text-darken-3">Egg Free</a></li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
-            <li><a href="{{ url_for('gluten_free') }}" class="brown-text darken-3">Gluten Free</a></li>
-            <li><a href="{{ url_for('dairy_free') }}" class="brown-text darken-3">Dairy Free</a></li>
-            <li><a href="{{ url_for('egg_free') }}" class="brown-text darken-3">Egg Free</a></li>
+            <li><a href="{{ url_for('gluten_free') }}" class="brown-text text-darken-3">Gluten Free</a></li>
+            <li><a href="{{ url_for('dairy_free') }}" class="brown-text text-darken-3">Dairy Free</a></li>
+            <li><a href="{{ url_for('egg_free') }}" class="brown-text text-darken-3">Egg Free</a></li>
         </ul>
 
-        <nav class="nav-extended teal lighten-4">
+        <nav class="nav-extended teal lighten-4 brown-text text-darken-3">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo brown-text darken-3">Recipes Without</a>
+                <a href="{{ url_for('home') }}" class="brand-logo brown-text text-darken-3">Recipes Without</a>
                 <a href="" data-target="mobile-demo" class="sidenav-trigger brown-text darken-3"><i
                         class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down nav-items">
-                    <li><a href="{{ url_for('home') }}" class="brown-text darken-3">Home</a></li>
+                    <li><a href="{{ url_for('home') }}" class="brown-text text-darken-3">Home</a></li>
                     <!--dropdown trigger-->
-                    <li><a class="dropdown-trigger brown-text darken-3" data-target="dropdown1">Recipes<i
-                                class="fas fa-angle-down right brown-text darken-3"></i></a></li>
-                    <li><a href="{{ url_for('contact') }}" class="brown-text darken-3">Contact</a></li>
+                    <li><a class="dropdown-trigger brown-text text-darken-3" data-target="dropdown1">Recipes<i
+                                class="fas fa-angle-down right brown-text text-darken-3"></i></a></li>
+                    <li><a href="{{ url_for('contact') }}" class="brown-text text-darken-3">Contact</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('add_recipes') }}" class="brown-text darken-3">Add Recipes</a></li>
+                    <li><a href="{{ url_for('add_recipes') }}" class="brown-text text-darken-3">Add Recipes</a></li>
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text darken-3">My
                             Recipes</a></li>
-                    <li><a href="{{ url_for('manage_account', username=session['user']) }}" class="brown-text darken-3">Manage Account</a></li>
+                    <li><a href="{{ url_for('manage_account', username=session['user']) }}" class="brown-text text-darken-3">Manage Account</a></li>
                     <li><a href="{{ url_for('logout') }}" class="brown-text darken-3">Logout</a></li>
                     {% if session.user == "admin" %}
-                    <li><a href="{{ url_for('admin', username=['admin']) }}" class="brown-text darken-3">Admin Section</a></li>
+                    <li><a href="{{ url_for('admin', username=['admin']) }}" class="brown-text text-darken-3">Admin Section</a></li>
                     {% endif %}
                     {% else %}
-                    <li><a href="{{ url_for('login') }}" class="brown-text darken-3">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}" class="brown-text darken-3">Register</a></li>
+                    <li><a href="{{ url_for('login') }}" class="brown-text text-darken-3">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}" class="brown-text text-darken-3">Register</a></li>
                     {% endif %}
 
                 </ul>
@@ -59,24 +59,24 @@
         <!--sidenav copied from Materialize-->
         <ul class="sidenav" id="mobile-demo">
             <li>
-                <h4 class="center-align brown-text darken-3">Recipes Without</h4>
+                <h4 class="center-align brown-text text-darken-3">Recipes Without</h4>
             </li>
-            <li><a href="{{ url_for('home') }}" class="brown-text darken-3">Home</a></li>
+            <li><a href="{{ url_for('home') }}" class="brown-text text-darken-3">Home</a></li>
             <!--dropdown trigger-->
             <li><a class="dropdown-trigger brown-text darken-3" data-target="dropdown2">Recipes<i
-                        class="fas fa-angle-down right brown-text darken-3"></i></a></li>
-            <li><a href="{{ url_for('contact') }}" class="brown-text darken-3">Contact</a></li>
+                        class="fas fa-angle-down right brown-text text-darken-3"></i></a></li>
+            <li><a href="{{ url_for('contact') }}" class="brown-text text-darken-3">Contact</a></li>
             {% if session.user %}
-            <li><a href="{{ url_for('add_recipes') }}" class="brown-text darken-3">Add Recipes</a></li>
+            <li><a href="{{ url_for('add_recipes') }}" class="brown-text text-darken-3">Add Recipes</a></li>
             <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text darken-3">My
                     Recipes</a></li>
-            <li><a href="{{ url_for('logout') }}" class="brown-text darken-3">Logout</a></li>
+            <li><a href="{{ url_for('logout') }}" class="brown-text text-darken-3">Logout</a></li>
             {% if session.user == "admin" %}
-            <li><a href="{{ url_for('admin', username=['admin']) }}" class="brown-text darken-3">Admin Section</a></li>
+            <li><a href="{{ url_for('admin', username=['admin']) }}" class="brown-text text-darken-3">Admin Section</a></li>
             {% endif %}
             {% else %}
-            <li><a href="{{ url_for('login') }}" class="brown-text darken-3">Log In</a></li>
-            <li><a href="{{ url_for('register') }}" class="brown-text darken-3">Register</a></li>
+            <li><a href="{{ url_for('login') }}" class="brown-text text-darken-3">Log In</a></li>
+            <li><a href="{{ url_for('register') }}" class="brown-text text-darken-3">Register</a></li>
             {% endif %}
         </ul>
     </header>
@@ -110,13 +110,13 @@
     <footer id="footer" class="page-footer teal lighten-4">
         <div class="row">
             <div class="col l6 s12">
-                <a href="{{ url_for('home') }}" class="brand-logo brown-text darken-3">
-                    <h5 class="brown-text darken-3">Recipes Without</h5>
+                <a href="{{ url_for('home') }}" class="brand-logo">
+                    <h5 class="brown-text text-darken-3">Recipes Without</h5>
                 </a>
-                <p class="brown-text darken-3">You can use rows and columns here to organize your footer content.</p>
+                <p class="brown-text text-darken-3">You can use rows and columns here to organize your footer content.</p>
             </div>
             <div class="col l4 offset-l2 s12">
-                <h5 class="brown-text darken-3">Connect</h5>
+                <h5 class="brown-text text-darken-3">Connect</h5>
                 <ul>
                     <li><a href="http://www.facebook.com" target="_blank" rel="noopener"><img
                                 src="{{ url_for('static', filename='images/facebook.png')}}" class="social-icon"
@@ -133,8 +133,8 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-copyright brown-text darken-3">
-            © 2021 Copyright Helen Goatly.
+        <div class="footer-copyright brown-text text-darken-3">
+           © 2021 Copyright Helen Goatly.
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
