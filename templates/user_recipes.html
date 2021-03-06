@@ -87,8 +87,17 @@
             </div>
         </div>
 </div>
+  
             {% endif %}
-            
-</div>      
+                  {% if session.user == "admin" %}
+       <div class="row">
+    <div class="col s12 center-align">
+                    <a href="{{ url_for('admin', username=['admin']) }}" class="btn teal lighten-3">Admin Section</a>
+        
+        </div>
+</div>
+        {% endif %}  
+</div>
+    
                           
         {% endblock %}

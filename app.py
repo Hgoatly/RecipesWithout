@@ -335,6 +335,17 @@ def my_recipes(username):
     return redirect(url_for("login"))
 
 
+@app.route("/user_recipes/<username>", methods=["GET", "POST"])
+def user_recipes(username):
+    if "user" in session:
+        # get the session user's username from the db
+        recipes = list(mongo.db.recipes.find({"added_by": username}))
+        return render_template(
+            "user_recipes.html", username=username,
+            recipes=recipes)
+    return redirect(url_for("login"))
+
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
