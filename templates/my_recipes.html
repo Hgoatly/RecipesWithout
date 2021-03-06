@@ -11,7 +11,7 @@
         </div>
     </div>
     {% if recipes %}
-        <div class="row my-recipes-cards">
+        <div class="row my-recipes-cards hide-on-small-only">
             {% for recipe in recipes %}            
 
             <div class="col s4 center-align">
@@ -47,11 +47,35 @@
                     </div>
                 </div>
             </div>
-
-            
            
             {% endfor %}
+        </div> 
 
+             <div class="hide-on-med-and-up">
+        <ul class="collapsible brown-text">
+        {% for recipe in recipes %}
+    <li>
+      <div class="collapsible-header grey lighten-5"><i class="fas fa-concierge-bell brown-text"></i>{{ recipe.category_name.title() }}: {{ recipe.recipe_name }}</div>
+      <div class="collapsible-body">
+          <div class="col s12 center-align">
+      <div class="card-panel large">
+          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+         
+        </div>
+        <div class="card-action">
+          <a href="{{ url_for('dairy_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+        </div>
+       
+      </div>
+    </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+  </div>
             {% else %}
 
             <div class="row no-recipes">

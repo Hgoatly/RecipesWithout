@@ -73,15 +73,15 @@ document.getElementById("advanced-search-box").style.display = "none";
 document.getElementById("show-advanced-search").addEventListener("click", function() {
 document.getElementById("search-box").style.display = "none";
 document.getElementById("show-advanced-search").style.display = "none";
-document.getElementById("show-basic-search").style.display = "block";
-document.getElementById("advanced-search-box").style.display = "block";
+document.getElementById("show-basic-search").style.display = "inline";
+document.getElementById("advanced-search-box").style.display = "inline";
 
 });  
 
 document.getElementById("show-basic-search").style.display = "none";
 document.getElementById("show-basic-search").addEventListener("click", function() {
-document.getElementById("search-box").style.display = "block";
-document.getElementById("show-advanced-search").style.display = "block";
+document.getElementById("search-box").style.display = "inline";
+document.getElementById("show-advanced-search").style.display = "inline";
 document.getElementById("show-basic-search").style.display = "none";
 document.getElementById("advanced-search-box").style.display = "none";
 
