@@ -302,6 +302,10 @@ h5 {
     margin-top: 20px;
 }
 
+.collapsible-body {
+    padding: 0px;
+}
+
 .error-text {
     margin-top: 50%;
 }
