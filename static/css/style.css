@@ -363,4 +363,15 @@ footer ul li {
     border-radius: 25px;
 }
 
+#landing-page {   
+    position: relative;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url('../images/landing-page.jpg');
+    min-height: 50vh;
+    min-width: 100vw; 
+    padding-left: 0px;
+    padding-right: 0px;
+    }
 }
