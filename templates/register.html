@@ -3,6 +3,22 @@
 
 <!--form copied from Materialize. Code referneced from the 'task manager' mini project-->
     <div class="row register brown-text">
+                    <section>
+        {% with messages=get_flashed_messages()%}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flash-messages">
+            <div class="col s12 m6 offset-m1 center-align">
+                <div class="card-panel title-panel teal lighten-4">
+                    <h4 class="center-align brown-text">{{ message }}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% endif %}
+        {% endwith%}
+    </section>
         <div class="col s12 m4 offset-m4">
         <form method="POST" action="{{ url_for('register') }}">
             <div class="card-panel register-panel">
