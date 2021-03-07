@@ -69,7 +69,7 @@ html
     margin-left: 14%;
 }
 
-.card-panel {
+.recipe-panels {
     max-height: 800px;
 }
 
@@ -186,7 +186,7 @@ h5 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image:url('../images/burger.jpg');
+    background-image:url('../images/raspberry.jpg');
     min-height: 95vh;
     min-width: 100vw;
     margin-bottom: 0px;
