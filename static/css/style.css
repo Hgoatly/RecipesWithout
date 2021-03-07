@@ -30,6 +30,7 @@ html
 #content {
     flex: 1 0 auto;
 }
+
 .nav-items {
     font-weight: 600;
 }
@@ -42,12 +43,6 @@ html
    flex-shrink: 0;
 }
 
-/*
-#landing-page, #error-page {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-*/
 .search-card {
     border-radius: 25px;
 }
