@@ -169,41 +169,7 @@ h5 {
    margin-bottom: 0px;
    }
 
-.edit-recipes {
-    height: auto;
-    width: 100%;
-    background: url("../images/herbs.jpg") no-repeat center center fixed; 
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   display: flex;
-   justify-content: center;
-   position: relative;
-   }
 
-.login {
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image:url('../images/raspberry.jpg');
-    min-height: 95vh;
-    min-width: 100vw;
-    margin-bottom: 0px;
-   }
-
-.register {
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image:url('../images/cookies.jpg');
-    min-height: 95vh;
-    min-width: 100vw;
-    margin-bottom: 0px;
-    margin-top: 0px;
-   }
 
 
 .recipe {
@@ -257,14 +223,14 @@ h5 {
     margin-bottom: 0px;
     margin-top: 0px;
     } 
-*/
+
 .add-recipes-panel, .edit-recipes-panel {
     width: 40vw;
     margin-top: 15%;
     margin-bottom: 15%;;
     border-radius: 25px;
 }
-
+*/
 .my-recipes-cards {
     margin-bottom: 0px;
 }
@@ -360,9 +326,9 @@ footer ul li {
 }
 
 .contact-card, .login-panel,
-.register-panel {
-    margin-top: 17.5%;
-    margin-bottom: 0%;
+.register-panel, .add-recipes-panel, .edit-recipes-panel {
+    margin-top: 5%;
+    margin-bottom: 5%;
     border-radius: 25px;
 }
 
@@ -381,6 +347,11 @@ footer ul li {
 .admin_section {
     padding-right: 0px;
 }
+
+.input-field>label {
+    font-size: 1rem;
+    line-height: 1rem;
+}
 }
 
 @media screen and (min-width: 601px) {
@@ -393,4 +364,39 @@ footer ul li {
     padding-right: 15px;
     position: relative;
     } 
+    .edit-recipes {
+    height: auto;
+    width: 100%;
+    background: url("../images/herbs.jpg") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   }
+
+.login {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('../images/raspberry.jpg');
+    min-height: 95vh;
+    min-width: 100vw;
+    margin-bottom: 0px;
+   }
+
+.register {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('../images/cookies.jpg');
+    min-height: 95vh;
+    min-width: 100vw;
+    margin-bottom: 0px;
+    margin-top: 0px;
+   }
 }
