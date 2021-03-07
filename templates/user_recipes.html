@@ -17,7 +17,7 @@
             <div class="col s12 m6 l4 center-align">
                 <div class="card-panel large">
                     <div class="card-title brown-text truncate">{{ recipe.recipe_name }}</div>
-                        <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image responsive-img">
+                        <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
                     <div class="card-buttons">
 
                         <a href="{{ url_for('recipe', username=session['user'], recipe_id=recipe._id) }}"
