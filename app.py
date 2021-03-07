@@ -99,7 +99,6 @@ def send_password_reset():
 @app.route("/reset_password_form", methods=["GET", "POST"])
 def reset_password_form():
     if request.method == "GET":
-
         return render_template("reset_password")
 
 
@@ -348,28 +347,29 @@ def user_recipes(username):
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    if recipe['added_by'] == session["user"]:
-        if request.method == "POST":
+    if request.method == "POST":
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        if recipe['added_by'] == session["user"]:
             edit = {
-                "category_name": request.form.get("category_name"),
-                "recipe_name": request.form.get("recipe_name"),
-                "equipment_needed": request.form.get("equipment_needed"),
-                "portions": request.form.get("portions"),
-                "ingredients": request.form.get("ingredients"),
-                "method": request.form.get("method"),
-                "image": request.form.get("image_url"),
-                "added_by": session["user"],
-                }
+                    "category_name": request.form.get("category_name"),
+                    "recipe_name": request.form.get("edit_recipe_name"),
+                    "equipment_needed": request.form.get(
+                        "edit_equipment_needed"),
+                    "portions": request.form.get("edit_portions"),
+                    "ingredients": request.form.get("edit_ingredients"),
+                    "method": request.form.get("edit_method"),
+                    "image": request.form.get("edit_image_url"),
+                    "alt": request.form.get("edit_image_description"),
+                    "added_by": session["user"],
+                    }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
-            flash("Your recipe has been edited.")
-            return redirect(url_for("my_recipes", username=session["user"]))
+            flash("Recipe Updated")
+            print(edit)
+
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template(
             "edit_recipe.html", recipe=recipe, categories=categories)
-    else:
-        return redirect(url_for("home"))
 
 
 @app.route("/delete_recipe/<recipe_id>")

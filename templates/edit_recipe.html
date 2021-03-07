@@ -1,11 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="edit-recipes brown-text"> 
-<!--form copied and adapted from Materialize and 'Task Manager' mini project-->
-    <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-            <div class="row card-panel edit-recipes-panel">
+<div class="row edit-recipes brown-text">
+    <section>
+        {% with messages=get_flashed_messages()%}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flash-messages">
+            <div class="col s12 m6 offset-m1 center-align">
+                <div class="card-panel title-panel">
+                    <h4 class="center-align brown-text">{{ message }}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% endif %}
+        {% endwith%}
+    </section>
+
+        <div class="col s12 m6 offset-m3">
+        <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <div class="card-panel edit-recipes-panel">
                 <h3 class="center-align">Edit Recipe</h3>
             <!-- recipe category -->
             <div class="row">
@@ -83,8 +99,8 @@
                         <div class="row">
             <div class="input-field col s12">
                 <i id="edit-image-description" class=" fas fa-pencil-alt prefix"></i>
-                <input id="image_description" name="image_description" value="{{ recipe.alt }}" type="text" minlength="5" required>
-                <label for="image_description">Edit image description</label>
+                <input id="edit_image_description" name="edit_image_description" value="{{ recipe.alt }}" type="text" minlength="5" required>
+                <label for="edit_image_description">Edit image description</label>
             </div>
             </div>
             <!-- submit button -->
@@ -99,5 +115,6 @@
             </div>
         </form>
     </div>
+</div>
 
 {% endblock %}

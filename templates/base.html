@@ -69,7 +69,7 @@
             <li><a href="{{ url_for('contact') }}" class="brown-text text-darken-3">Contact</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_recipes') }}" class="brown-text text-darken-3">Add Recipes</a></li>
-            <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text darken-3">My
+            <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="brown-text text-darken-3">My
                     Recipes</a></li>
             <li><a href="{{ url_for('logout') }}" class="brown-text text-darken-3">Logout</a></li>
             {% if session.user == "admin" %}
@@ -81,24 +81,6 @@
             {% endif %}
         </ul>
     </header>
-
-   
-    <section>
-        {% with messages=get_flashed_messages()%}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row flash-messages">
-            <div class="col s12 m6 offset-m1 center-align">
-                <div class="card-panel title-panel">
-                    <h4 class="center-align brown-text">{{ message }}</h4>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-        {% endif %}
-        {% endwith%}
-    </section>
     <div id="content">
         {% block content %}
         {% endblock %}
