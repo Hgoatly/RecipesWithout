@@ -75,7 +75,7 @@ html
 }
 
 .card-panel {
-    max-height: 700px;
+    max-height: 800px;
 }
 
 img {
@@ -85,7 +85,6 @@ img {
 
 .card-title {
     font-size: 25px;
-    padding-top: 15px;
     padding-bottom: 15px;
     margin-left: 15px;
     margin-right: 15px;
@@ -95,10 +94,6 @@ img {
     max-height: 100vh;
     max-width: 100%;
     object-fit:cover;
-}
-
-.card-buttons {
-    margin-top: 12.5%;
 }
 
 .vote-buttons {
@@ -245,14 +240,14 @@ h5 {
    }
 
 /*
-.my_recipes {   
+.my-recipes {   
     background-image:url('../images/herbs.jpg');
     min-height: 90vh;
     min-width: 100vw;
     margin-bottom: 0px; 
     margin-top: 0px;
     } 
-*/
+
 
 .admin_section {   
     position: relative;
@@ -265,7 +260,7 @@ h5 {
     margin-bottom: 0px;
     margin-top: 0px;
     } 
-
+*/
 .add-recipes-panel, .edit-recipes-panel {
     width: 40vw;
     margin-top: 15%;

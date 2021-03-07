@@ -18,9 +18,7 @@
             <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
 
             <div class="card-content">
-                <p>Added by: {{ recipe.added_by|title }}</p>
-                <p>Added on: {{ recipe.added_on }}</p>
-
+                <p>Added by {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
             </div>
             <div class="card-action">
                 <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View
@@ -67,8 +65,7 @@
                     <div class="card-panel large">
                         <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
                         <div class="card-content">
-                            <p>Added by: {{ recipe.added_by|title }}</p>
-                            <p>Added on: {{ recipes.added_on }}</p>
+                            <p>Added by: {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
                         </div>
                         <div class="card-action">
                             <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}"
