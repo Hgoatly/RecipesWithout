@@ -202,7 +202,7 @@ h5 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image:url('../images/plates.jpg');
+    background-image:url('../images/cookies.jpg');
     min-height: 95vh;
     min-width: 100vw;
     margin-bottom: 0px;
@@ -282,7 +282,8 @@ h5 {
 
 .contact-card, .login-panel,
 .register-panel {
-    margin-top: 25%;
+    margin-top: 15%;
+    margin-bottom: 15%;
     border-radius: 25px;
 }
 
