@@ -1,14 +1,15 @@
 import os
+import smtplib, ssl
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
-from datetime import datetime
-import smtplib, ssl
+
 
 app = Flask(__name__)
 
@@ -21,7 +22,8 @@ now = datetime.now()
 date_time = now.strftime("%d %B %Y")
 
 
-# This section copied and adapted from https://realpython.com/lessons/sending-plaintext-emails-python/
+# This section copied and adapted from
+# https://realpython.com/lessons/sending-plaintext-emails-python/
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -83,10 +85,8 @@ def send_password_reset():
             """
             context = ssl.create_default_context()
 
-            with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-                print(f"sender is: {sender};")
-                print(f"receiver is: {receiver};")
-                print(f"statement is: {message};")
+            with smtplib.SMTP_SSL(
+                    smtp_server, port, context=context) as server:
 
                 server.login(sender, password)
                 server.sendmail(sender, receiver, message)
