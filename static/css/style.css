@@ -44,7 +44,7 @@ html
 }
 
 #footer {
-  position: absolute;
+  position: static;
   bottom:0;
   left:0;
   width:100%;
@@ -248,15 +248,6 @@ h5 {
     position: relative;
 }
 
-.admin_section {   
-    position: relative;
-    background-image:url('../images/herbs.jpg');
-    min-height: 100vh;
-    min-width: 100vw;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    } 
-
 .my-recipes {   
     background-image:url('../images/cake.jpg');
     min-height: 100vh;
@@ -289,6 +280,16 @@ h5 {
     margin-top: 0px;
    }
 
+.manage-account {   
+    background-image:url('../images/cake.jpg');
+    min-height: 90vh;
+    min-width: 100vw;
+    margin-bottom: 0px; 
+    margin-top: 0px;
+    padding-right: 15px;
+    position: relative;
+    }
+
 .add-recipes-panel, .edit-recipes-panel {
     margin-top: 15%;
     margin-bottom: 15%;
@@ -318,6 +319,10 @@ h5 {
     border-radius: 25px;
 }
 
+.manage-account-panel {
+    margin-top: 50%;
+}
+
 .title-text {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -330,11 +335,7 @@ h5 {
     padding-bottom: 20px;
     margin-bottom: 0px;
 }
-/*
-.manage-account-panel {
-   margin-top: 50%;
-}
-*/
+
 .reset-paragraph {
     margin-top: 20px;
 }
@@ -379,18 +380,23 @@ footer ul li {
 /*---------------- Media Queries ---------------*/
 
 @media screen and (max-width: 600px) {
- nav .brand-logo {
-    font-size: 1.8rem;
+nav .brand-logo {
+    font-size: 1.5rem;
   }
 
-  h1 {
+h1 {
       font-size: 3.5rem;
   }
-  .subtitle {
+.subtitle {
       font-size: 1.5rem;
   }
-  .two-search-results {
+.two-search-results {
     margin-left: 0%;
+}
+
+.manage-account-panel {
+   margin-top: 50%;
+   margin-bottom: 0px;
 }
 
 .contact-card, .login-panel,
@@ -399,17 +405,27 @@ footer ul li {
     margin-bottom: 15%;
     border-radius: 25px;
 }
-
+/*
 #landing-page {   
     position: relative;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
     background-image:url('../images/landing-page.jpg');
-    min-height: 50vh;
+    min-height: 20vh;
     min-width: 100vw; 
     padding-left: 0px;
     padding-right: 0px;
+    }
+*/
+.manage-account {   
+    background-image:url('../images/plum.jpg');
+    min-height: 90vh;
+    min-width: 100vw;
+    margin-bottom: 0px; 
+    margin-top: 0px;
+    padding-right: 0px;
+    position: relative;
     }
 
 .admin_section {
@@ -421,6 +437,8 @@ footer ul li {
 }
 }
 
-@media screen and (min-width: 601px) {
- 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .manage-account-panel {
+   margin-top: 100%;
 }
+    
