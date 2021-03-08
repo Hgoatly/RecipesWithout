@@ -206,12 +206,12 @@ img {
 
 /*-------This section is copied and adapted from css.tricks.com/perfect-full-page-background-image------*/
 
-#landing-page {   
+#hero {   
     position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image:url('../images/landing-page.jpg');
+    background-image:url('../images/hero.jpg');
     min-height: 100vh;
     min-width: 100vw; 
     padding-left: 0px;
@@ -346,7 +346,7 @@ img {
 
 /* Scroll to top button from w3 Schools */
 #myBtn {
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 12%; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */

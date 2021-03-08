@@ -61,37 +61,59 @@ The site is based around a multi-page layout, with access to different pages and
 not you are a logged in registered user, or whether you are the site owner (admin).
 
 The pages are as follows: 
-## Accessible to all users via the navbar:
-- Home
-- Gluten Free
-- Dairy Free
-- Egg Free
-- Contact
-- Login
-- register
+- ### Accessible to all users via the navbar:
+    - Home
+    - Gluten Free
+    - Dairy Free
+    - Egg Free
+    - Contact
+    - Login
+    - register
 
-## Accessible to all users via the search boxes:
-- Search Results
+- ### Accessible to all users via the search boxes:
+    - Search Results
 
-## Accessible to all users via the recipe cards:
-- Recipe
+- ### Accessible to all users via the recipe cards:
+    - Recipe
 
-## Accessible to registered users via the navbar:
-- Add Recipes
-- My Recipes 
-- Manage account
+- ### Accessible to registered users via the navbar:
+    - Add Recipes
+    - My Recipes 
+    - Manage account
 
-## Accessible to registered users via the My Recipes page:
-- Recipe (via the 'view recipe' button)
-- Edit Recipe
+- ### Accessible to registered users via the My Recipes page:
+    - Recipe (via the 'view recipe' button)
+    - Edit Recipe
 
-## Accessible to registered users via the Manage Account page.
-- My Recipes
+- ### Accessible to registered users via the Manage Account page.
+    - My Recipes
 
-## Accessible only to the site owner (admin user):
-- Admin Section
-- User's Recipes
+- ### Accessible only to the site owner (admin user):
+    - Admin Section
+    - User's Recipes
 
+- ### Additional features available to logged in users:
+    - On the My Recipes Page: Delete Recipe, Upvote, Downvote.
+    - On the Recipe Category pages (Gluten Free, Dairy Free, Egg Free): Delete Recipe.
+    - On the Manage Account Page: Delete Account.
+
+- ### Additional features available to any user who is not logged in:
+    - Reset Password form (accesssed via the login form).
+    - Password Reset (accessed via an email link generated from submitting the Reset Password form).
+
+### First Time Visitor Goals:
+- To easily find out the main purpose of the site. 
+- To easily navigate around the site to find relevant content.
+- To create an acount and begin to upload and manage recipes.
+
+### Returning Visitor Goals:
+- To find out if any new recipes have been added to the site, so that the user can use them for mealtime inspiration.
+- To create an account if the user has not previously done so.
+- To create, read, update or delete any recipes previously added by the user.
+
+### Frequent Visitor Goals: 
+- To find out if any new recipes have been added to the site, so that the user can use them for mealtime inspiration..
+- To maintain an account with recipes that are reglarly created, read, edited and deleted.
 
 ## Business Owner Goals:
 
@@ -120,6 +142,23 @@ or offensive.
 7. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
 8. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
 9. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
+
+### Design: 
+
+** Home Page **
+- The idea of the 'Recipes Without' homepage is to give the site visitor a preview of what they can find on the site. The hero image shows a tabletop
+with food around the edges, and an empty space in the middle. Something is missing - which is a visual metaphor for 'Recipes Without', as all the 
+recipes on the site have either no gluten, no dairy, or no eggs in them.
+- Beneath the Hero image, there is a paragraph of text explaining the purpose and features of the site. This section is crucial, as without it the 
+site visitor may not understand the purpose of the site, or may be unaware of its features.
+- Below the paragraph, there is a search box, where the user can choose to perform a basic or advanced search of the site.
+- Below the search box, there are 9 recipe cards - each of which display a randomly selected recipe from the database collection.
+- At the bottom of the page is the footer Element. This contains links to Social Media sites, and a link back to the homepage. 
+
+- **Navbar:** All pages except for the error pages have a fixed navbar at the top. This displays different nav elements according to whether the user is 
+logged in or not, or whether the user is the site owner (admin).
+
+
 
 ## Wireframes:
 
