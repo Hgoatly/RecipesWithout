@@ -135,7 +135,7 @@ def search():
 def advanced_search():
     if request.method == "POST":
         gluten_free_search = mongo.db.recipes.find(
-            {"category_name": "Gluten Free"})
+            {"category_name": {"$gt": "Gluten Free"}})
         dairy_free_search = mongo.db.recipes.find(
             {"category_name": "Dairy Free"})
         egg_free_search = mongo.db.recipes.find(
@@ -345,35 +345,7 @@ def user_recipes(username):
     return redirect(url_for("login"))
 
 
-#@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
-#def edit_recipe(recipe_id):
- #   if request.method == "POST":
-#        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-
-#        if recipe['added_by'] == session["user"]:
-#            edit = {
-#                    "category_name": request.form.get("category_name"),
-#                 "recipe_name": request.form.get("edit_recipe_name"),
-#                    "equipment_needed": request.form.get(
-#                        "edit_equipment_needed"),
-#                    "portions": request.form.get("edit_portions"),
-#                    "ingredients": request.form.get("edit_ingredients"),
- #                   "method": request.form.get("edit_method"),
-#                    "image": request.form.get("edit_image_url"),
-#                    "alt": request.form.get("edit_image_description"),
-#                    "added_by": session["user"],
-#                    }
-#            mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
-#            flash("Recipe Updated")
-#            print(edit)
-
-#        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-#        categories = mongo.db.categories.find().sort("category_name", 1)
-#        return redirect(url_for("my_recipes", username=session["user"]))
-#    else:
-#        return redirect(url_for("home"))
-
-
+# This section referenced and adapted from 'Tak Manager' walkthrough project.
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
