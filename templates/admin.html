@@ -5,10 +5,10 @@
 <div class="admin-section">
     <div class="row">
         <div class="col s12 m8 offset-m2 center-align">
-            <div class="manage-account-panel">
+            <div class="card-panel  category-title">
                 <h3 class="center-align brown-text title-text">Admin Section</h3>
                 <button class="btn teal lighten-3"><a href="{{ url_for('user_recipes', username=session['user']) }}"
-                        class="white-text">My Recipes</a></button>
+                        class="white-text">Admin's Recipes</a></button>
             </div>
 {% for user in users %}
 <div class="card-panel admin-panel">

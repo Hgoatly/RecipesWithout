@@ -38,11 +38,6 @@ html
     font-weight: 600;
 }
 
-#wrapper{
-    min-height:100%;
-    position:relative;
-}
-
 #footer {
   position: static;
   bottom:0;
@@ -103,6 +98,10 @@ img {
 
 .category-title {
     margin-top: 34.5px;
+    border-radius: 25px;
+}
+
+.admin-panel {
     border-radius: 25px;
 }
 
@@ -441,4 +440,4 @@ h1 {
     .manage-account-panel {
    margin-top: 250px;
 }
-    
+}   
