@@ -72,7 +72,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i id="add-image" class=" fas fa-camera prefix"></i>
-                        <input id="image-url" name="image-url" type="url" minlength="5" pattern="https://.*" required>
+                <!--regex for the pattern copied from an answer in Stack Overflow: https://stackoverflow.com/questions/40687546/html-input-require-url-to-end-in-specific-filetype-->        
+                        <input id="image-url" name="image-url" type="url" minlength="5" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required>
                         <label for="image-url">Add an image url</label>
                     </div>
                 </div>
