@@ -20,7 +20,7 @@
     </section>
 
         <div class="col s12 m6 offset-m3">
-        <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id, recipe=recipe) }}">
             <div class="card-panel edit-recipes-panel">
                 <h3 class="center-align">Edit Recipe</h3>
             <!-- recipe category -->

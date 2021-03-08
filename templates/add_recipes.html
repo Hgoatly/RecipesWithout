@@ -4,41 +4,41 @@
 
 <div class="row add-recipes brown-text">
     <div class="col s12 m6 offset-m3">
-    <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
-    <form method="POST" action="{{ url_for('add_recipes') }}">
-        <div class="card-panel add-recipes-panel">
-            <!-- recipe category -->
-            <h3 class="center-align">Add Your Recipe</h3>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix"></i>
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose category</option>
-                        {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category_name"></label>
+        <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
+        <form method="POST" action="{{ url_for('add_recipes') }}">
+            <div class="card-panel add-recipes-panel">
+                <!-- recipe category -->
+                <h3 class="center-align">Add Your Recipe</h3>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" disabled selected>Choose category</option>
+                            {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category_name"></label>
+                    </div>
                 </div>
-            </div>
-            <!-- recipe name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
-                        required>
-                    <label for="recipe_name">Recipe Name</label>
+                <!-- recipe name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix"></i>
+                        <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text"
+                            class="validate" required>
+                        <label for="recipe_name">Recipe Name</label>
+                    </div>
                 </div>
-            </div>
-            <!-- equipment needed -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-utensils prefix"></i>
-                    <textarea id="equipment_needed" name="equipment_needed" minlength="10"
-                        class="materialize-textarea validate" required></textarea>
-                    <label for="equpiment_needed">Equipment needed. Separate items with commas.</label>
+                <!-- equipment needed -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-utensils prefix"></i>
+                        <textarea id="equipment_needed" name="equipment_needed" minlength="10"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="equpiment_needed">Equipment needed. Separate items with commas.</label>
+                    </div>
                 </div>
-             </div>
                 <!-- number of portions -->
                 <div class="row">
                     <div class="input-field col s12">
@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-seedling prefix"></i>
-                        <textarea id="ingredients" name="ingredients" minlength="10" 
+                        <textarea id="ingredients" name="ingredients" minlength="10"
                             class="materialize-textarea validate" required></textarea>
                         <label for="ingredients">Ingredients. Separate items with commas.</label>
                     </div>
@@ -81,7 +81,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i id="add-image-description" class=" fas fa-pencil-alt prefix"></i>
-                        <input id="image_description" name="image_description" type="text" minlength="5" max-length="30" required>
+                        <input id="image_description" name="image_description" type="text" minlength="5"
+                            required>
                         <label for="image_description">Describe your image</label>
                     </div>
                 </div>
@@ -92,13 +93,13 @@
                         <button type="submit" class="btn-large teal lighten-3">
                             Add Recipe <i class="fas fa-plus-square-right"></i>
                         </button>
-                        <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn-large teal lighten-3">Cancel</a>
+                        <a href="{{ url_for('my_recipes', username=session['user']) }}"
+                            class="btn-large teal lighten-3">Cancel</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </form>
-</div>
+           </div> 
+        </form>
+    </div>
 </div>
 
 
