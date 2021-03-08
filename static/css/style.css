@@ -320,7 +320,7 @@ h5 {
 }
 
 .manage-account-panel {
-    margin-top: 50%;
+    margin-top: 250px;
 }
 
 .title-text {
@@ -437,8 +437,8 @@ h1 {
 }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
     .manage-account-panel {
-   margin-top: 100%;
+   margin-top: 250px;
 }
     
