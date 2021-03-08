@@ -2,16 +2,96 @@
 
 ## A customisable online resource for recipes without gluten, dairy or eggs
 
+# **Table of Contents:**
+
+- [Site Owner Goals](#site-owner-goals)
+- [User Experience (UX)](#user-experience-ux)
+  - [User Stories](#user-stories)
+    - [First Time Visitor Goals](#first-time-visitor-goals)
+    - [Returning Visitor Goals](#returning-visitor-goals)
+    - [Frequent Visitor Goals](#frequent-visitor-goals)
+  - [Design](#Design)
+    - [Colours Used](#colours-used)
+    - [Typography](#typography) 
+    - [Imagery](#imagery)
+    - [Layout](#layout)
+    - [Wireframes](#wireframes)
+  - [Features](#features)
+    - [Mobile Design Features](#mobile-design-features)
+    - [Tablet Design Features](#tablet-design-features)
+    - [Desktop Design Features](#desktop-design-features)
+    - [How The Features Relate To The User Stories](#how-the-features-relate-to-the-user-stories)
+    - [Future Features](#future-features)
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries and Other Sources Used](#frameworks,-libraries-and-other-sources-used)
+  - [Application Programming Interfaces Used (APIs)](#application-programming-interfaces-used-(APIs))
+- [Testing](#testing)
+  - [Known Bugs and Fixes](#known-bugs-and-fixes)
+- [Deployment](#deployment)
+  - [Github Pages](#github-pages)
+  - [Forking The Repository](#forking-the-repository)
+  - [Making A Local Clone](#making-a-local-clone)
+- [Credits](#credits)
+- [Version Control](#version-control)
+
+
 ## Site Owner Goals:
 
 Recipes Without is a recipe site that is designed to be a customisable online resource for those looking to 
 prepare meals free from gluten, dairy or eggs. It is primarily intened for those suffering from allergies or intolerances. 
 However the recipies can be enjoyed by anyone. 
 
-It has two main objectives: 
+The main objectives are as follows: 
 
 1. To allow site users to find recipies without allergens.
-2. To allow site users to store and manage their favourite recipies in an easily accessable format.
+2. To allow site users to view their own and other users recipes.
+3. To allow site users to view recipes on allergen-specific pages.
+4. To allow site users to add recipes to the site.
+5. To allow site users to upvote/downvote their own, and other people's recipes.
+6. To allow site users to update their own previously upladed recipes.
+7. To allow site users to delete their previously uploaded recipes.
+8. To allow site users to search the site for key words.
+9. To allow the site owner (admin) to create, read, update and delete recipes added by any user - including themselves.
+10. To allow the site owner (admin) to view and delete user recipes and user accounts.
+
+The site uses CRUD (create, Read, Update, Delete) functionality in order to create an interactive user experience. 
+
+The site is based around a multi-page layout, with access to different pages and features available according to whether or 
+not you are a logged in registered user, or whether you are the site owner (admin).
+
+The pages are as follows: 
+## Accessible to all users via the navbar:
+- Home
+- Gluten Free
+- Dairy Free
+- Egg Free
+- Contact
+- Login
+- register
+
+## Accessible to all users via the search boxes:
+- Search Results
+
+## Accessible to all users via the recipe cards:
+- Recipe
+
+## Accessible to registered users via the navbar:
+- Add Recipes
+- My Recipes 
+- Manage account
+
+## Accessible to registered users via the My Recipes page:
+- Recipe (via the 'view recipe' button)
+- Edit Recipe
+
+## Accessible to registered users via the Manage Account page.
+- My Recipes
+
+## Accessible only to the site owner (admin user):
+- Admin Section
+- User's Recipes
+
 
 ## Business Owner Goals:
 
@@ -32,9 +112,14 @@ recipes so that I can safely cook them a tasty meal.
 3. I am a restaurant or cafe owner, and I would like to find inspiration for dishes that I can add to my menu that would
 be suitable for diners with intolerances to gluten, dairy or eggs.
 4. I am any of the above users, and I would like to be able to upload, edit and delete my own recipes, without other 
-users being able to tamper with them. 
-5. I am the site owner, and I would like to be able to delete other users recipes if I decide that they are not 
-appropriate material for the site.
+users being able to tamper with them.
+5. I am a user who enjoys cooking, and I would like to have all of my favourite recipes easily accessible in a digital format, 
+so that I can access them fromm anywhere.
+6. I am the site owner, and I would like to be able to edit or delete other users recipes if I decide that they are inappropriate 
+or offensive.
+7. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
+8. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
+9. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
 
 ## Wireframes:
 
