@@ -518,16 +518,16 @@ def egg_free_recipe(recipe_id):
 def add_recipes():
     if request.method == "POST":
         recipe = {
-            "category_name": request.form.get("category_name"),
-            "recipe_name": request.form.get("recipe_name"),
-            "equipment_needed": request.form.get("equipment_needed"),
+            "category_name": request.form.get("category-name"),
+            "recipe_name": request.form.get("recipe-name"),
+            "equipment_needed": request.form.get("equipment-needed"),
             "portions": request.form.get("portions"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "added_by": session["user"],
-            "image": request.form.get("image_url"),
+            "image": request.form.get("image-url"),
             "added_on": date_time,
-            "alt": request.form.get("image_description"),
+            "alt": request.form.get("image-description"),
             "upvotes": 0,
             "downvotes": 0
         }

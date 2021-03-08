@@ -12,31 +12,31 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix"></i>
-                        <select id="category_name" name="category_name" class="validate" required>
+                        <select id="category-name" name="category-name" class="validate" required>
                             <option value="" disabled selected>Choose category</option>
                             {% for category in categories %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="category_name"></label>
+                        <label for="category-name"></label>
                     </div>
                 </div>
                 <!-- recipe name -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix"></i>
-                        <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text"
+                        <input id="recipe-name" name="recipe-name" minlength="5" maxlength="50" type="text"
                             class="validate" required>
-                        <label for="recipe_name">Recipe Name</label>
+                        <label for="recipe-name">Recipe Name</label>
                     </div>
                 </div>
                 <!-- equipment needed -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-utensils prefix"></i>
-                        <textarea id="equipment_needed" name="equipment_needed" minlength="10"
+                        <textarea id="equipment-needed" name="equipment-needed" minlength="10"
                             class="materialize-textarea validate" required></textarea>
-                        <label for="equpiment_needed">Equipment needed. Separate items with commas.</label>
+                        <label for="equipment-needed">Equipment needed. Separate items with commas.</label>
                     </div>
                 </div>
                 <!-- number of portions -->
@@ -72,8 +72,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i id="add-image" class=" fas fa-camera prefix"></i>
-                        <input id="image_url" name="image_url" type="url" minlength="5" pattern="https://.*" required>
-                        <label for="image_url">Add an image url</label>
+                        <input id="image-url" name="image-url" type="url" minlength="5" pattern="https://.*" required>
+                        <label for="image-url">Add an image url</label>
                     </div>
                 </div>
 
@@ -81,9 +81,9 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i id="add-image-description" class=" fas fa-pencil-alt prefix"></i>
-                        <input id="image_description" name="image_description" type="text" minlength="5"
+                        <input id="image-description" name="image-description" type="text" minlength="5"
                             required>
-                        <label for="image_description">Describe your image</label>
+                        <label for="image-description">Describe your image</label>
                     </div>
                 </div>
 
