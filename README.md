@@ -138,22 +138,33 @@ contact pages. There are also links to external social media sites.
     - Recipe: The entire recipe is displayed on a card, with an image of the recipe at the top of the card. The card is superimposed on a background image of fruit and vegetables on a table.
 
 - ### Accessible to registered users via the navbar:
-    - Add Recipes: A card entitled 'Add Your recipe' with 'choose category', 'recipe name', 'equipment needed', 'number of portions', 'ingredients', 'method', 'add an image url' and 'describe your image' fields are superimposed
+    - Add Recipes: A card entitled 'Add Your Recipe' with 'choose category', 'recipe name', 'equipment needed', 'number of portions', 'ingredients', 'method', 'add an image url' and 'describe your image' fields are superimposed
     on an image.  
     - My Recipes: Images of all of the recipes added by that user are displayed on individual cards, along with their titles, date they were added, buttons to view, edit or delete the recipe, buttons to upvote or downvote the recipe, 
     and the number of upvotes/downvotes that recipe has.  
-    - Manage account
+    - Manage account: A card panel saying "(User)'s Recipes". Beneath, there is one button linking to the user recipes page, and another button that invites the user to delete their account. When clicked, a modal opens which asks: 
+    "Are you sure you want to delete your account?" The user can then choose to click 'cancel', in order to close the modal, or "Yes I'm Sure" in order to delete their account.
+    The panel is superimposed on an image of food items on a table.
+    - Log out: This is not a separate page, but logs the user out of the site when it is clicked.
 
 - ### Accessible to registered users via the My Recipes page:
-    - Recipe (via the 'view recipe' button)
-    - Edit Recipe
+    - Recipe (via the 'view recipe' 
+    - Edit Recipe: A card entitled 'Edit Recipe' with 'choose category', 'Edit Recipe Name', 'Edit Equipment needed', 'Edit Number of Portions', 'Edit Ingredients', 'Edit Method', 'Edit image url' and 'Edit Image Description' fields are superimposed
+    on an image or a chopping board with a knife and some herbs round the edges.  
 
 - ### Accessible to registered users via the Manage Account page.
-    - My Recipes
+    - My Recipes: 
 
 - ### Accessible only to the site owner (admin user):
-    - Admin Section
-    - User's Recipes
+    - Admin Section: A card panel with the title "Admin Section", which has a "Admin's Recipes" button that links to all of the recipes added by the site owner. Below, there are card panels that display a button, which when clicked, takes the user to 
+    the "Users Recipes" page. Additionally there is a button that invites the user to delete that account. When clicked, a modal opens which asks: 
+    "Are you sure you want to delete this account?" The user can then choose to click 'cancel', in order to close the modal, or "Yes I'm Sure" in order to delete their account.
+    The panel is superimposed on an image of cakes on plates on a table.
+    - User's Recipes:
+
+- ### Error Pages:
+    - 404 and 500 error pages are provided. They both show a background image of an empty plate on a table. The 404 page has the words "No Recipes Here" superimposed on the picture, and the 500 page says "Something's Wrong". On both pages, there is a button
+     underneath which says: "Back To Recipes Without" on it, which when clicked take the user back to the home page. 
 
 - ### Additional features available to logged in users:
     - On the My Recipes Page: Delete Recipe, Upvote, Downvote.
@@ -164,6 +175,22 @@ contact pages. There are also links to external social media sites.
     - Reset Password form (accesssed via the login form).
     - Password Reset (accessed via an email link generated from submitting the Reset Password form).
 
+## Colours Used: 
+- ** Navbar and Footer: ** The Materialize colour "teal lighten-4" (#b2dfdb) was used as the background colour, 
+because it is striking and fresh looking, and contrasts well with the images used throughout the site. The Materialize colour
+"brown-text text-darken-3" (#4e342e) because it was a good contrast with the background colour, whilst matching the colours of the images. 
+
+- ** Body: ** The colour chosen for the body was chosen as the Materialize colour "grey lighten-3" (#eee) as it was felt tht it would make 
+a subtle but distinct contrast with the other content. 
+
+- ** Buttons: ** The Materialize colour "teal lighten-3" (#80cbc4) was chosen in order to match the Navbar and Footer. Although it is not 
+an exact match with the navbar and footer background colour, it as felt by the developer that "teal lighten-4" would be too light, and would not
+meet accessibility guidelines. The text on the buttons is white, in order to make a contrast with the buttons themselves.
+
+- ** Cards and Collapsibles: ** The Materialize colour "grey lighten-5" was used for all collapsible and card elements in order to contrast with the body.
+It was decided by the developer that white (#fff) would be too bright. 
+
+- ** Text: ** The Materialize colour "brown" (#795548) was chosen for the text throughout the page because it contrasts well with the background colours and images, and looks attractive.
 
 ## Wireframes:
 
