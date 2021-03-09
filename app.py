@@ -165,7 +165,7 @@ def upvotes(recipe_id):
 
         mongo.db.users.find_one_and_update(
             {"username": session["user"]},
-            {"$pull": {"upvotes": ObjectId(recipe_id)}})
+            {"$pull": {"downvotes": ObjectId(recipe_id)}})
         try:
             user_upvotes = mongo.db.users.find(
                 {"username": session["user"]})["upvotes"]
@@ -173,7 +173,6 @@ def upvotes(recipe_id):
             user_upvotes = []
         return redirect(url_for("home", user_upvotes=user_upvotes))
     return redirect(url_for("home"))
-
 
 @app.route("/downvotes/<recipe_id>")
 def downvotes(recipe_id):

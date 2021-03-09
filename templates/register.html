@@ -19,7 +19,7 @@
         {% endif %}
         {% endwith%}
     </section>
-        <div class="col s12 m4 offset-m4">
+        <div class="col s12 m6 offset-m3">
         <form method="POST" action="{{ url_for('register') }}">
             <div class="card-panel register-panel">
                 <h3 class="center-align">Register</h3>
@@ -28,7 +28,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-user-plus prefix"></i>
                         <input id="username" name="username" type="text" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
-                        <label for="username">User Name (at least 5 characters)</label>
+                        <label for="username">Username (at least 5 characters)</label>
                     </div>
                 </div>
                 <!--email-address-->

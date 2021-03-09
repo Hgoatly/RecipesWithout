@@ -60,46 +60,7 @@ The site uses CRUD (create, Read, Update, Delete) functionality in order to crea
 The site is based around a multi-page layout, with access to different pages and features available according to whether or 
 not you are a logged in registered user, or whether you are the site owner (admin).
 
-The pages are as follows: 
-- ### Accessible to all users via the navbar:
-    - Home
-    - Gluten Free
-    - Dairy Free
-    - Egg Free
-    - Contact
-    - Login
-    - register
-
-- ### Accessible to all users via the search boxes:
-    - Search Results
-
-- ### Accessible to all users via the recipe cards:
-    - Recipe
-
-- ### Accessible to registered users via the navbar:
-    - Add Recipes
-    - My Recipes 
-    - Manage account
-
-- ### Accessible to registered users via the My Recipes page:
-    - Recipe (via the 'view recipe' button)
-    - Edit Recipe
-
-- ### Accessible to registered users via the Manage Account page.
-    - My Recipes
-
-- ### Accessible only to the site owner (admin user):
-    - Admin Section
-    - User's Recipes
-
-- ### Additional features available to logged in users:
-    - On the My Recipes Page: Delete Recipe, Upvote, Downvote.
-    - On the Recipe Category pages (Gluten Free, Dairy Free, Egg Free): Delete Recipe.
-    - On the Manage Account Page: Delete Account.
-
-- ### Additional features available to any user who is not logged in:
-    - Reset Password form (accesssed via the login form).
-    - Password Reset (accessed via an email link generated from submitting the Reset Password form).
+The pages are detailed in the 'Design' section below: 
 
 ### First Time Visitor Goals:
 - To easily find out the main purpose of the site. 
@@ -155,9 +116,53 @@ site visitor may not understand the purpose of the site, or may be unaware of it
 - Below the search box, there are 9 recipe cards - each of which display a randomly selected recipe from the database collection.
 - At the bottom of the page is the footer Element. This contains links to Social Media sites, and a link back to the homepage. 
 
-- **Navbar:** All pages except for the error pages have a fixed navbar at the top. This displays different nav elements according to whether the user is 
-logged in or not, or whether the user is the site owner (admin).
+- ** Navbar: ** All pages except for the error pages have a fixed navbar at the top. This displays different nav elements according to whether the user is 
+logged in or not, or whether the user is the site owner (admin). These are listed in the 'Site Owner Goals.
 
+- ** Footer: ** All pages except for the error pages have a fixed footer at the bottom. From the footer, the user can navigate to the home, register, login and 
+contact pages. There are also links to external social media sites.
+
+- ### Accessible to all users via the navbar:
+    - Home
+    - Gluten Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
+    - Dairy Free: Images and titles of all dairy free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
+    - Egg Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
+    - Contact: A contact form with 'name', 'email address' and 'message' fields is displayed on a card. This is superimposed upon an image of a table of food.
+    - Login:  A contact form with 'username', 'password' and 'confirm password' fields is displayed on a card. This is superimposed upon an image of a table of food.
+    - register: A contact form with 'username', 'email address', 'memorable name', 'password' and 'confirm password' fields is displayed on a card. This is superimposed upon an image of a table of food.
+
+- ### Accessible to all users via the search boxes:
+    - Search Results
+
+- ### Accessible to all users via the recipe cards:
+    - Recipe: The entire recipe is displayed on a card, with an image of the recipe at the top of the card. The card is superimposed on a background image of fruit and vegetables on a table.
+
+- ### Accessible to registered users via the navbar:
+    - Add Recipes: A card entitled 'Add Your recipe' with 'choose category', 'recipe name', 'equipment needed', 'number of portions', 'ingredients', 'method', 'add an image url' and 'describe your image' fields are superimposed
+    on an image.  
+    - My Recipes: Images of all of the recipes added by that user are displayed on individual cards, along with their titles, date they were added, buttons to view, edit or delete the recipe, buttons to upvote or downvote the recipe, 
+    and the number of upvotes/downvotes that recipe has.  
+    - Manage account
+
+- ### Accessible to registered users via the My Recipes page:
+    - Recipe (via the 'view recipe' button)
+    - Edit Recipe
+
+- ### Accessible to registered users via the Manage Account page.
+    - My Recipes
+
+- ### Accessible only to the site owner (admin user):
+    - Admin Section
+    - User's Recipes
+
+- ### Additional features available to logged in users:
+    - On the My Recipes Page: Delete Recipe, Upvote, Downvote.
+    - On the Recipe Category pages (Gluten Free, Dairy Free, Egg Free): Delete Recipe.
+    - On the Manage Account Page: Delete Account.
+
+- ### Additional features available to any user who is not logged in:
+    - Reset Password form (accesssed via the login form).
+    - Password Reset (accessed via an email link generated from submitting the Reset Password form).
 
 
 ## Wireframes:
