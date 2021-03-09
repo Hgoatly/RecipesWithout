@@ -86,7 +86,7 @@
         {% block content %}
         {% endblock %}
     </div>
-    
+    <!-- Scroll to top button copied from w3 Schools. https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
     <button onclick="topFunction()" id="myBtn" title="Go to top" class="brown"><i
             class="fas fa-chevron-up medium white-text"></i></button>
     <footer id="footer" class="page-footer teal lighten-4">
@@ -95,8 +95,17 @@
                 <a href="{{ url_for('home') }}" class="brand-logo">
                     <h5 class="brown-text text-darken-3">Recipes Without</h5>
                 </a>
-                <p class="brown-text text-darken-3">You can use rows and columns here to organize your footer content.</p>
+                <a href="{{ url_for('login') }}" class="brown-text darken-3">
+                <p class="brown-text text-darken-3">Login</p>
+                </a>
+                 <a href="{{ url_for('register') }}" class="brown-text darken-3">
+                <p class="brown-text text-darken-3">Register</p>
+                </a>
+                <a href="{{ url_for('contact') }}" class="brown-text darken-3">
+                <p class="brown-text text-darken-3">Contact</p>
+                </a>
             </div>
+                
             <div class="col l4 offset-l2 s12">
                 <h5 class="brown-text text-darken-3">Connect</h5>
                 <ul>
