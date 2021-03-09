@@ -117,12 +117,13 @@ site visitor may not understand the purpose of the site, or may be unaware of it
 - At the bottom of the page is the footer Element. This contains links to Social Media sites, and a link back to the homepage. 
 
 - ** Navbar: ** All pages except for the error pages have a fixed navbar at the top. This displays different nav elements according to whether the user is 
-logged in or not, or whether the user is the site owner (admin). These are listed in the 'Site Owner Goals.
+logged in or not, or whether the user is the site owner (admin). Python checks whether there is a user in session (``` if user in session```), or whether 
+the user is ther site owner (```if username == "admin"```) and passes this information to Jinja, so that the correct navbar links will be displayed.
 
 - ** Footer: ** All pages except for the error pages have a fixed footer at the bottom. From the footer, the user can navigate to the home, register, login and 
 contact pages. There are also links to external social media sites.
 
-- ### Accessible to all users via the navbar:
+- #### Accessible to all users via the navbar:
     - Home
     - Gluten Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
     - Dairy Free: Images and titles of all dairy free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
@@ -138,6 +139,7 @@ contact pages. There are also links to external social media sites.
     - Recipe: The entire recipe is displayed on a card, with an image of the recipe at the top of the card. The card is superimposed on a background image of fruit and vegetables on a table.
 
 - ### Accessible to registered users via the navbar:
+    Python checks whether there is a user in session (``` if user in session ```) and passes this to Jinja, so that the correct navbar links will be displayed.
     - Add Recipes: A card entitled 'Add Your Recipe' with 'choose category', 'recipe name', 'equipment needed', 'number of portions', 'ingredients', 'method', 'add an image url' and 'describe your image' fields are superimposed
     on an image.  
     - My Recipes: Images of all of the recipes added by that user are displayed on individual cards, along with their titles, date they were added, buttons to view, edit or delete the recipe, buttons to upvote or downvote the recipe, 
@@ -192,6 +194,20 @@ It was decided by the developer that white (#fff) would be too bright.
 
 - ** Text: ** The Materialize colour "brown" (#795548) was chosen for the text throughout the page because it contrasts well with the background colours and images, and looks attractive.
 
+- ** Scroll to Top Button: ** The materialize colour "brown" (#795548) was chosen for the button, so that it matches the text on the site. The 'up' chevron is
+white, so that it contrasts with the background, making it clearly visible. The button has an opacity of 0.3 so that it is discreet. On hover it has an opacity of 1. 
+
+### Typography:
+-  'Roboto' was chosen as the font for throughout the site, with a fallback of 'sans-serif' in case the 'Roboto font doesn't load. Roboto is 
+clean and easy to read, which makes it an appropriate font for the text.
+
+### Layout: 
+
+- The Materialize framework was used throughout the site to add responsiveness and to help facilitate mobile-first design. 
+The Materialize grid system has been used extensively throughout the site.
+- The website is designed around a multi page layout, with navbar links, and appropriately placed buttons in order to help 
+the user navigate their way around the site.
+
 ## Wireframes:
 
 Original wireframes from the 17/01/2021 can be found here:
@@ -199,6 +215,47 @@ Original wireframes from the 17/01/2021 can be found here:
 - <a href="assets/wireframes/desktop-wireframes-recipes-without.pdf" target="_blank">For Desktop</a>
 - <a href="assets/wireframes/tablet-wireframes-recipes-without.pdf" target="_blank">For Tablet</a>
 - <a href="assets/wireframes/smartphone-wireframes-recipes-without.pdf" target="_blank">For Smartphone</a>
+
+### Mobile Design Features: 
+
+The main features of the mobile version of the 'Recipes Without' website are detailed below:
+
+- The mobile version of the site was designed for devices corresponding to the Materialize 's' class.
+
+- The navbar has been collapsed, and is accessed by clicking on the 'hamburger' icon in the top left hand corner. When the 'hamburger' icon 
+is clicked, the Materialize 'sidenav' element appears with all relevent elements displayed. 
+
+- Where appropriate, the images used on the tablet and dektop versions have been replaced by images that are more suitable for small screens.
+
+- All of the card elements have been collapsed into 'accordions', whereby each collapsed element needs to be clicked on in 
+order to be viewed. Only one card is visible at a time, as multiple cards next to each other would have been inappropriate for 
+the screen size. The decision to collapse the card elements was made to provide better UX, as otherwise the site visitor would 
+have to scroll past too much content, and it would have been poor UX.
+
+### Tablet Design Features:
+
+The tablet design was designed for screens corresponding to the Materialize 'm' class, and has the same features as the mobile version, except those 
+detailed below. On screens wider than the Materialize 'm' class, the desktop version will be used.
+
+- On pages where three or more recipe cards are displayed on the desktop version, only two card elements displayed rather than three, as the images 
+looked squashed when there were three of them. Rather than 
+being collapsed into an accordion, they are displayed next to each other as this is more visually appealing.
+
+### Desktop Design Features:
+
+The desktop design was designed for screens corresponding to the Matrialize 'l' class and above, and has some of the same features as the mobile and tablet versions.The differences are detailed below:
+
+- The fixed navbar is not collapsed, and spans the width of the page.
+
+- On pages where three or more recipe cards are displayed, they appear in rows of three. If the quantity of recipes is not divisible by three, the 'extra' recipes start a new row beneath the other recipes.
+If the quantity of recipes is fewer than three, the recipes are aligned in the centre of the page.
+
+- The images are an appropriate size for the screen size.
+
+### Interactive Features:
+'Recipes Without' has been designed as an interactive resource, built around the principles of CRUD (Create, Read, Update, Delete),and users can take all of these actions on the site.
+- ** Register **: The site visitor can add their details to open an account on the site. 
+
 
 ## Technologies Used:
 
@@ -208,6 +265,30 @@ Original wireframes from the 17/01/2021 can be found here:
 - Javascript
 - Python
 
+### Frameworks, Libraries and Other Sources Used:
+
+- [Materialize-1.0.0](https://materializecss.com/) was used to help facilitate responsive design by the use of their grid system. It was also used for the cards, card panels, collapsibles navbars and footer.
+- [JQuery](https://jquery.com/) was used to enable the Materialize elements and grid system.
+- [Gitpod](https://gitpod.io/workspaces/) and [Github](https://github.com/). All code was written in Gitpod, and pushed to Github for storage and version control. 
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes for the project.
+- [Unsplash](https://unsplash.com/) was used to download images for the site.
+- [Pixabay](https://pixabay.com/) was used to download images for the site.
+- [Favicon.cc]( https://www.favicon.cc/?action=icon&file_id=793468) was used to generate the favicon - which is a knife, fork and spoon.
+- [CompressImage.touler](https://compressimage.toolur.com/) was used to crompress and resize the image files to a more appropriate size for the site, and in order to 
+speed up their load time.
+- [Dirty-Markup](https://www.10bestdesign.com/dirtymarkup/) was used to beautify the code.
+- [PIP](https://pip.pypa.io/en/stable/installing/) was used to install tools needed in the project.
+- [MONGODB-Atlas](https://www.mongodb.com/3) is the database for this project.
+- [PYMONGO](https://pypi.org/project/pymongo/) was used so that Python and MongoDB could commuicate with one another.
+- [FLASK](https://flask.palletsprojects.com/en/1.1.x/) was used in order to render pages.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) was used in order to easily display information from the backend easily in HTML.
+
+
+## Testing:
+
+Information about tests carried out can be found in a separate [testing.md](testing.md) file.
+
+### Known Bugs and Fixes:
 
 ## Deployment: 
 
@@ -289,9 +370,48 @@ and click 'Deploy Branch'.
 14. If successful, 'Your app was successfully deployed' should be displayed.
 ![heroku-deploy-tab](assets/readme-images/heroku-app-deployed.jpg)
 
+### Running the Site Locally:
 
+In order to run this project locally, you will need to have an IDE installed on your computer. 
+There are many available, but popular ones include [GitPod](https://gitpod.io/), 
+[Visual-Studio](https://visualstudio.microsoft.com/) and [Eclipse](https://www.eclipse.org/ide/). 
 
+** You will also need to install the following: **
+- [PIP](https://pip.pypa.io/en/stable/)
+- [Python3](python.org/doc/)
+- [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for version control.
 
+Next, access the Recipes Without repository at: https://github.com/Hgoatly/recipes-without. 
+Either download a zip file to your computer by clicking on the 'Code' button, and then clicking on 'Download Zip' 
+from the dropdown, and extracting the files to an appropriate location on your computer.
+If you have GIT installed, you can clone the repository if you prefer, by running the following command:
+``` 
+git clone https://github.com/Hgoatly/recipes-without.git 
+```
+![Github-Code-Button](assets/readme-images/repository-code-button.jpg)
 
+Ideally, use a virtual environment for the Python Interpreter. You can use Python's own built in interpreter by running this command: 
+```
+python -m .venv venv
+```
+Your Python commands may vary slightly according to the particular IDE you're using. Be sure to check the [documentation](https://docs.python.org/3/library/venv.html).
+
+Your virtual environment can be activated with the following code: 
+```
+.venv\Scripts\activate 
+```
+
+The next step is to download all of your requirements for the project. The easiest way to do this is by running the following command:
+```
+pip -r requirements.txt.
+```
+
+After that, you will need to set up your SECRET_KEY and MONGO_URI that will link to your database. These should be stored in a file called .flaskenv.
+The database for this project needs to be called recipes_without. Within the database, there are 3 collections: 'categories', 'users' and 'recipes'.
+
+In order to run the app, please run the following command, which will open a port that will allow you to view the app.
+``` 
+python3 app.py
+```
 
 
