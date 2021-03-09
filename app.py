@@ -47,16 +47,14 @@ def contact():
         context = ssl.create_default_context()
 
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-            print(f"sender is: {sender};")
-            print(f"receiver is: {receiver};")
-            print(f"statement is: {message};")
-
             server.login(sender, password)
             server.sendmail(sender, receiver, message)
 
     return render_template("contact.html")
 
 
+# This section copied and adapted from
+# https://realpython.com/lessons/sending-plaintext-emails-python/
 @app.route("/send_password_reset", methods=["GET", "POST"])
 def send_password_reset():
     if request.method == "POST":
@@ -151,6 +149,7 @@ def advanced_search():
             dairy_free_search=dairy_free_search)
 
 
+# This code copied and adapted from an example posted on CI Slack by ShaneMuir_Alumni. Help was also received from Tim Nelson at Tutor Support
 @app.route("/upvotes/<recipe_id>")
 def upvotes(recipe_id):
     mongo.db.recipes.find_one_and_update(
@@ -174,6 +173,8 @@ def upvotes(recipe_id):
         return redirect(url_for("home", user_upvotes=user_upvotes))
     return redirect(url_for("home"))
 
+
+# This code copied and adapted from an example posted on CI Slack by ShaneMuir_Alumni. Help was also received from Tim Nelson at Tutor Support
 @app.route("/downvotes/<recipe_id>")
 def downvotes(recipe_id):
     mongo.db.recipes.find_one_and_update(

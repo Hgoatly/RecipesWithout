@@ -253,8 +253,18 @@ If the quantity of recipes is fewer than three, the recipes are aligned in the c
 - The images are an appropriate size for the screen size.
 
 ### Interactive Features:
+
 'Recipes Without' has been designed as an interactive resource, built around the principles of CRUD (Create, Read, Update, Delete),and users can take all of these actions on the site.
-- ** Register **: The site visitor can add their details to open an account on the site. 
+- **Register:** The site visitor can add their details to open an account on the site. 
+- **Login:** The site visitor can login to the site if they are an existing user.
+- **Contact:** Any User can contact the site owner by email.
+- **Upvote/Downvote:** Logged in registered users can upvote/downvote any recipe.
+- **Edit Recipe:** Logged in registered users can edit their own recipes.
+- **Reset Password:** Users who have forgotten their password can request a 'reset password' link to be emailed to them, so that they can reset their password.
+- **Delete Recipe:** Logged in registered users can delete their own recipes.
+- **My Recipes:** Logged in registered users can view all of their own recipes.
+- **Admin Area:" If the logged in user is the site owner (Admin), they can view all of the usernames, view their recipes and delete their accounts. The 
+site owner can also view their own recipes and delete their own account from this area.
 
 
 ## Technologies Used:
@@ -413,5 +423,34 @@ In order to run the app, please run the following command, which will open a por
 ``` 
 python3 app.py
 ```
+## Credits:
+
+### Code:
+
+- **Code Institute Course:**  The CI 'Task Manager' walkthrough project was referenced extensively throughout the project.
+- **Code Institute Slack Channels:** Python code for the upvote/downvote routes was referenced from an example posted on CI Slack by ShaneMuir_Alumni
+- **Tutorials:** Python Code for the 'contact' and 'send_password_reset' routes was referenced from this tutorial: https://realpython.com/lessons/sending-plaintext-emails-python/
+- **W3 Schools:** W3 Schools was referenced for the scroll to top button.
+- **Materialize:** The Materialize framework was used extensively throughout the project.
+
+### Content:
+
+- The 'Welcome Text' was written by the developer.
+- All recipes and their images that were added by the developer are from [BBC-Good-Food](https://www.bbcgoodfood.com/)
+
+### Media:
+
+Background images on the website are from the following sources:
+- **Hero Image** from [Unsplash](https://unsplash.com/).
 
 
+### Acknowledgements:
+
+- **My Mentor** Can Sücüllü, for help and guidance on this project.
+- **My Friends and Family** for constant support, and feedback on the content and functionality.
+- **Code Institute Slack Channel** for help answering my many questions.
+- **Code Institute Tutor Support** for helping me work out why things weren't working how they should. 
+
+## Version Control:
+
+- Throughout the development process, regular commits have been made in Gitpod, which have been pushed to the Recipes Without Github repository.
