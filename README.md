@@ -1,6 +1,11 @@
-# Recipes Without
 
+<div align="center">
+
+# **Recipes Without**
+    
+![Recipes Without responsive image display](assets/readme-images/recipes-without-responsive-image.jpg)
 ## A customisable online resource for recipes without gluten, dairy or eggs
+</div>
 
 # **Table of Contents:**
 
