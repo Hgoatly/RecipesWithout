@@ -153,6 +153,22 @@ def advanced_search():
 # This code copied and adapted from an example posted on CI Slack by ShaneMuir_Alumni. Help was also received from Tim Nelson at Tutor Support
 @app.route("/upvotes/<recipe_id>")
 def upvotes(recipe_id):
+    """Checks if the user already upvoted the recipe
+        if yes the upvote is taken back and upvote count decreases
+        else..."""
+    # Get the recipe item
+    mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # Get the user
+
+    # Get the upvoted recipes list from the user
+
+    # Compare the incoming recipe to the list
+
+    # if already in list
+
+    # else
+
     mongo.db.recipes.find_one_and_update(
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"upvotes": 1}},
@@ -351,7 +367,7 @@ def user_recipes(username):
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    if recipe['added_by'] == session["user"]:
+    if recipe['added_by'] == session.get("user", None):
         if request.method == "POST":
             edit = {
                     "category_name": request.form.get("category_name"),
@@ -541,6 +557,8 @@ def something_wrong(e):
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    app.run(
+        host=os.environ.get("IP"),
+        port=int(os.environ.get("PORT")),
+        debug=(os.environ.get("DEBUG") == "True")
+        )

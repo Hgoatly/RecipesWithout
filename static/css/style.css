@@ -118,7 +118,7 @@ h5 {
 }
 
 .list-text {
-    font-size: 25px;
+    font-size: 18px;
 }
 /*--- Cards and Panels ---*/
 
@@ -404,6 +404,10 @@ h1 {
 
 .input-field>label {
     line-height: 14px;
+}
+
+.list-text {
+    font-size: 14.5px;
 }
 
 /*--- Background Images ---*/
