@@ -101,6 +101,7 @@
 <!-- recipe cards -->
     <div class="row hide-on-small-only">
            {% for recipe in recipes %}
+            
            <div class="col s12 m6 l4 center-align">
             <div class="card-panel large grey lighten-5">  
           <div class="card-title brown-text truncate">{{ recipe.recipe_name }}</div>
@@ -150,8 +151,6 @@
       <div class="card-panel large">
           <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
          
         </div>
         <div class="card-action">

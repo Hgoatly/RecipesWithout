@@ -117,6 +117,9 @@ h5 {
     line-height: 20px;
 }
 
+.list-text {
+    font-size: 25px;
+}
 /*--- Cards and Panels ---*/
 
 .search-card {

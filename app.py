@@ -106,6 +106,7 @@ def home():
     recipes = list(
         [recipe for recipe in mongo.db.recipes.aggregate(
             [{"$sample": {"size": 9}}])])
+    
 #    if "user" in session:
  #       try:
   #          user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
@@ -477,9 +478,9 @@ def recipe(recipe_id):
         return render_template(
             "recipe.html", recipes=recipes,
             user_upvotes=user_upvotes, user_downvotes=user_downvotes)
-
-    return render_template(
-        "recipe.html/recipe_id", recipes=recipes)
+    else:
+        return render_template(
+            "recipe.html", recipes=recipes)
 
 
 @app.route("/gluten_free_recipe/<recipe_id>")
