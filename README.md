@@ -20,6 +20,16 @@
     - [Typography](#typography) 
     - [Imagery](#imagery)
     - [Layout](#layout)
+        - [Accessible to all users via the navbar](#Accessible to all users via the navbar)
+        - [Accessible to all users via the search boxes](#Accessible to all users via the search boxes)
+        - [Accessible to all users via the recipe cards](#Accessible to all users via the recipe cards)
+        - [Accessible to registered users via the navbar](#Accessible to registered users via the navbar)
+        - [Accessible to registered users via the My Recipes page](#Accessible to registered users via the My Recipes page)
+        - [Accessible to registered users via the Manage Account page](#Accessible to registered users via the Manage Account page)
+        - [Accessible only to the site owner (admin user)](#Accessible only to the site owner (admin user))
+        - [Error Pages](#Error Pages)
+        - [Additional features available to logged in users](#Additional features available to logged in users)
+        - [Additional features available to any user who is not logged in](#Additional features available to any user who is not logged in)
     - [Wireframes](#wireframes)
   - [Features](#features)
     - [Mobile Design Features](#mobile-design-features)
@@ -135,6 +145,7 @@ and passes this information to Jinja, so that the correct navbar links will be d
 **Footer:** All pages except for the error pages have a fixed footer at the bottom. From the footer, the user can navigate to the home, register, login and 
 contact pages. There are also links to external social media sites.
 
+### Layout:
 #### Accessible to all users via the navbar:
 - Home
 - Gluten Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
@@ -229,6 +240,9 @@ Background images were added to all pages except those that display recipe cards
 This was because the developer considered that those pages were already visually stimulating, so needed no more images. The other pages were considered to be quite bland
 by the developer, so inspirational food-related background images were added to beautify the site.
 
+Even though some of the images are barely visible when viewed on a mobile site, because they are behind cards, the decision was made to include them on the mobile site as well
+so that they add some colour and interest to the background.
+
 ### Layout: 
 
 - The Materialize framework was used throughout the site to add responsiveness and to help facilitate mobile-first design. 
@@ -300,10 +314,7 @@ site owner can also view their own recipes and delete their own account from thi
 In future I would like to add the following features:
 - **Pagination**: For better UX, I would like to add pagination to the pages with more than 9 recipe cards.This was attempted for several days, but I 
 still couldn't get it to work. When I have more time I will do some more research and add it to the project.
-- **Image Upload:** For improved UX, I would like to add the ability for 
-
-
-
+- **Image Upload:** For improved UX, I would like to add the ability for site users to upload images as files, rather than URLs.
 
 ## Technologies Used:
 
