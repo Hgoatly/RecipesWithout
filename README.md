@@ -336,7 +336,6 @@ still couldn't get it to work. When I have more time I will do some more researc
 - [Favicon.cc]( https://www.favicon.cc/?action=icon&file_id=793468) was used to generate the favicon - which is a knife, fork and spoon.
 - [CompressImage.touler](https://compressimage.toolur.com/) was used to crompress and resize the image files to a more appropriate size for the site, and in order to 
 speed up their load time.
-- [Dirty-Markup](https://www.10bestdesign.com/dirtymarkup/) was used to beautify the code.
 - [PIP](https://pip.pypa.io/en/stable/installing/) was used to install tools needed in the project.
 - [MONGODB-Atlas](https://www.mongodb.com/3) is the database for this project.
 - [PYMONGO](https://pypi.org/project/pymongo/) was used so that Python and MongoDB could commuicate with one another.
@@ -545,7 +544,7 @@ Background images on the website are from the following sources:
 - **My Mentor** Can Sücüllü, for help and guidance on this project.
 - **My Friends and Family** for constant support, and feedback on the content and functionality.
 - **Code Institute Slack Channel** for help answering my many questions.
-- **Code Institute Tutor Support** for helping me work out why things weren't working how they should. 
+- **Code Institute Tutor Support** for helping me work out why things weren't working how they should. In particular, Tim, Johann and Jo for their kindness and patience. 
 
 ## Version Control:
 
