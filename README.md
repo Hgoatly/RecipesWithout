@@ -111,7 +111,7 @@ or offensive.
 
 ### Design: 
 
-** Home Page **
+**Home Page**
 - The idea of the 'Recipes Without' homepage is to give the site visitor a preview of what they can find on the site. The hero image shows a tabletop
 with food around the edges, and an empty space in the middle. Something is missing - which is a visual metaphor for 'Recipes Without', as all the 
 recipes on the site have either no gluten, no dairy, or no eggs in them.
@@ -121,85 +121,92 @@ site visitor may not understand the purpose of the site, or may be unaware of it
 - Below the search box, there are 9 recipe cards - each of which display a randomly selected recipe from the database collection.
 - At the bottom of the page is the footer Element. This contains links to Social Media sites, and a link back to the homepage. 
 
-- ** Navbar: ** All pages except for the error pages have a fixed navbar at the top. This displays different nav elements according to whether the user is 
-logged in or not, or whether the user is the site owner (admin). Python checks whether there is a user in session (``` if user in session```), or whether 
-the user is ther site owner (```if username == "admin"```) and passes this information to Jinja, so that the correct navbar links will be displayed.
+**Navbar:** All pages except for the error pages have a fixed navbar at the top. This displays different nav elements according to whether the user is 
+logged in or not, or whether the user is the site owner (admin). Python checks whether there is a user in session 
+``` 
+if user in session
+``` 
+or whether the user is the site owner 
+```
+if username == "admin"
+``` 
+and passes this information to Jinja, so that the correct navbar links will be displayed.
 
-- ** Footer: ** All pages except for the error pages have a fixed footer at the bottom. From the footer, the user can navigate to the home, register, login and 
+**Footer:** All pages except for the error pages have a fixed footer at the bottom. From the footer, the user can navigate to the home, register, login and 
 contact pages. There are also links to external social media sites.
 
-- #### Accessible to all users via the navbar:
-    - Home
-    - Gluten Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
-    - Dairy Free: Images and titles of all dairy free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
-    - Egg Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
-    - Contact: A contact form with 'name', 'email address' and 'message' fields is displayed on a card. This is superimposed upon an image of a table of food.
-    - Login:  A contact form with 'username', 'password' and 'confirm password' fields is displayed on a card. This is superimposed upon an image of a table of food.
-    - register: A contact form with 'username', 'email address', 'memorable name', 'password' and 'confirm password' fields is displayed on a card. This is superimposed upon an image of a table of food.
+#### Accessible to all users via the navbar:
+- Home
+- Gluten Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
+- Dairy Free: Images and titles of all dairy free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
+- Egg Free: Images and titles of all gluten free recipes are displayed on cards, as well as the number of upvotes and downvotes they have. If the user is logged in, they are able to upvote/downvote the recipe. 
+- Contact: A contact form with 'name', 'email address' and 'message' fields is displayed on a card. This is superimposed upon an image of a table of food.
+- Login:  A contact form with 'username', 'password' and 'confirm password' fields is displayed on a card. This is superimposed upon an image of a table of food.
+- register: A contact form with 'username', 'email address', 'memorable name', 'password' and 'confirm password' fields is displayed on a card. This is superimposed upon an image of a table of food.
 
-- ### Accessible to all users via the search boxes:
-    - Search Results
+### Accessible to all users via the search boxes:
+- Search Results
 
-- ### Accessible to all users via the recipe cards:
-    - Recipe: The entire recipe is displayed on a card, with an image of the recipe at the top of the card. The card is superimposed on a background image of fruit and vegetables on a table.
+### Accessible to all users via the recipe cards:
+- Recipe: The entire recipe is displayed on a card, with an image of the recipe at the top of the card. The card is superimposed on a background image of fruit and vegetables on a table.
 
-- ### Accessible to registered users via the navbar:
-    Python checks whether there is a user in session (``` if user in session ```) and passes this to Jinja, so that the correct navbar links will be displayed.
-    - Add Recipes: A card entitled 'Add Your Recipe' with 'choose category', 'recipe name', 'equipment needed', 'number of portions', 'ingredients', 'method', 'add an image url' and 'describe your image' fields are superimposed
-    on an image.  
-    - My Recipes: Images of all of the recipes added by that user are displayed on individual cards, along with their titles, date they were added, buttons to view, edit or delete the recipe, buttons to upvote or downvote the recipe, 
-    and the number of upvotes/downvotes that recipe has.  
-    - Manage account: A card panel saying "(User)'s Recipes". Beneath, there is one button linking to the user recipes page, and another button that invites the user to delete their account. When clicked, a modal opens which asks: 
-    "Are you sure you want to delete your account?" The user can then choose to click 'cancel', in order to close the modal, or "Yes I'm Sure" in order to delete their account.
-    The panel is superimposed on an image of food items on a table.
-    - Log out: This is not a separate page, but logs the user out of the site when it is clicked.
+### Accessible to registered users via the navbar:
+    
+- Add Recipes: A card entitled 'Add Your Recipe' with 'choose category', 'recipe name', 'equipment needed', 'number of portions', 'ingredients', 'method', 'add an image url' and 'describe your image' fields are superimposed
+on an image.  
+- My Recipes: Images of all of the recipes added by that user are displayed on individual cards, along with their titles, date they were added, buttons to view, edit or delete the recipe, buttons to upvote or downvote the recipe, 
+and the number of upvotes/downvotes that recipe has.  
+- Manage account: A card panel saying "(User)'s Recipes". Beneath, there is one button linking to the user recipes page, and another button that invites the user to delete their account. When clicked, a modal opens which asks: 
+"Are you sure you want to delete your account?" The user can then choose to click 'cancel', in order to close the modal, or "Yes I'm Sure" in order to delete their account.
+The panel is superimposed on an image of food items on a table.    
+- Log out: This is not a separate page, but logs the user out of the site when it is clicked.
 
-- ### Accessible to registered users via the My Recipes page:
-    - Recipe (via the 'view recipe' 
-    - Edit Recipe: A card entitled 'Edit Recipe' with 'choose category', 'Edit Recipe Name', 'Edit Equipment needed', 'Edit Number of Portions', 'Edit Ingredients', 'Edit Method', 'Edit image url' and 'Edit Image Description' fields are superimposed
-    on an image or a chopping board with a knife and some herbs round the edges.  
+### Accessible to registered users via the My Recipes page:
+- Recipe (via the 'view recipe' 
+- Edit Recipe: A card entitled 'Edit Recipe' with 'choose category', 'Edit Recipe Name', 'Edit Equipment needed', 'Edit Number of Portions', 'Edit Ingredients', 'Edit Method', 'Edit image url' and 'Edit Image Description' fields are superimposed
+on an image or a chopping board with a knife and some herbs round the edges.  
 
-- ### Accessible to registered users via the Manage Account page.
-    - My Recipes: 
+### Accessible to registered users via the Manage Account page.
+- My Recipes: 
 
-- ### Accessible only to the site owner (admin user):
-    - Admin Section: A card panel with the title "Admin Section", which has a "Admin's Recipes" button that links to all of the recipes added by the site owner. Below, there are card panels that display a button, which when clicked, takes the user to 
-    the "Users Recipes" page. Additionally there is a button that invites the user to delete that account. When clicked, a modal opens which asks: 
-    "Are you sure you want to delete this account?" The user can then choose to click 'cancel', in order to close the modal, or "Yes I'm Sure" in order to delete their account.
-    The panel is superimposed on an image of cakes on plates on a table.
-    - User's Recipes:
+### Accessible only to the site owner (admin user):
+- Admin Section: A card panel with the title "Admin Section", which has a "Admin's Recipes" button that links to all of the recipes added by the site owner. Below, there are card panels that display a button, which when clicked, takes the user to 
+the "Users Recipes" page. Additionally there is a button that invites the user to delete that account. When clicked, a modal opens which asks: 
+"Are you sure you want to delete this account?" The user can then choose to click 'cancel', in order to close the modal, or "Yes I'm Sure" in order to delete their account.
+The panel is superimposed on an image of cakes on plates on a table.
+- User's Recipes:
 
-- ### Error Pages:
-    - 404 and 500 error pages are provided. They both show a background image of an empty plate on a table. The 404 page has the words "No Recipes Here" superimposed on the picture, and the 500 page says "Something's Wrong". On both pages, there is a button
-     underneath which says: "Back To Recipes Without" on it, which when clicked take the user back to the home page. 
+### Error Pages:
+- 404 and 500 error pages are provided. They both show a background image of an empty plate on a table. The 404 page has the words "No Recipes Here" superimposed on the picture, and the 500 page says "Something's Wrong". On both pages, there is a button
+underneath which says: "Back To Recipes Without" on it, which when clicked take the user back to the home page. 
 
-- ### Additional features available to logged in users:
-    - On the My Recipes Page: Delete Recipe, Upvote, Downvote.
-    - On the Recipe Category pages (Gluten Free, Dairy Free, Egg Free): Delete Recipe.
-    - On the Manage Account Page: Delete Account.
+### Additional features available to logged in users:
+- On the My Recipes Page: Delete Recipe, Upvote, Downvote.
+- On the Recipe Category pages (Gluten Free, Dairy Free, Egg Free): Delete Recipe.
+- On the Manage Account Page: Delete Account.
 
-- ### Additional features available to any user who is not logged in:
-    - Reset Password form (accesssed via the login form).
-    - Password Reset (accessed via an email link generated from submitting the Reset Password form).
+### Additional features available to any user who is not logged in:
+- Reset Password form (accesssed via the login form).
+- Password Reset (accessed via an email link generated from submitting the Reset Password form).
 
 ## Colours Used: 
-- ** Navbar and Footer: ** The Materialize colour "teal lighten-4" (#b2dfdb) was used as the background colour, 
+- **Navbar and Footer:** The Materialize colour "teal lighten-4" (#b2dfdb) was used as the background colour, 
 because it is striking and fresh looking, and contrasts well with the images used throughout the site. The Materialize colour
 "brown-text text-darken-3" (#4e342e) because it was a good contrast with the background colour, whilst matching the colours of the images. 
 
-- ** Body: ** The colour chosen for the body was chosen as the Materialize colour "grey lighten-3" (#eee) as it was felt tht it would make 
+- **Body:** The colour chosen for the body was chosen as the Materialize colour "grey lighten-3" (#eee) as it was felt tht it would make 
 a subtle but distinct contrast with the other content. 
 
-- ** Buttons: ** The Materialize colour "teal lighten-3" (#80cbc4) was chosen in order to match the Navbar and Footer. Although it is not 
+- **Buttons:** The Materialize colour "teal lighten-3" (#80cbc4) was chosen in order to match the Navbar and Footer. Although it is not 
 an exact match with the navbar and footer background colour, it as felt by the developer that "teal lighten-4" would be too light, and would not
 meet accessibility guidelines. The text on the buttons is white, in order to make a contrast with the buttons themselves.
 
-- ** Cards and Collapsibles: ** The Materialize colour "grey lighten-5" was used for all collapsible and card elements in order to contrast with the body.
+- **Cards and Collapsibles:** The Materialize colour "grey lighten-5" was used for all collapsible and card elements in order to contrast with the body.
 It was decided by the developer that white (#fff) would be too bright. 
 
-- ** Text: ** The Materialize colour "brown" (#795548) was chosen for the text throughout the page because it contrasts well with the background colours and images, and looks attractive.
+- **Text:** The Materialize colour "brown" (#795548) was chosen for the text throughout the page because it contrasts well with the background colours and images, and looks attractive.
 
-- ** Scroll to Top Button: ** The materialize colour "brown" (#795548) was chosen for the button, so that it matches the text on the site. The 'up' chevron is
+- **Scroll to Top Button:** The materialize colour "brown" (#795548) was chosen for the button, so that it matches the text on the site. The 'up' chevron is
 white, so that it contrasts with the background, making it clearly visible. The button has an opacity of 0.3 so that it is discreet. On hover it has an opacity of 1. 
 
 ### Typography:
@@ -208,6 +215,19 @@ clean and easy to read, which makes it an appropriate font for the text. For tit
 stand out more.
 
 ### Imagery: 
+
+The Hero image, background and recipe images were chosen for the site that were considered to be both striking, and appropriate for their context. Although site users 
+can upload their own images to the site, the site owner still has overall control over what is on the site as they have the ability to delete recipes and accounts. 
+
+- **Hero Image:**
+![Recipes Without responsive image display](assets/readme-images/recipes-without-responsive-image.jpg)
+The hero was chosen as a visual metaphor, as it is a picture of an empty space with food/cooking items around the sides. The implication being that the picture is 'without' something.
+Although some of the image is cut off on mobile and tablet screens, the developer considers this acceptable because it still looks visually appealing, and the metaphor still works well. 
+The alternative of reducing the size of the image was not acceptable, because in order to make the whole image fit the screen, it was either too small to look good, or it became squashed and elongated.
+- **Background Images:**
+Background images were added to all pages except those that display recipe cards (with the exception of "recipe.html", which displays one entire recipe on the page). 
+This was because the developer considered that those pages were already visually stimulating, so needed no more images. The other pages were considered to be quite bland
+by the developer, so inspirational food-related background images were added to beautify the site.
 
 ### Layout: 
 
@@ -273,6 +293,16 @@ If the quantity of recipes is fewer than three, the recipes are aligned in the c
 - **My Recipes:** Logged in registered users can view all of their own recipes.
 - **Admin Area:" If the logged in user is the site owner (Admin), they can view all of the usernames, view their recipes and delete their accounts. The 
 site owner can also view their own recipes and delete their own account from this area.
+- **Search:** Any user can use the search box to search the site for recipes.
+
+### Future Features:
+
+In future I would like to add the following features:
+- **Pagination**: For better UX, I would like to add pagination to the pages with more than 9 recipe cards.This was attempted for several days, but I 
+still couldn't get it to work. When I have more time I will do some more research and add it to the project.
+- **Image Upload:** For improved UX, I would like to add the ability for 
+
+
 
 
 ## Technologies Used:
@@ -300,6 +330,52 @@ speed up their load time.
 - [PYMONGO](https://pypi.org/project/pymongo/) was used so that Python and MongoDB could commuicate with one another.
 - [FLASK](https://flask.palletsprojects.com/en/1.1.x/) was used in order to render pages.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) was used in order to easily display information from the backend easily in HTML.
+
+
+## Information Architecture:
+
+### Database Choice:
+- MongoDB was chosen as the database for this project.
+
+- Within MongoDB, 3 collections are used for 'Recipes Without':
+
+#### Categories Collection: 
+
+| Title         | DB Key        | Data Type |
+|---------------|---------------|-----------|
+| Category ID   | _id           | ObjectId  |
+| Category Name | category_name | string    |
+
+#### Users Collection:
+
+| ID             | _id            | ObjectID |
+|----------------|----------------|----------|
+| Username       | username       | string   |
+| Password       | password       | string   |
+| Upvotes        | upvotes        | array    |
+| Downvotes      | downvotes      | array    |
+| Memorable Name | memorable-name | string   |
+| Email Address  | email-address  | string   |
+
+#### Recipes Collection:
+
+| Title            | DB Key           | Data Type |
+|------------------|------------------|-----------|
+| Recipe ID        | _id              | ObjectID  |
+| Category Name    | category_name    | string    |
+| Recipe Name      | recipe_name      | string    |
+| Equipment Needed | equipment_needed | string    |
+| Portions         | portions         | string    |
+| Ingredients      | ingredients      | string    |
+| Method           | method           | string    |
+| Image            | image            | string    |
+| Added By         | added_by         | string    |
+| Added On         | added_on         | string    |
+| Alt Image        | alt              | string    |
+| Upvotes          | upvotes          | INT32     |
+| Downvotes        | downvotes        | INT32     |
+
+
 
 
 ## Testing:

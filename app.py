@@ -106,16 +106,16 @@ def home():
     recipes = list(
         [recipe for recipe in mongo.db.recipes.aggregate(
             [{"$sample": {"size": 9}}])])
-    if "user" in session:
-        try:
-            user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
-            user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
-        except:
-            user_upvotes = []
-            user_downvotes = []
-        return render_template(
-            "home.html", recipes=recipes,
-            user_upvotes=user_upvotes, user_downvotes=user_downvotes)
+#    if "user" in session:
+ #       try:
+  #          user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
+   #         user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
+  #      except:
+  #          user_upvotes = []
+  #          user_downvotes = []
+  #      return render_template(
+  #          "home.html", recipes=recipes,
+  #          user_upvotes=user_upvotes, user_downvotes=user_downvotes)
 
     return render_template("home.html", recipes=recipes)
 
@@ -170,8 +170,8 @@ def upvotes(recipe_id):
                 {"username": session["user"]})["upvotes"]
         except:
             user_upvotes = []
-        return redirect(url_for("home", user_upvotes=user_upvotes))
-    return redirect(url_for("home"))
+        return redirect(url_for("recipe", user_upvotes=user_upvotes, recipe_id=recipe_id))
+    return redirect(url_for("recipe"))
 
 
 # This code copied and adapted from an example posted on CI Slack by ShaneMuir_Alumni. Help was also received from Tim Nelson at Tutor Support
@@ -195,8 +195,9 @@ def downvotes(recipe_id):
                 {"username": session["user"]})["upvotes"]
         except:
             user_downvotes = []
-        return redirect(url_for("home", user_downvotes=user_downvotes))
-    return redirect(url_for("home"))
+        return redirect(url_for(
+            "recipe", user_downvotes=user_downvotes, recipe_id=recipe_id))
+    return redirect(url_for("recipe"))
 
 
 # code copied and adapted from 'Task Manager' mini project.
@@ -466,8 +467,19 @@ def egg_free():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if "user" in session:
+        try:
+            user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
+            user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
+        except:
+            user_upvotes = []
+            user_downvotes = []
+        return render_template(
+            "recipe.html", recipes=recipes,
+            user_upvotes=user_upvotes, user_downvotes=user_downvotes)
+
     return render_template(
-        "recipe.html", recipes=recipes)
+        "recipe.html/recipe_id", recipes=recipes)
 
 
 @app.route("/gluten_free_recipe/<recipe_id>")
