@@ -3,92 +3,92 @@
 <div class="row">
     <div class="col s12 m6 offset-m3 center-align brown-text">
         <div class="card-panel category-title">
-<h3>Search Results</h3>
-</div>
-</div>
+            <h3>Search Results</h3>
+        </div>
+    </div>
 </div>
 {% if recipes|length > 2 %}
 
-    <div class="row">
-           {% for recipe in recipes %}
-           <div class="col s12 m6 center-align home-recipes">
-            <div class="card-panel large">  
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12 m6 center-align home-recipes">
+        <div class="card-panel large">
             <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
-        
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-    
-        <div class="card-action">
-          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+
+            <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+
+            <div class="card-action">
+                <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+            </div>
         </div>
-      </div>
-    </div>      
-           {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+
+{% elif recipes|length == 1 %}
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12 m6 offset-m3 center-align home-recipes">
+        <div class="card-panel large">
+            <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
+            <div class="card-image">
+                <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+
+            </div>
+            <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
-    {% elif recipes|length == 1 %}
-        <div class="row">
-           {% for recipe in recipes %}
-           <div class="col s12 m6 offset-m3 center-align home-recipes">
-            <div class="card-panel large">  
-            <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
-        <div class="card-image">
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-          
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-         
-        </div>
-        <div class="card-action">
-          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-{% elif recipes|length == 2 %}
+    {% elif recipes|length == 2 %}
 
     <div class="row two-search-results">
-           {% for recipe in recipes %}
+        {% for recipe in recipes %}
 
-           <div class="col s12 m6 l5 center-align">
-           
-            <div class="card-panel">  
-          <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
-        
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-          
-        
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-         
+        <div class="col s12 m6 l5 center-align">
+
+            <div class="card-panel">
+                <h4 class="card-title brown-text truncate">{{ recipe.recipe_name }}</h4>
+
+                <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+
+
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+                </div>
+            </div>
         </div>
-        <div class="card-action">
-          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="row">
+        <div class="col s12 m6 offset-m3 center-align">
+            <div class="card-panel category-title">
+                <h3 class="teal-text lighten-3">Sorry. No Recipes Found.</h3>
+            </div>
         </div>
-      </div>
-       </div>
-        
-      {% endfor %}
-    </div> 
-     
-{% else %}
-<div class="row">
-    <div class="col s12 m6 offset-m3 center-align">
-        <div class="card-panel category-title">
-<h3 class="teal-text lighten-3">Sorry. No Recipes Found.</h3>
-</div>
-</div>
-</div>
-{% endif %}
+    </div>
+    {% endif %}
 
-<div class="row">
-    <div class="col s12 center-align">
-        
-<a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
+    <div class="row">
+        <div class="col s12 center-align">
 
-</div>
-</div>
-{% endblock %}
+            <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
+
+        </div>
+    </div>
+    {% endblock %}

@@ -2,9 +2,9 @@
 {% block content %}
 
 <!--form copied from Materialize. Code referneced from the 'task manager' mini project-->
-    
+
 <div class="row login brown-text">
-        <section>
+    <section>
         {% with messages=get_flashed_messages()%}
         {% if messages %}
         {% for message in messages %}
@@ -20,7 +20,7 @@
         {% endif %}
         {% endwith%}
     </section>
-        <div class="col s12 m6 offset-m3">
+    <div class="col s12 m6 offset-m3">
         <form method="POST" action="{{ url_for('login') }}">
             <div class="card-panel login-panel">
                 <h3 class="center-align">Log In</h3>
@@ -28,7 +28,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-cog prefix"></i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
+                        <input id="username" name="username" type="text" minlength="5" maxlength="10"
+                            pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
                         <label for="username">User Name</label>
                     </div>
                 </div>
@@ -36,7 +37,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-lock prefix"></i>
-                        <input id="password" name="password" type="password" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
+                        <input id="password" name="password" type="password" minlength="5" maxlength="10"
+                            pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
@@ -44,25 +46,26 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-lock prefix"></i>
-                        <input id="confirm-password" name="confirm-password" type="password" minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
+                        <input id="confirm-password" name="confirm-password" type="password" minlength="5"
+                            maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
                         <label for="confirm-password">Confirm Password</label>
                     </div>
                 </div>
                 <!--submit-->
                 <div class="row">
                     <div class="col s12 center-align">
-                     <button class="btn teal lighten-3" type="submit" name="action">Log In
-                    </button>
+                        <button class="btn teal lighten-3" type="submit" name="action">Log In
+                        </button>
 
-        <p>New User?</p>
-        <a href="{{ url_for('register') }}" class="btn teal lighten-3">Register Here</a>
-        <p>Forgot Password?</p>
-        <a href="{{ url_for('send_password_reset') }}" class="btn teal lighten-3">Reset</a>
-    </div>
-    </div>
+                        <p>New User?</p>
+                        <a href="{{ url_for('register') }}" class="btn teal lighten-3">Register Here</a>
+                        <p>Forgot Password?</p>
+                        <a href="{{ url_for('send_password_reset') }}" class="btn teal lighten-3">Reset</a>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
- </div>
+</div>
 
 {% endblock %}

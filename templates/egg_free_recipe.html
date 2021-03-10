@@ -1,68 +1,68 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="recipe">
-<div class="brown-text">
-    <div class="row">
-        <div class="col">
-            <div class="card-panel title-panel">
-                <h3 class="center-align">{{ recipes.recipe_name }}</h3>
+    <div class="brown-text">
+        <div class="row">
+            <div class="col">
+                <div class="card-panel title-panel">
+                    <h3 class="center-align">{{ recipes.recipe_name }}</h3>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col center-align">
-            <div class="card-panel content-panel">
-                <img src="{{ recipes.image }}" class="recipe-page-image responsive-img">
-                <hr>
-                <h5 class="col s12 recipe-instructions">Equipment Needed</h5>
+        <div class="row">
+            <div class="col center-align">
+                <div class="card-panel content-panel">
+                    <img src="{{ recipes.image }}" class="recipe-page-image responsive-img">
+                    <hr>
+                    <h5 class="col s12 recipe-instructions">Equipment Needed</h5>
 
-                {% for equipment in recipes.equipment_needed.split(",") %}
-                <ul class="left-align">
+                    {% for equipment in recipes.equipment_needed.split(",") %}
+                    <ul class="left-align">
+                        <div class="row">
+                            <div class="col s8 m6 offset-m2">
+                                <li><i class="fas fa-utensils teal-text lighten-3"></i>
+                                    {{ equipment.title() }}</li>
+                            </div>
+                        </div>
+                    </ul>
+                    {% endfor %}
+                    <hr>
+                    <h5 class="col s12 recipe-instructions">Ingredients</h5>
+                    {% for ingredient in recipes.ingredients.title().split(",")%}
+                    <ul class="left-align recipe-list">
+                        <div class="row">
+                            <div class="col s8 m6 offset-m2">
+                                <li><i class="fas fa-seedling teal-text lighten-3"></i>
+                                    {{ ingredient.title() }}</li>
+                            </div>
+                        </div>
+                    </ul>
+                    {% endfor %}
+                    <hr>
+                    <h5 class="recipe-instructions">Method</h5>
                     <div class="row">
-                        <div class="col s8 m6 offset-m2">
-                    <li><i class="fas fa-utensils teal-text lighten-3"></i>
-                        {{ equipment.title() }}</li>
-                    </div>
-                    </div>
-                </ul>
-                {% endfor %}
-                <hr>
-                <h5 class="col s12 recipe-instructions">Ingredients</h5>
-                {% for ingredient in recipes.ingredients.title().split(",")%}
-                <ul class="left-align recipe-list">
-                    <div class="row">
-                        <div class="col s8 m6 offset-m2">
-                    <li><i class="fas fa-seedling teal-text lighten-3"></i>
-                        {{ ingredient.title() }}</li>
+                        <div class="col s10 offset-s1 center-align">
+                            <p>{{ recipes.method }}</p>
                         </div>
                     </div>
-                </ul>
-                {% endfor %}
-                <hr>
-                <h5 class="recipe-instructions">Method</h5>
-                <div class="row">
-                        <div class="col s10 offset-s1 center-align">
-                <p>{{ recipes.method }}</p>
+                    <hr>
+                    <h5 class="col s12 recipe-instructions">Portions</h5>
+
+                    <p>{{ recipes.portions }}</p>
+                    <hr>
+                    <h5 class="col s12 recipe-instructions">Added By</h5>
+
+                    <p>{{ recipes.added_by.title() }}</p>
+                    <hr>
+                    <h5 class="col s12 recipe-instructions">Added On</h5>
+
+                    <p>{{ recipes.added_on }}</p>
+
+                    <a href="{{ url_for('egg_free') }}" class="btn teal lighten-3">Back to Egg Free Recipes</a>
+
                 </div>
-                </div>
-                <hr>
-                <h5 class="col s12 recipe-instructions">Portions</h5>
-
-                <p>{{ recipes.portions }}</p>
-                <hr>
-                <h5 class="col s12 recipe-instructions">Added By</h5>
-
-                <p>{{ recipes.added_by.title() }}</p>
-                <hr>
-                <h5 class="col s12 recipe-instructions">Added On</h5>
-
-                <p>{{ recipes.added_on }}</p>
-                
-                <a href="{{ url_for('egg_free') }}" class="btn teal lighten-3">Back to Egg Free Recipes</a>
-                
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}

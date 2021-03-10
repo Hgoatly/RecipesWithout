@@ -1,105 +1,119 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="brown-text">
-<div class="row">
-    <div class="col s12 m10 offset-m1">
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
             <h3 class="center-align title-text">Gluten Free Recipes</h3>
-    </div>
-</div>
-{% if recipes %}
-<div class="row hide-on-small-only">
-    {% for recipe in recipes %}
-
-    <div class="col s12 m6 l4 center-align">
-        <div class="card-panel large recipe-panels">
-
-            <span class="card-title truncate">{{ recipe.recipe_name }}</span>
-
-            <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-
-            <div class="card-content">
-                <p>Added by {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
-            </div>
-            <div class="card-action">
-                <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View
-                    Recipe</a>
-            </div>
-          {% if session.user %}
-    {% if recipe._id in user_upvotes %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-    {% elif recipe._id in user_downvotes%}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-    {% else %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-          {% endif %}  
-    {% endif %} 
-         
-              {% if recipe.upvotes %}
-          <p>Upvotes {{ recipe.upvotes }}</p>
-          {% else %}
-          <p>Upvotes 0</p>
-          {% endif %}
-          {% if recipe.downvotes %}
-          <p>Downvotes {{ recipe.downvotes }}</p>
-          {% else %}
-          <p>Downvotes 0</p>
-          {% endif %}
-
         </div>
     </div>
-
-    {% endfor%}
-</div>
-{% endif %}
-
-{% if recipes %}
-<div class="hide-on-med-and-up">
-    <ul class="collapsible">
+    {% if recipes %}
+    <div class="row hide-on-small-only">
         {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header"><i
-                    class="fas fa-concierge-bell teal-text text-lighten-3"></i>{{ recipe.recipe_name }}</div>
-            <div class="collapsible-body">
-                <div class="col s12 center-align">
-                    <div class="card-panel large">
-                        <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-                        <div class="card-content">
-                            <p>Added by: {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}"
-                                class="btn teal lighten-3">View Recipe</a>
-                        </div>
-          {% if session.user %}
-    {% if recipe._id in user_upvotes %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-    {% elif recipe._id in user_downvotes%}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-    {% else %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-          {% endif %}  
-    {% endif %} 
-              {% if recipe.upvotes %}
-          <p>Upvotes {{ recipe.upvotes }}</p>
-          {% else %}
-          <p>Upvotes 0</p>
-          {% endif %}
-          {% if recipe.downvotes %}
-          <p>Downvotes {{ recipe.downvotes }}</p>
-          {% else %}
-          <p>Downvotes 0</p>
-          {% endif %}
-                       
-                    </div>
 
+        <div class="col s12 m6 l4 center-align">
+            <div class="card-panel large recipe-panels">
+
+                <span class="card-title truncate">{{ recipe.recipe_name }}</span>
+
+                <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+
+                <div class="card-content">
+                    <p>Added by {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
                 </div>
+                <div class="card-action">
+                    <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View
+                        Recipe</a>
+                </div>
+                {% if session.user %}
+                {% if recipe._id in user_upvotes %}
+                <button class="btn teal lighten-3 vote-buttons"><a
+                        href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i
+                            class="fas fa-thumbs-down"></i></a></button>
+                {% elif recipe._id in user_downvotes%}
+                <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}"
+                        class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
+                {% else %}
+                <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}"
+                        class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
+                <button class="btn teal lighten-3 vote-buttons"><a
+                        href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i
+                            class="fas fa-thumbs-down"></i></a></button>
+                {% endif %}
+                {% endif %}
+
+                {% if recipe.upvotes %}
+                <p>Upvotes {{ recipe.upvotes }}</p>
+                {% else %}
+                <p>Upvotes 0</p>
+                {% endif %}
+                {% if recipe.downvotes %}
+                <p>Downvotes {{ recipe.downvotes }}</p>
+                {% else %}
+                <p>Downvotes 0</p>
+                {% endif %}
+
             </div>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-{% endif %}
+        </div>
+
+        {% endfor%}
+    </div>
+    {% endif %}
+
+    {% if recipes %}
+    <div class="hide-on-med-and-up">
+        <ul class="collapsible">
+            {% for recipe in recipes %}
+            <li>
+                <div class="collapsible-header"><i
+                        class="fas fa-concierge-bell teal-text text-lighten-3"></i>{{ recipe.recipe_name }}</div>
+                <div class="collapsible-body">
+                    <div class="col s12 center-align">
+                        <div class="card-panel large">
+                            <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+                            <div class="card-content">
+                                <p>Added by: {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="{{ url_for('gluten_free_recipe', recipe_id=recipe._id) }}"
+                                    class="btn teal lighten-3">View Recipe</a>
+                            </div>
+                            {% if session.user %}
+                            {% if recipe._id in user_upvotes %}
+                            <button class="btn teal lighten-3 vote-buttons"><a
+                                    href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i
+                                        class="fas fa-thumbs-down"></i></a></button>
+                            {% elif recipe._id in user_downvotes%}
+                            <button class="btn teal lighten-3 vote-buttons"><a
+                                    href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i
+                                        class="fas fa-thumbs-up"></i></a></button>
+                            {% else %}
+                            <button class="btn teal lighten-3 vote-buttons"><a
+                                    href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i
+                                        class="fas fa-thumbs-up"></i></a></button>
+                            <button class="btn teal lighten-3 vote-buttons"><a
+                                    href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i
+                                        class="fas fa-thumbs-down"></i></a></button>
+                            {% endif %}
+                            {% endif %}
+                            {% if recipe.upvotes %}
+                            <p>Upvotes {{ recipe.upvotes }}</p>
+                            {% else %}
+                            <p>Upvotes 0</p>
+                            {% endif %}
+                            {% if recipe.downvotes %}
+                            <p>Downvotes {{ recipe.downvotes }}</p>
+                            {% else %}
+                            <p>Downvotes 0</p>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

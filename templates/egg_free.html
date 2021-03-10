@@ -1,79 +1,83 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row brown-text">
-        <div class="col s12 m10 offset-m1 center-align">
-            <h3 class="title-text">Egg Free Recipes</h3>
-        </div>
- </div>
-   {% if recipes %}
- <div class="row hide-on-med-and-down">
+<div class="row brown-text">
+    <div class="col s12 m10 offset-m1 center-align">
+        <h3 class="title-text">Egg Free Recipes</h3>
+    </div>
+</div>
+{% if recipes %}
+<div class="row hide-on-med-and-down">
     {% for recipe in recipes %}
-    
+
     <div class="col s4 center-align">
-      <div class="card-panel large recipe-panels">
-          
-          <span class="card-title brown-text truncate">{{ recipe.recipe_name }}</span>
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-           <div class="card-content">
-            <p>Added by: {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
+        <div class="card-panel large recipe-panels">
+
+            <span class="card-title brown-text truncate">{{ recipe.recipe_name }}</span>
+            <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+            <div class="card-content">
+                <p>Added by: {{ recipe.added_by|title }} on {{ recipe.added_on }}</p>
             </div>
-        <div class="card-action">
-          <a href="{{ url_for('egg_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
+            <div class="card-action">
+                <a href="{{ url_for('egg_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View
+                    Recipe</a>
+            </div>
+            {% if session.user %}
+            {% if recipe._id in user_upvotes %}
+            <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}"
+                    class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
+            {% elif recipe._id in user_downvotes%}
+            <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}"
+                    class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
+            {% else %}
+            <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}"
+                    class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
+            <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}"
+                    class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
+            {% endif %}
+            {% endif %}
+            {% if recipe.upvotes %}
+            <p>Upvotes {{ recipe.upvotes }}</p>
+            {% else %}
+            <p>Upvotes 0</p>
+            {% endif %}
+            {% if recipe.downvotes %}
+            <p>Downvotes {{ recipe.downvotes }}</p>
+            {% else %}
+            <p>Downvotes 0</p>
+            {% endif %}
         </div>
-          {% if session.user %}
-    {% if recipe._id in user_upvotes %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-    {% elif recipe._id in user_downvotes%}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-    {% else %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipe._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-          {% endif %}  
-    {% endif %} 
-              {% if recipe.upvotes %}
-          <p>Upvotes {{ recipe.upvotes }}</p>
-          {% else %}
-          <p>Upvotes 0</p>
-          {% endif %}
-          {% if recipe.downvotes %}
-          <p>Downvotes {{ recipe.downvotes }}</p>
-          {% else %}
-          <p>Downvotes 0</p>
-          {% endif %}
-      </div>
     </div>
     {% endfor%}
-     </div>
-    {% endif %}
+</div>
+{% endif %}
 
-    {% if recipes %}     
-    <div class="hide-on-large-only">
-        <ul class="collapsible">
+{% if recipes %}
+<div class="hide-on-large-only">
+    <ul class="collapsible">
         {% for recipe in recipes %}
-    <li>
-      <div class="collapsible-header"><i class=""></i>{{ recipe.recipe_name }}</div>
-      <div class="collapsible-body">
-          <div class="col s12 center-align">
-      <div class="card-panel large">
-          <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-         
-        </div>
-        <div class="card-action">
-          <a href="{{ url_for('egg_free_recipe', recipe_id=recipe._id) }}" class="btn teal lighten-3">View Recipe</a>
-        </div>
-       
-      </div>
-    </div>
-      </div>
-    </li>
-  {% endfor %}
-  </ul>
-  </div>
-  {% endif %}
+        <li>
+            <div class="collapsible-header"><i class=""></i>{{ recipe.recipe_name }}</div>
+            <div class="collapsible-body">
+                <div class="col s12 center-align">
+                    <div class="card-panel large">
+                        <img src="{{ recipe.image }}" loading="lazy" alt="{{ recipe.alt }}" class="card-image">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a href="{{ url_for('egg_free_recipe', recipe_id=recipe._id) }}"
+                                class="btn teal lighten-3">View Recipe</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
 {% endblock %}
-
-

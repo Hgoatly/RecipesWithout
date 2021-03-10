@@ -3,7 +3,7 @@
 
 <!--form copied from Materialize. Code referneced from the 'task manager' mini project-->
 <div class="admin-section">
-                        <section>
+    <section>
         {% with messages=get_flashed_messages()%}
         {% if messages %}
         {% for message in messages %}
@@ -26,28 +26,32 @@
                 <button class="btn teal lighten-3"><a href="{{ url_for('user_recipes', username=session['user']) }}"
                         class="white-text">Admin's Recipes</a></button>
             </div>
-{% for user in users %}
-<div class="card-panel admin-panel">
-    <h5 class="brown-text">{{ user.username.title() }}</h5>
-    <a href="{{ url_for('user_recipes', username=user.username) }}" class="btn teal lighten-3 white-text">User's Recipes</a>
-    <a href="#modal-id{{ loop.index }}" class="btn teal lighten-3 white-text modal-trigger">Delete Account</a>
-<div id="modal-id{{ loop.index }}" class="modal">
-    <div class="modal-content">
-        <h4>Confirm Delete</h4>
-        <p>Are you sure you want to delete this account?</p>
-    
-    <div class="modal-footer">
-        <a href="{{ url_for('admin_delete', username=['admin'], user_id=user._id) }}" class="btn red lighten-2">Yes
-            I'm Sure</a>
-        <a href="{{ url_for('admin', username=['admin'], user_id=user._id) }}" class="btn teal lighten-2">Cancel</a>
-    </div>
-</div>
-</div>
+            {% for user in users %}
+            <div class="card-panel admin-panel">
+                <h5 class="brown-text">{{ user.username.title() }}</h5>
+                <a href="{{ url_for('user_recipes', username=user.username) }}"
+                    class="btn teal lighten-3 white-text">User's Recipes</a>
+                <a href="#modal-id{{ loop.index }}" class="btn teal lighten-3 white-text modal-trigger">Delete
+                    Account</a>
+                <div id="modal-id{{ loop.index }}" class="modal">
+                    <div class="modal-content">
+                        <h4>Confirm Delete</h4>
+                        <p>Are you sure you want to delete this account?</p>
 
-</div>
-{% endfor %}
+                        <div class="modal-footer">
+                            <a href="{{ url_for('admin_delete', username=['admin'], user_id=user._id) }}"
+                                class="btn red lighten-2">Yes
+                                I'm Sure</a>
+                            <a href="{{ url_for('admin', username=['admin'], user_id=user._id) }}"
+                                class="btn teal lighten-2">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
         </div>
     </div>
-    </div>
-    
+</div>
+
 {% endblock %}

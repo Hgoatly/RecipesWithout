@@ -15,9 +15,9 @@
                 <ul class="left-align">
                     <div class="row">
                         <div class="col s12 m6 offset-m2 list-text">
-                    <li><i class="fas fa-utensils teal-text lighten-3"></i>
-                        {{ equipment.title() }}</li>
-                    </div>
+                            <li><i class="fas fa-utensils teal-text lighten-3"></i>
+                                {{ equipment.title() }}</li>
+                        </div>
                     </div>
                 </ul>
                 {% endfor %}
@@ -27,8 +27,8 @@
                 <ul class="left-align recipe-list">
                     <div class="row">
                         <div class="col s12 m6 offset-m2 list-text">
-                    <li><i class="fas fa-seedling teal-text lighten-3"></i>
-                        {{ ingredient.title() }}</li>
+                            <li><i class="fas fa-seedling teal-text lighten-3"></i>
+                                {{ ingredient.title() }}</li>
                         </div>
                     </div>
                 </ul>
@@ -36,9 +36,9 @@
                 <hr>
                 <h5 class="recipe-instructions">Method</h5>
                 <div class="row">
-                        <div class="col s10 offset-s1 center-align list-text">
-                <p>{{ recipes.method }}</p>
-                </div>
+                    <div class="col s10 offset-s1 center-align list-text">
+                        <p>{{ recipes.method }}</p>
+                    </div>
                 </div>
                 <hr>
                 <h5 class="col s12 recipe-instructions">Portions</h5>
@@ -54,34 +54,42 @@
                 <p class="list-text">{{ recipes.added_on }}</p>
 
                 <!-- Display quantity of upvotes/downvotes -->
-              {% if recipes.upvotes %}
-          <p>Upvotes {{ recipes.upvotes }}</p>
-          {% else %}
-          <p>Upvotes 0</p>
-          {% endif %}
-          {% if recipes.downvotes %}
-          <p>Downvotes {{ recipes.downvotes }}</p>
-          {% else %}
-          <p>Downvotes 0</p>
-          {% endif %}
+                {% if recipes.upvotes %}
+                <p>Upvotes {{ recipes.upvotes }}</p>
+                {% else %}
+                <p>Upvotes 0</p>
+                {% endif %}
+                {% if recipes.downvotes %}
+                <p>Downvotes {{ recipes.downvotes }}</p>
+                {% else %}
+                <p>Downvotes 0</p>
+                {% endif %}
 
-                 {% if session.user %}
-    {% if recipes._id in user_upvotes %}
-    <div>
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-    {% elif recipes._id in user_downvotes%}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-    {% else %}
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i class="fas fa-thumbs-up"></i></a></button>
-          <button class="btn teal lighten-3 vote-buttons"><a href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i class="fas fa-thumbs-down"></i></a></button>
-    </div>      
-          {% endif %}  
-    {% endif %} 
+                {% if session.user %}
+                {% if recipes._id in user_upvotes %}
+                <div>
+                    <button class="btn teal lighten-3 vote-buttons"><a
+                            href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                class="fas fa-thumbs-down"></i></a></button>
+                    {% elif recipes._id in user_downvotes%}
+                    <button class="btn teal lighten-3 vote-buttons"><a
+                            href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                class="fas fa-thumbs-up"></i></a></button>
+                    {% else %}
+                    <button class="btn teal lighten-3 vote-buttons"><a
+                            href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                class="fas fa-thumbs-up"></i></a></button>
+                    <button class="btn teal lighten-3 vote-buttons"><a
+                            href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                class="fas fa-thumbs-down"></i></a></button>
+                </div>
+                {% endif %}
+                {% endif %}
 
                 {% if session['user'] %}
                 <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">My
                     Recipes</a>
-                 <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
+                <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
                 {% else %}
                 <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
                 {% endif %}
