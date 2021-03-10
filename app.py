@@ -49,7 +49,7 @@ def contact():
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
             server.login(sender, password)
             server.sendmail(sender, receiver, message)
-
+        flash("Your email has been sent")
     return render_template("contact.html")
 
 
@@ -423,6 +423,7 @@ def admin_delete(username, user_id):
         for user in users:
             # mongo.db.users.remove({"_id": ObjectId(user_id)})
             mongo.db.users.delete_one(user)
+            flash("User account has been deleted")
         return redirect(url_for("admin", username=username, users=users))
 
 

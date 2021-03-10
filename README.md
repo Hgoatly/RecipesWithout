@@ -199,7 +199,10 @@ white, so that it contrasts with the background, making it clearly visible. The 
 
 ### Typography:
 -  'Roboto' was chosen as the font for throughout the site, with a fallback of 'sans-serif' in case the 'Roboto font doesn't load. Roboto is 
-clean and easy to read, which makes it an appropriate font for the text.
+clean and easy to read, which makes it an appropriate font for the text. For titles on the recipe pages, the font weight was increased to 700 to make it
+stand out more.
+
+### Imagery: 
 
 ### Layout: 
 

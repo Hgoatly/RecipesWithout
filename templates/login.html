@@ -2,14 +2,15 @@
 {% block content %}
 
 <!--form copied from Materialize. Code referneced from the 'task manager' mini project-->
-    <div class="row login brown-text">
-            <section>
+    
+<div class="row login brown-text">
+        <section>
         {% with messages=get_flashed_messages()%}
         {% if messages %}
         {% for message in messages %}
         <div class="row flash-messages">
-            <div class="col s12 m6 offset-m1 center-align">
-                <div class="card-panel title-panel teal lighten-4">
+            <div class="col s12 m6 offset-m3 center-align">
+                <div class="card-panel flash-panel teal lighten-4">
                     <h4 class="center-align brown-text">{{ message }}</h4>
                 </div>
             </div>

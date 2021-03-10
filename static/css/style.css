@@ -429,6 +429,13 @@ h1 {
 .collapsible {
     margin-bottom: 0px;
 }
+
+/*--- Text ---*/
+
+.flash-messages {
+    font-size: 1 rem;
+}
+
 }
 
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
@@ -437,3 +444,5 @@ h1 {
    margin-top: 250px;
 }
 }   
+
+
