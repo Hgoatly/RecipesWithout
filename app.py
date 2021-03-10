@@ -80,6 +80,7 @@ def send_password_reset():
             Hello {name},
             Please Click the link to reset your password:
             https://8080-f4360024-3059-4858-adc7-9d6490572673.ws-eu03.gitpod.io/reset_password
+            https://recipes-without.herokuapp.com/reset_password
             """
             context = ssl.create_default_context()
 
@@ -430,7 +431,6 @@ def admin(username):
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
     recipe = list(mongo.db.recipes.find({"added_by": username}))
-    print(recipe)
     if username == "admin":
         users = mongo.db.users.find()
         return render_template(
