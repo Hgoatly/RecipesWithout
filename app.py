@@ -96,7 +96,7 @@ def send_password_reset():
 
 @app.route("/reset_password_form", methods=["GET", "POST"])
 def reset_password_form():
-    if request.method == "GET":
+    if request.method == "POST":
         return render_template("reset_password")
 
 
@@ -150,7 +150,9 @@ def advanced_search():
             dairy_free_search=dairy_free_search)
 
 
-# This code copied and adapted from an example posted on CI Slack by ShaneMuir_Alumni. Help was also received from Tim Nelson at Tutor Support
+# This code copied and adapted from an example posted on
+# CI Slack by ShaneMuir_Alumni.
+# Help was also received from Tim Nelson at Tutor Support
 @app.route("/upvotes/<recipe_id>")
 def upvotes(recipe_id):
     """Checks if the user already upvoted the recipe
@@ -187,11 +189,14 @@ def upvotes(recipe_id):
                 {"username": session["user"]})["upvotes"]
         except:
             user_upvotes = []
-        return redirect(url_for("recipe", user_upvotes=user_upvotes, recipe_id=recipe_id))
+        return redirect(url_for(
+            "recipe", user_upvotes=user_upvotes, recipe_id=recipe_id))
     return redirect(url_for("recipe"))
 
 
-# This code copied and adapted from an example posted on CI Slack by ShaneMuir_Alumni. Help was also received from Tim Nelson at Tutor Support
+# This code copied and adapted from an example posted on
+# CI Slack by ShaneMuir_Alumni.
+# Help was also received from Tim Nelson at Tutor Support
 @app.route("/downvotes/<recipe_id>")
 def downvotes(recipe_id):
     mongo.db.recipes.find_one_and_update(
@@ -396,7 +401,7 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    if recipe['added_by'] == session["user"]:
+    if recipe['added_by'] == session.get("user", None):
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -557,8 +562,6 @@ def something_wrong(e):
 
 
 if __name__ == "__main__":
-    app.run(
-        host=os.environ.get("IP"),
-        port=int(os.environ.get("PORT")),
-        debug=(os.environ.get("DEBUG") == "True")
-        )
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
