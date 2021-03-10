@@ -1,13 +1,12 @@
-
 <div align="center">
 
-# **Recipes Without**
-    
+# **Recipes Without** 
 ![Recipes Without responsive image display](assets/readme-images/recipes-without-responsive-image.jpg)
 ## A customisable online resource for recipes without gluten, dairy or eggs
+Visit [Recipes Without](https://recipes-without.herokuapp.com/)
 </div>
 
-# **Table of Contents:**
+## **Table of Contents:**
 
 - [Site Owner Goals](#site-owner-goals)
 - [User Experience (UX)](#user-experience-ux)
@@ -20,16 +19,16 @@
     - [Typography](#typography) 
     - [Imagery](#imagery)
     - [Layout](#layout)
-        - [Accessible to all users via the navbar](#Accessible to all users via the navbar)
-        - [Accessible to all users via the search boxes](#Accessible to all users via the search boxes)
-        - [Accessible to all users via the recipe cards](#Accessible to all users via the recipe cards)
-        - [Accessible to registered users via the navbar](#Accessible to registered users via the navbar)
-        - [Accessible to registered users via the My Recipes page](#Accessible to registered users via the My Recipes page)
-        - [Accessible to registered users via the Manage Account page](#Accessible to registered users via the Manage Account page)
-        - [Accessible only to the site owner (admin user)](#Accessible only to the site owner (admin user))
-        - [Error Pages](#Error Pages)
-        - [Additional features available to logged in users](#Additional features available to logged in users)
-        - [Additional features available to any user who is not logged in](#Additional features available to any user who is not logged in)
+        - [Accessible to all users via the navbar](#Accessible-to-all-users-via-the-navbar)
+        - [Accessible to all users via the search boxes](#Accessible-to-all-users-via-the-search-boxes)
+        - [Accessible to all users via the recipe cards](#Accessible-to-all-users-via-the-recipe-cards)
+        - [Accessible to registered users via the navbar](#Accessible-to-registered-users-via-the-navbar)
+        - [Accessible to registered users via the My Recipes page](#Accessible-to-registered-users-via-the-My-Recipes-page)
+        - [Accessible to registered users via the Manage Account page](#Accessible-to-registered-users-via-the-Manage-Account-page)
+        - [Accessible only to the site owner (admin user)](#Accessible-only-to-the-site-owner-(admin-user))
+        - [Error Pages](#Error-Pages)
+        - [Additional features available to logged in users](#Additional-features-available-to-logged-in-users)
+        - [Additional features available to any user who is not logged in](#Additional-features-available-to-any-user-who-is-not-logged-in)
     - [Wireframes](#wireframes)
   - [Features](#features)
     - [Mobile Design Features](#mobile-design-features)
@@ -230,9 +229,10 @@ stand out more.
 The Hero image, background and recipe images were chosen for the site that were considered to be both striking, and appropriate for their context. Although site users 
 can upload their own images to the site, the site owner still has overall control over what is on the site as they have the ability to delete recipes and accounts. 
 
-- **Hero Image:**
+
 ![Recipes Without responsive image display](assets/readme-images/recipes-without-responsive-image.jpg)
-The hero was chosen as a visual metaphor, as it is a picture of an empty space with food/cooking items around the sides. The implication being that the picture is 'without' something.
+- **Hero Image:**
+The hero image was chosen as a visual metaphor, as it is a picture of an empty space with food/cooking items around the sides. The implication being that the picture is 'without' something.
 Although some of the image is cut off on mobile and tablet screens, the developer considers this acceptable because it still looks visually appealing, and the metaphor still works well. 
 The alternative of reducing the size of the image was not acceptable, because in order to make the whole image fit the screen, it was either too small to look good, or it became squashed and elongated.
 - **Background Images:**
