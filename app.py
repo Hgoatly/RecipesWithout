@@ -160,9 +160,10 @@ def upvotes(recipe_id):
         if yes the upvote is taken back and upvote count decreases
         else..."""
     # Get the recipe item
-    mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    # mongo.db.recipes.find_one_and_update({"_id": ObjectId(recipe_id)})
 
     # Get the user
+   # mongo.db.users.find_one({"_id": ObjectId(user_id)})
 
     # Get the upvoted recipes list from the user
 
@@ -172,10 +173,16 @@ def upvotes(recipe_id):
 
     # else
 
+
     mongo.db.recipes.find_one_and_update(
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"upvotes": 1}},
       )
+
+    mongo.db.recipes.find_one_and_update(
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"downvotes": -1}},
+        )
 
     if "user" in session:
         mongo.db.users.find_one_and_update(
@@ -184,7 +191,8 @@ def upvotes(recipe_id):
 
         mongo.db.users.find_one_and_update(
             {"username": session["user"]},
-            {"$pull": {"downvotes": ObjectId(recipe_id)}})
+            {"$push": {"downvotes": ObjectId(recipe_id)}})
+
         try:
             user_upvotes = mongo.db.users.find(
                 {"username": session["user"]})["upvotes"]
@@ -205,17 +213,20 @@ def downvotes(recipe_id):
         {"$inc": {"downvotes": 1}}
         )
 
+    mongo.db.recipes.find_one_and_update(
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"upvotes": -1}},
+      )
     if "user" in session:
         mongo.db.users.find_one_and_update(
             {"username": session["user"]},
             {"$push": {"downvotes": ObjectId(recipe_id)}})
-
         mongo.db.users.find_one_and_update(
             {"username": session["user"]},
-            {"$pull": {"upvotes": ObjectId(recipe_id)}})
+            {"$push": {"upvotes": ObjectId(recipe_id)}})
         try:
             user_downvotes = mongo.db.users.find(
-                {"username": session["user"]})["upvotes"]
+                {"username": session["user"]})["downvotes"]
         except:
             user_downvotes = []
         return redirect(url_for(
@@ -240,17 +251,21 @@ def register():
         memorable_name = request.form.get("memorable-name")
         username = request.form.get("username")
 
+        # check if password doesn't match confirm password
         if password != confirm_password:
             flash("Please ensure that your passwords match.")
             return redirect(url_for("register"))
 
+        # check if memorable name matches username
         if memorable_name == username:
             flash("Please chose a unique Memorable Name")
 
+        # check if memorable name matches password
         elif memorable_name == password:
             flash("Please chose a unique Memorable Name")
             return redirect(url_for("register"))
 
+        # check if password and confirm password match
         if password == confirm_password:
 
             register = {
@@ -489,19 +504,19 @@ def egg_free():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    if "user" in session:
-        try:
-            user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
-            user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
-        except:
-            user_upvotes = []
-            user_downvotes = []
-        return render_template(
-            "recipe.html", recipes=recipes,
-            user_upvotes=user_upvotes, user_downvotes=user_downvotes)
-    else:
-        return render_template(
-            "recipe.html", recipes=recipes)
+#    if "user" in session:
+#        try:
+#            user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
+#            user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
+#        except:
+#            user_upvotes = []
+#            user_downvotes = []
+#        return render_template(
+#            "recipe.html", recipes=recipes,
+#            user_upvotes=user_upvotes, user_downvotes=user_downvotes)
+#    else:
+    return render_template(
+        "recipe.html", recipes=recipes)
 
 
 @app.route("/gluten_free_recipe/<recipe_id>")
