@@ -39,4 +39,5 @@ There was, however, a warning on all pages that display flash messages. This is 
 ## W3C CSS Validation Service: 
 
 - The [W3C-CSS-Validation-Service](https://jigsaw.w3.org/) was used to check that CSS used on the site was compliant with modern standards. The code passed the 
-validator's tests with no errors. 
+validator's tests with no errors or warnings. 
+![Screenshot of the W3 CSS validator results](assets/readme-images/w3c-css-validator-results.jpg "Screenshot of the W3 HTML validator results")
