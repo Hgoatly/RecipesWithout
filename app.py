@@ -1,5 +1,6 @@
 import os
-import smtplib, ssl
+import smtplib
+import ssl
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -145,8 +146,6 @@ def login():
     return render_template("login.html")
 
 
-# This section copied and adapted from
-# https://realpython.com/lessons/sending-plaintext-emails-python/
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -154,24 +153,21 @@ def contact():
         port = 465
         sender = "recipetest17@gmail.com"
         password = os.environ.get("PASSWORD")
-
         name = request.form["name"]
         email = request.form["email"]
-
         receiver = "recipetest579@gmail.com"
-
         message = f"""\
         From: "{name}"
 
         Email from {email}
+
         {request.form['message']}
         """
-
         context = ssl.create_default_context()
-
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
             server.login(sender, password)
             server.sendmail(sender, receiver, message)
+
         flash("Your email has been sent")
     return render_template("contact.html")
 
