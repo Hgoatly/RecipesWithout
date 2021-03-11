@@ -22,102 +22,12 @@ now = datetime.now()
 date_time = now.strftime("%d %B %Y")
 
 
-# This section copied and adapted from
-# https://realpython.com/lessons/sending-plaintext-emails-python/
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        smtp_server = "smtp.gmail.com"
-        port = 465
-        sender = "recipetest17@gmail.com"
-        password = os.environ.get("PASSWORD")
-
-        name = request.form["name"]
-        email = request.form["email"]
-
-        receiver = "recipetest579@gmail.com"
-
-        message = f"""\
-        From: "{name}"
-
-        Email from {email}
-        {request.form['message']}
-        """
-
-        context = ssl.create_default_context()
-
-        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-            server.login(sender, password)
-            server.sendmail(sender, receiver, message)
-        flash("Your email has been sent")
-    return render_template("contact.html")
-
-
-# This section copied and adapted from
-# https://realpython.com/lessons/sending-plaintext-emails-python/
-@app.route("/send_password_reset", methods=["GET", "POST"])
-def send_password_reset():
-    if request.method == "POST":
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username1").lower()})
-        email = mongo.db.users.find_one(
-            {"email-address": request.form.get("email1")})
-        if existing_user and email:
-            smtp_server = "smtp.gmail.com"
-            port = 465
-            sender = "recipetest17@gmail.com"
-            password = os.environ.get("PASSWORD")
-
-            name = request.form["username1"]
-            email = "recipetest579@gmail.com"
-
-            receiver = request.form["email1"]
-
-            message = f"""\
-            From: "Recipes Without"
-
-            Email from {email}
-            Hello {name},
-            Please Click the link to reset your password:
-            https://8080-f4360024-3059-4858-adc7-9d6490572673.ws-eu03.gitpod.io/reset_password
-            https://recipes-without.herokuapp.com/reset_password
-            """
-            context = ssl.create_default_context()
-
-            with smtplib.SMTP_SSL(
-                    smtp_server, port, context=context) as server:
-
-                server.login(sender, password)
-                server.sendmail(sender, receiver, message)
-            flash("Password reset link has been sent")
-        else:
-            flash("Incorrect Username or Password")
-    return render_template("send_password_reset.html")
-
-
-@app.route("/reset_password_form", methods=["GET", "POST"])
-def reset_password_form():
-    if request.method == "POST":
-        return render_template("reset_password")
-
-
 @app.route("/")
 @app.route("/home")
 def home():
     recipes = list(
         [recipe for recipe in mongo.db.recipes.aggregate(
             [{"$sample": {"size": 9}}])])
-    
-#    if "user" in session:
- #       try:
-  #          user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
-   #         user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
-  #      except:
-  #          user_upvotes = []
-  #          user_downvotes = []
-  #      return render_template(
-  #          "home.html", recipes=recipes,
-  #          user_upvotes=user_upvotes, user_downvotes=user_downvotes)
 
     return render_template("home.html", recipes=recipes)
 
@@ -149,88 +59,6 @@ def advanced_search():
             gluten_free_search=gluten_free_search,
             egg_free_search=egg_free_search,
             dairy_free_search=dairy_free_search)
-
-
-# This code copied and adapted from an example posted on
-# CI Slack by ShaneMuir_Alumni.
-# Help was also received from Tim Nelson at Tutor Support
-@app.route("/upvotes/<recipe_id>")
-def upvotes(recipe_id):
-    """Checks if the user already upvoted the recipe
-        if yes the upvote is taken back and upvote count decreases
-        else..."""
-    # Get the recipe item
-    # mongo.db.recipes.find_one_and_update({"_id": ObjectId(recipe_id)})
-
-    # Get the user
-   # mongo.db.users.find_one({"_id": ObjectId(user_id)})
-
-    # Get the upvoted recipes list from the user
-
-    # Compare the incoming recipe to the list
-
-    # if already in list
-
-    # else
-
-    mongo.db.recipes.find_one_and_update(
-        {"_id": ObjectId(recipe_id)},
-        {"$inc": {"upvotes": 1}},
-      )
-
-   # mongo.db.recipes.find_one_and_update(
-    #    {"_id": ObjectId(recipe_id)},
-     #   {"$inc": {"downvotes": -1}},
-      #  )
-
-    if "user" in session:
-        mongo.db.users.find_one_and_update(
-            {"username": session["user"]},
-            {"$push": {"upvotes": ObjectId(recipe_id)}})
-
-        mongo.db.users.find_one_and_update(
-            {"username": session["user"]},
-            {"$pull": {"downvotes": ObjectId(recipe_id)}})
-
-        try:
-            user_upvotes = mongo.db.users.find(
-                {"username": session["user"]})["upvotes"]
-        except:
-            user_upvotes = []
-        return redirect(url_for(
-            "recipe", user_upvotes=user_upvotes, recipe_id=recipe_id))
-    return redirect(url_for("recipe"))
-
-
-# This code copied and adapted from an example posted on
-# CI Slack by ShaneMuir_Alumni.
-# Help was also received from Tim Nelson at Tutor Support
-@app.route("/downvotes/<recipe_id>")
-def downvotes(recipe_id):
-    mongo.db.recipes.find_one_and_update(
-        {"_id": ObjectId(recipe_id)},
-        {"$inc": {"downvotes": 1}}
-        )
-
-  #  mongo.db.recipes.find_one_and_update(
-   #     {"_id": ObjectId(recipe_id)},
-    #    {"$inc": {"upvotes": -1}},
-     # )
-    if "user" in session:
-        mongo.db.users.find_one_and_update(
-            {"username": session["user"]},
-            {"$push": {"downvotes": ObjectId(recipe_id)}})
-        mongo.db.users.find_one_and_update(
-            {"username": session["user"]},
-            {"$pull": {"upvotes": ObjectId(recipe_id)}})
-        try:
-            user_downvotes = mongo.db.users.find(
-                {"username": session["user"]})["downvotes"]
-        except:
-            user_downvotes = []
-        return redirect(url_for(
-            "recipe", user_downvotes=user_downvotes, recipe_id=recipe_id))
-    return redirect(url_for("recipe"))
 
 
 # code copied and adapted from 'Task Manager' mini project.
@@ -317,6 +145,79 @@ def login():
     return render_template("login.html")
 
 
+# This section copied and adapted from
+# https://realpython.com/lessons/sending-plaintext-emails-python/
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        smtp_server = "smtp.gmail.com"
+        port = 465
+        sender = "recipetest17@gmail.com"
+        password = os.environ.get("PASSWORD")
+
+        name = request.form["name"]
+        email = request.form["email"]
+
+        receiver = "recipetest579@gmail.com"
+
+        message = f"""\
+        From: "{name}"
+
+        Email from {email}
+        {request.form['message']}
+        """
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(sender, password)
+            server.sendmail(sender, receiver, message)
+        flash("Your email has been sent")
+    return render_template("contact.html")
+
+
+# This section copied and adapted from
+# https://realpython.com/lessons/sending-plaintext-emails-python/
+@app.route("/send_password_reset", methods=["GET", "POST"])
+def send_password_reset():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username1").lower()})
+        email = mongo.db.users.find_one(
+            {"email-address": request.form.get("email1")})
+        if existing_user and email:
+            smtp_server = "smtp.gmail.com"
+            port = 465
+            sender = "recipetest17@gmail.com"
+            password = os.environ.get("PASSWORD")
+
+            name = request.form["username1"]
+            email = "recipetest579@gmail.com"
+
+            receiver = request.form["email1"]
+
+            message = f"""\
+            From: "Recipes Without"
+
+            Email from {email}
+            Hello {name},
+            Please Click the link to reset your password:
+            https://8080-f4360024-3059-4858-adc7-9d6490572673.ws-eu03.gitpod.io/reset_password
+            https://recipes-without.herokuapp.com/reset_password
+            """
+            context = ssl.create_default_context()
+
+            with smtplib.SMTP_SSL(
+                    smtp_server, port, context=context) as server:
+
+                server.login(sender, password)
+                server.sendmail(sender, receiver, message)
+            flash("Password reset link has been sent")
+        else:
+            flash("Incorrect Username or Password")
+    return render_template("send_password_reset.html")
+
+
 @app.route("/reset_password", methods=["GET", "POST"])
 def reset_password():
     if request.method == "POST":
@@ -349,6 +250,12 @@ def reset_password():
             return redirect(url_for("login"))
 
     return render_template("reset_password.html")
+
+
+@app.route("/reset_password_form", methods=["GET", "POST"])
+def reset_password_form():
+    if request.method == "POST":
+        return render_template("reset_password")
 
 
 @app.route("/manage_account/<username>")
@@ -503,19 +410,65 @@ def egg_free():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-#    if "user" in session:
-#        try:
-#            user_upvotes = mongo.db.users.find_one({"username": session["user"]})["upvotes"]
-#            user_downvotes = mongo.db.users.find_one({"username": session["user"]})["downvotes"]
-#        except:
-#            user_upvotes = []
-#            user_downvotes = []
-#        return render_template(
-#            "recipe.html", recipes=recipes,
-#            user_upvotes=user_upvotes, user_downvotes=user_downvotes)
-#    else:
     return render_template(
         "recipe.html", recipes=recipes)
+
+
+# This code copied and adapted from an example posted on
+# CI Slack by ShaneMuir_Alumni.
+# Help was also received from Tim Nelson at Tutor Support
+@app.route("/upvotes/<recipe_id>")
+def upvotes(recipe_id):
+
+    mongo.db.recipes.find_one_and_update(
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"upvotes": 1}},
+      )
+
+    if "user" in session:
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$push": {"upvotes": ObjectId(recipe_id)}})
+
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$pull": {"downvotes": ObjectId(recipe_id)}})
+
+        try:
+            user_upvotes = mongo.db.users.find(
+                {"username": session["user"]})["upvotes"]
+        except:
+            user_upvotes = []
+        return redirect(url_for(
+            "recipe", user_upvotes=user_upvotes, recipe_id=recipe_id))
+    return redirect(url_for("recipe"))
+
+
+# This code copied and adapted from an example posted on
+# CI Slack by ShaneMuir_Alumni.
+# Help was also received from Tim Nelson at Tutor Support
+@app.route("/downvotes/<recipe_id>")
+def downvotes(recipe_id):
+    mongo.db.recipes.find_one_and_update(
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"downvotes": 1}}
+        )
+
+    if "user" in session:
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$push": {"downvotes": ObjectId(recipe_id)}})
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"]},
+            {"$pull": {"upvotes": ObjectId(recipe_id)}})
+        try:
+            user_downvotes = mongo.db.users.find(
+                {"username": session["user"]})["downvotes"]
+        except:
+            user_downvotes = []
+        return redirect(url_for(
+            "recipe", user_downvotes=user_downvotes, recipe_id=recipe_id))
+    return redirect(url_for("recipe"))
 
 
 @app.route("/gluten_free_recipe/<recipe_id>")

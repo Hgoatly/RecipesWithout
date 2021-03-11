@@ -7,7 +7,7 @@
     {% for message in messages %}
     <div class="row flash-messages">
         <div class="col s12 m6 offset-m3 center-align">
-            <div class="card-panel teal lighten-3">
+            <div class="card-panel teal lighten-4">
                 <h4 class="center-align brown-text">{{ message }}</h4>
             </div>
         </div>
@@ -39,7 +39,7 @@
                     <div class="input-field col s8 offset-s2">
                         <i class="fas fa-comment prefix brown-text"></i>
                         <textarea id="message" name="message" minlength="10" maxlength="1000"
-                            class="materialize-textarea validate" required></textarea>
+                            class="materialize-textarea validate" required=""></textarea>
                         <label for="message">Message</label>
                     </div>
                 </div>
