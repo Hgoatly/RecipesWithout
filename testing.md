@@ -138,6 +138,14 @@ be suitable for diners with intolerances to gluten, dairy or eggs.
 
 ![Screenshot of recipe cards on egg free.html](assets/readme-images/egg-free-recipe-cards.jpg)
 
+- Navigate to Gluten Free, Egg Free or Dairy Free pages
+
+- **Test Case 5**
+    - Ensure that the view recipe button on each card navigates the user to 'gluten_free_recipe.html', 'egg_free_recipe.html' or 'dairy_free_recipe.html',
+    - **Expected Result**: 'view recipe' button should operate as described above.
+    - **Actual Result**: 'view recipe' button operates as described above.
+    - **Pass/Fail**: Pass.
+
 ### **Create:** User stories 4 and 5 are concerned with being able to create data on the site. This stage of user story testing is 
 concerned with logged in and registered users:
 
@@ -148,7 +156,7 @@ so that I can access them from anywhere.
 
 - Navigate to 'register' by clicking the 'register' link on the navbar or on the footer. 
 
- - **Test Case 5**
+ - **Test Case 6**
     - Ensure that the the register card panel is rendered in front of the background image. The following fields should be displayed:
     username, email address, memorable name, password, and compare password.
     - **Expected Result**: register.html page should render as described above.
@@ -158,7 +166,7 @@ so that I can access them from anywhere.
 ![Screenshot of register card panel on register.html](assets/readme-images/register-card-panel.jpg)
 
 - Complete the 'Register' form.
-    - **Test Case 6**
+    - **Test Case 7*
     - Ensure that submit button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
     is not followed.
     - **Expected Result**: register.html page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked.
@@ -167,7 +175,7 @@ so that I can access them from anywhere.
 
 - Navigate to 'Add Recipes' by clicking on the navbar link, or on the 'Add Recipe' button that is displayed when the 'My Recipes' page shows no recipes.
 
-- **Test Case 7**
+- **Test Case 8**
     - Ensure that the the Add Recipes card panel is rendered in front of the background image. The following fields should be displayed:
     username, email address, memorable name, password, and compare password.
     - **Expected Result**: register.html page should render as described above.
@@ -178,7 +186,7 @@ so that I can access them from anywhere.
 ![Screenshot of bottom half of 'Add Recipes' card panel on add_recipes.html](assets/readme-images/add-recipe-bottom-screenshot.jpg)
 
 - Complete the 'Add Recipe' form.
-    - **Test Case 8**
+    - **Test Case 9**
     - Ensure that submit ('Add Recipe') button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
     is not followed, and that the 'Add Recipe' button takes the user to the 'my recipes' page, where the newly added recipe is displayed.
     - **Expected Result**: 'add_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
@@ -188,7 +196,7 @@ so that I can access them from anywhere.
     - **Pass/Fail**: Pass.
 
 - Navigate to 'My Recipes' by submitting the 'Add Recipes' form, registering, logging in, or by clicking the navbar link:
-     - **Test Case 9**
+    - **Test Case 10**
     - Ensure that if the user has uploaded any recipes, all user recipe cards render as expected, with title, image, date recipe was added, 'view recipe', 'edit recipe' and 'delete' button, number of upvotes, 
     and number of downvotes displayed on them.
     - **Expected Result**: my_recipes.html page should render as described above.
@@ -197,12 +205,52 @@ so that I can access them from anywhere.
 
 ![Screenshot of recipe cards on my_recipes.html](assets/readme-images/my-recipes-cards-screenshot.jpg)
 
+### **Update:** User stories 4, 6 and 7 are concerned with being able to update data on the site. This stage of user story testing is 
+concerned with logged in and registered users:
+
 - Navigate to 'Edit Recipe' by clicking on one of the 'edit recipe' buttons located on recipe cards on the 'My Recipes' page.
-     - **Test Case 10**
+    - **Test Case 11**
     - Ensure that the 'Edit Recipe' on the recipe cards button take the user to 'edit_recipes.html' when clicked. Ensure that form validation is present when the expected format
     is not followed, and that the 'Edit Recipe' button displays the flash message ' the user to the 'my recipes' page, where the newly added recipe is displayed.
-    - **Expected Result**: 'add_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
-    where the newly uploaded recipe is displayed.
-    - **Actual Result**: 'add_recipes.html' page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked, 
-    where the newly uploaded recipe is displayed.
+    - **Expected Result**: 'edit_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
+    where the newly uploaded recipe is displayed, and the flash message is displayed.
+    - **Actual Result**: 'edit_recipes.html' page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked, 
+    where the newly edited recipe is displayed.
     - **Pass/Fail**: Pass.
+
+- Navigate to 'My Recipes' by submitting the 'Add Recipes' form, registering, logging in, or by clicking the navbar link. From there, click on 
+'view recipe' in order to navigate to 'recipe.html' 
+    - **Test Case 12:**
+    - Ensure that thumbs up (upvote) and thumbs down (downvote) buttons are present at the bottom of the card panel. Ensure that when clicked they increment the upvotes/downvotes 
+    displayed on the page.
+    - **Expected Result:** 'Upvote' and 'downvote' buttons are present at the bottom of the card panel. When clicked they increment the upvotes/downvotes 
+    displayed on the page.
+    - **Actual Result:** 'Upvote' and 'downvote' buttons are present at the bottom of the card panel. When clicked they increment the upvotes/downvotes 
+    displayed on the page.
+
+![Screenshot of upvotes/downvotes on recipe.html](assets/readme-images/votes.jpg)
+
+- Navigate to 'My Recipes' by submitting the 'Add Recipes' form, registering, logging in, or by clicking the navbar link.
+    - **Test Case 13:**
+    - Ensure that a 'delete' button is present on each recipe card, and that when clicked it opens a modal, which says: 'Confirm Delete
+    Are you sure you want to delete this recipe?'. Below are these options: 'Yes I'm Sure' and ' Cancel'. Ensure that when clicked, 'cancel' 
+    closes the modal and returns the user back to their 'my recipe' page, 
+    and that when 'yes I'm sure' is clicked, the recipe is deleted, and a flash message is displayed confirming this.
+    - **Expected Result:** A modal is triggered when 'delete' is clicked, which invites the user to cancel the action, or confirm that they want to delete the recipe.
+    - **Actual Result:** A modal is triggered when 'delete' is clicked, which invites the user to cancel the action, or confirm that they want to delete the recipe.
+
+## **Delete:** User stories 7 and 8 are concerned with being able to delete data from the site:
+
+7. I am a user who no longer wants to use the site, so I would like to be able to delete my account.
+8. I am the site owner, and I would like to be able to edit or delete other users recipes if I decide that they are inappropriate 
+or offensive.
+
+- Navigate to 'Manage Account' by clicking the navbar link.
+    - **Test Case 14:**
+    - Ensure that when clicked, the 'Manage Account' link takes the user to their 'manage account' page, where a card panel is displayed with 'my recipes' and 
+    'delete account' buttons are displayed. Ensure that when 'my recipes' is clicked, it takes the user to their 'my recipes' page. Ensure that when 
+    'delete account' is clicked, a modal opens which asks: 'Confirm Delete Are you sure you want to delete your account?' When 'cancel' is clicked,
+    ensure that the modal is closed, and the user is returned to their 'manage account' page. Ensure that when 'Yes I'm Sure' is clicked, the account is deleted.
+    - **Expected Result:** Actions taken are as detailed above.
+    - **Actual result: ** Actions taken are as detailed above.
+    

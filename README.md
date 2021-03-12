@@ -114,11 +114,12 @@ users being able to tamper with them.
 so that I can access them from anywhere.
 6. I am a user who has tried some of the recipes on the site, and would like to be able to upvote or downvote the ones that I have tried
 so that I can recommend them to other site visitors.
-7. I am the site owner, and I would like to be able to edit or delete other users recipes if I decide that they are inappropriate 
+7. I am a user who no longer wants to use the site, so I would like to be able to delete my account.
+8. I am the site owner, and I would like to be able to edit or delete other users recipes if I decide that they are inappropriate 
 or offensive.
-8. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
-9. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
-10. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
+9. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
+10. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
+11. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
 
 ### Design: 
 
