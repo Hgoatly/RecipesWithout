@@ -330,6 +330,10 @@ img {
     position: relative;
     }
 
+.collapsible {
+    margin-bottom: 0px;
+}
+
 .collapsible-body {
     padding: 0px;
 }
@@ -421,10 +425,6 @@ h1 {
 .my-recipes {
     padding-right: 0px;
     padding-bottom: 0px;
-}
-
-.collapsible {
-    margin-bottom: 0px;
 }
 
 /*--- Text ---*/

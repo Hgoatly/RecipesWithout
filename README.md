@@ -446,11 +446,8 @@ However, I believe it to be better UX for it to be invisible until the user scro
 me to be able to debug it at a later date.
 
 - **Scroll to Top Button:** When the site is viewed on iOs 14.4, the scroll to top button is visible until it's clicked. Once clicked, it 
-disappears. I fixed this by adding a media query that disables the scroll to top button on iOs devices.
-
-
-
-
+disappears. I fixed this by adding a media query that disables the scroll to top button on iOs devices, as it didn't look very visually 
+appealing on a smaller screen anyway.
 
 ## Deployment: 
 
