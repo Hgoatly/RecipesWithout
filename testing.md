@@ -13,10 +13,6 @@ The Recipes Without site was tested extensively, using the following processes:
   - [Read](#read)
   - [Update](#update)
   - [Delete](#delete)
-  - [Book](#book)
-  - [Map](#map)
-  - [Contact](#contact)
-- [Testing the Swedish Content](#testing-the-swedish-content)
 - [Testing the Visitor Goals](#testing-the-visitor-goals)
   - [First Time Visitor Goals](#first-time-visitor-goals)
   - [Returning Visitor Goals](#returning-visitor-goals)
@@ -227,6 +223,7 @@ concerned with logged in and registered users:
     displayed on the page.
     - **Actual Result:** 'Upvote' and 'downvote' buttons are present at the bottom of the card panel. When clicked they increment the upvotes/downvotes 
     displayed on the page.
+    - **Pass/Fail**: Pass.
 
 ![Screenshot of upvotes/downvotes on recipe.html](assets/readme-images/votes.jpg)
 
@@ -238,6 +235,7 @@ concerned with logged in and registered users:
     and that when 'yes I'm sure' is clicked, the recipe is deleted, and a flash message is displayed confirming this.
     - **Expected Result:** A modal is triggered when 'delete' is clicked, which invites the user to cancel the action, or confirm that they want to delete the recipe.
     - **Actual Result:** A modal is triggered when 'delete' is clicked, which invites the user to cancel the action, or confirm that they want to delete the recipe.
+    - **Pass/Fail**: Pass.
 
 ## **Delete:** User stories 7 and 8 are concerned with being able to delete data from the site:
 
@@ -253,4 +251,69 @@ or offensive.
     ensure that the modal is closed, and the user is returned to their 'manage account' page. Ensure that when 'Yes I'm Sure' is clicked, the account is deleted.
     - **Expected Result:** Actions taken are as detailed above.
     - **Actual result: ** Actions taken are as detailed above.
-    
+    - **Pass/Fail**: Pass.
+
+### **If the site owner is logged in:** 
+
+- Navigate to 'Admin Section' via the navbar.
+    - **Test Case 15:**
+    - Ensure that when clicked, the 'Admin Section' link takes the user to 'admin.html', and that the card panel at the top of the page says
+    'Admin Section', with a button that links to all of the site owner's recipes. Ensure that below, all user accounts are displayed on separate card panels
+    with button-links to 'User's Recipes' and 'Delete Account'.
+    - **Expected Result:** 'admin.html' will display card panels for each user, with links to all their recipes, and a delete button.
+    - **Actual Result:** 'admin.html' displays card panels for each user with links to all their recipes, and a delete button.
+    - **Pass/Fail**: Pass.
+
+![Screenshot of card panels on admin.html](assets/readme-images/admin-section.jpg)
+
+    - **Test Case 16:**
+    - Ensure that when clicked, the 'Admin's Recipes' and 'User Recipes' cards navigate the user to 'user_recipes.html' 
+    - **Expected Result:** 'Admin's Recipes' and 'User Recipes' buttons navigate the user to 'user_recipes.html'
+    - **Actual Result:** ''Admin's Recipes' and 'User Recipes' buttons navigate the user to 'user_recipes.html'.
+    - **Pass/Fail**: Pass.
+
+    - **Test Case 17:** 
+    - Ensure that when clicked, the 'delete account' button opens a modal that says: 'Confirm Delete Are you sure you want to delete this account?'
+    Ensure that 'yes I'm sure' and 'cancel' buttons are displayed. Ensure that when 'yes I'm sure' is clicked, the account is deleted, and that when 
+    'cancel' is clicked, the modal will close, and return the site owner to 'admin.html'.
+    - **Expected Result:** The buttons will perform as described above.
+    - **Expected Result:** The buttons perform as described above.
+    - **Pass/Fail**: Pass.
+
+![Screenshot of confirm delete modal](assets/readme-images/confirm-delete-modal.jpg)  
+![Screenshot of admin section with deleted account removed](assets/readme-images/account-deleted.jpg) 
+
+## User story 9 is concerned with being able to read data that has been uploaded to the site. It is also concerned with one 
+of the business owner's goals:
+
+9. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
+
+'The site has one main goal, which is to collect recipies in order to publish them in a physical book at a later date.
+The site will be populated by recipes uploaded by users, using the CRUD functionality.'
+
+The fact that the recipes will be used to create a book is explained in the welcome text on the homepage
+
+![Screenshot of welcome text sentence](assets/readme-images/publication-text.jpg) 
+
+- **Test Case 18:** 
+    - Ensure that registered and logged in users are able to upload recipes to the site.
+    - **Expected Result:** registered and logged in users are able to upload recipes to the site.
+    - **Actual Result:** registered and logged in users are able to upload recipes to the site.
+    - **Pass/Fail**: Pass.
+
+
+## User story 10 is concerned with being able to contact the site owner:
+
+- Navigate to the contact page, by clicking the link on the navbar or the footer.
+- **Test Case 19:** 
+    - Ensure that any user is able to contact the site user via the contact form.
+    - **Expected Result:** When the contact form is submitted, the site owner's email (recipetest579@gmail.com) 
+    recieves an email from the site, and a flash message on the contact page confirms that an email has been sent.
+    - **Actual Result:** When the contact form is submitted, the site owner's email (recipetest579@gmail.com) 
+    recieves an email from the site, and a flash message on the contact page confirms that an email has been sent.
+    - **Pass/Fail**: Pass.
+
+
+
+
+
