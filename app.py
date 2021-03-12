@@ -42,26 +42,6 @@ def search():
             "search_results.html", recipes=recipes)
 
 
-@app.route("/advanced_search", methods=["GET", "POST"])
-def advanced_search():
-    if request.method == "POST":
-        gluten_free_search = mongo.db.recipes.find(
-            {"category_name": {"$gt": "Gluten Free"}})
-        dairy_free_search = mongo.db.recipes.find(
-            {"category_name": "Dairy Free"})
-        egg_free_search = mongo.db.recipes.find(
-            {"category_name": "Egg Free"})
-        query = request.form.get("advanced-query")
-        recipes = list(mongo.db.recipes.find(
-            {"$text": {"$search": query}}))
-
-        return render_template(
-            "search_results.html", recipes=recipes,
-            gluten_free_search=gluten_free_search,
-            egg_free_search=egg_free_search,
-            dairy_free_search=dairy_free_search)
-
-
 # code copied and adapted from 'Task Manager' mini project.
 @app.route("/register", methods=["GET", "POST"])
 def register():
