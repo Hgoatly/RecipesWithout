@@ -1,23 +1,23 @@
-  $(document).ready(function(){
-    
+$(document).ready(function () {
+
     // code copied from materialize
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('#method').val();
     $('select').formSelect();
-    $('.slider').slider({full_width: true});
+    $('.slider').slider({ full_width: true });
     $('.modal').modal();
     $('.collapsible').collapsible();
     // end of copied code
-   
+
     //setTimout method removes flashed messages after 10 seconds.
-    setTimeout(function() {
-    $('.flash-messages').remove();
-    }, 10000); 
-    
+    setTimeout(function () {
+        $('.flash-messages').remove();
+    }, 10000);
+
     // code copied from CI 'Task Manager' mini project
     // custom code for Materialize select dropdown element
-     validateMaterializeSelect();
+    validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
         let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
@@ -44,7 +44,7 @@
             }
         });
     }
-  });
+});
 
 // scroll to top button for all pages. To be found on 'base.html' template.
 
@@ -52,37 +52,37 @@
 mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction();};
+window.onscroll = function () { scrollFunction(); };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 
 document.getElementById("advanced-search-box").style.display = "none";
-document.getElementById("show-advanced-search").addEventListener("click", function() {
-document.getElementById("search-box").style.display = "none";
-document.getElementById("show-advanced-search").style.display = "none";
-document.getElementById("show-basic-search").style.display = "inline";
-document.getElementById("advanced-search-box").style.display = "inline";
+document.getElementById("show-advanced-search").addEventListener("click", function () {
+    document.getElementById("search-box").style.display = "none";
+    document.getElementById("show-advanced-search").style.display = "none";
+    document.getElementById("show-basic-search").style.display = "inline";
+    document.getElementById("advanced-search-box").style.display = "inline";
 
-});  
+});
 
 document.getElementById("show-basic-search").style.display = "none";
-document.getElementById("show-basic-search").addEventListener("click", function() {
-document.getElementById("search-box").style.display = "inline";
-document.getElementById("show-advanced-search").style.display = "inline";
-document.getElementById("show-basic-search").style.display = "none";
-document.getElementById("advanced-search-box").style.display = "none";
+document.getElementById("show-basic-search").addEventListener("click", function () {
+    document.getElementById("search-box").style.display = "inline";
+    document.getElementById("show-advanced-search").style.display = "inline";
+    document.getElementById("show-basic-search").style.display = "none";
+    document.getElementById("advanced-search-box").style.display = "none";
 
 });
