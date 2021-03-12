@@ -111,12 +111,14 @@ be suitable for diners with intolerances to gluten, dairy or eggs.
 4. I am any of the above users, and I would like to be able to upload, edit and delete my own recipes, without other 
 users being able to tamper with them.
 5. I am a user who enjoys cooking, and I would like to have all of my favourite recipes easily accessible in a digital format, 
-so that I can access them fromm anywhere.
-6. I am the site owner, and I would like to be able to edit or delete other users recipes if I decide that they are inappropriate 
+so that I can access them from anywhere.
+6. I am a user who has tried some of the recipes on the site, and would like to be able to upvote or downvote the ones that I have tried
+so that I can recommend them to other site visitors.
+7. I am the site owner, and I would like to be able to edit or delete other users recipes if I decide that they are inappropriate 
 or offensive.
-7. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
-8. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
-9. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
+8. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
+9. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
+10. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
 
 ### Design: 
 
