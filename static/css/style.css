@@ -427,6 +427,10 @@ h1 {
     padding-bottom: 0px;
 }
 
+.btn {
+    margin-top: 20px;
+}
+
 /*--- Text ---*/
 
 .flash-messages {
@@ -447,3 +451,4 @@ h1 {
     #myBtn {
   display: none;
     }
+}
