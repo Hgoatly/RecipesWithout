@@ -330,7 +330,7 @@ The fact that the recipes will be used to create a book is explained in the welc
 
 - **Test Case 20:** 
     - Ensure that when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
-    If no results are found, then the user is informed by text saying
+    If no results are found, then the user is informed by text saying 'Sorry. No recipes found.'
     - **Expected Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
     If no result is found, the user is informed that that is the case.
     - **Actual Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
@@ -343,15 +343,16 @@ The fact that the recipes will be used to create a book is explained in the welc
 ## **Reset Password:** user story 12 is concerned with a user being able to reset their password if they have forgotten it:
 
 - Navigate to the login page, by clicking the link on the navbar. Click the 'reset' button under the text that says 'Forgotten Password?'
-When clicked, 
+When clicked, ensure that the user is taken to 'reset_password.html.' 
 
 - **Test Case 20:** 
-    - Ensure that when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
-    If no results are found, then the user is informed by text saying
-    - **Expected Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
-    If no result is found, the user is informed that that is the case.
-    - **Actual Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
-    If no result is found, the user is informed that that is the case.
+    - Ensure that When the form has been filled out and submitted, ensure that a flash message is 
+displayed confirming that the email has been sent. Check email inbox to ensure that email has been received.
+    - **Expected Result:** Email will have been sent by recipetest579@gmail.com email account, and received by the user's email account. 
+    Don't forget to check your junk or spam folder.
+    - **Actual Result:**Email will have been sent by recipetest579@gmail.com email account, and received by the user's email account
+    Don't forget to check your junk or spam folder.
     - **Pass/Fail**: Pass.
 
-
+![Screenshot of completed reset password form](assets/readme-images/completed-reset-password-form.jpg)
+![Screenshot of confirmation of password reset link sent](assets/readme-images/confirm-reset-sent.jpg)

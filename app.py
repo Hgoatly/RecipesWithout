@@ -198,7 +198,6 @@ def send_password_reset():
             Email from {email}
             Hello {name},
             Please Click the link to reset your password:
-            https://8080-f4360024-3059-4858-adc7-9d6490572673.ws-eu03.gitpod.io/reset_password
             https://recipes-without.herokuapp.com/reset_password
             """
             context = ssl.create_default_context()
