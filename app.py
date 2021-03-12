@@ -188,7 +188,7 @@ def send_password_reset():
             password = os.environ.get("PASSWORD")
 
             name = request.form["username1"]
-            email = "recipetest579@gmail.com"
+            email = "recipetest17@gmail.com"
 
             receiver = request.form["email1"]
 
