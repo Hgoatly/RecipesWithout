@@ -141,6 +141,11 @@ be suitable for diners with intolerances to gluten, dairy or eggs.
 ### **Create:** User stories 4 and 5 are concerned with being able to create data on the site. This stage of user story testing is 
 concerned with logged in and registered users:
 
+4. I am any of the above users, and I would like to be able to upload, edit and delete my own recipes, without other 
+users being able to tamper with them.
+5. I am a user who enjoys cooking, and I would like to have all of my favourite recipes easily accessible in a digital format, 
+so that I can access them from anywhere.
+
 - Navigate to 'register' by clicking the 'register' link on the navbar or on the footer. 
 
  - **Test Case 5**
@@ -153,10 +158,21 @@ concerned with logged in and registered users:
 ![Screenshot of register card panel on egg register.html](assets/readme-images/register-card-panel.jpg)
 
 - Complete the 'Register' form.
-    - **Test Case 5**
+    - **Test Case 6**
     - Ensure that submit button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
     is not followed.
     - **Expected Result**: register.html page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked.
     - **Actual Result**: register.html page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked.
     - **Pass/Fail**: Pass.
 
+- Navigate to 'Add Recipes' by clicking on the navbar link, or on the 'Add Recipe' button that is displayed when the 'My Recipes' page shows no recipes.
+
+- Complete the 'Add Recipe' form.
+    - **Test Case 7**
+    - Ensure that submit button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
+    is not followed.
+    - **Expected Result**: 'add_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
+    where the newly uploaded recipe is displayed.
+    - **Actual Result**: 'add_recipes.html' page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked, 
+    where the newly uploaded recipe is displayed.
+    - **Pass/Fail**: Pass.
