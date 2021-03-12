@@ -119,7 +119,8 @@ so that I can recommend them to other site visitors.
 or offensive.
 9. I am the site owner and I would like to collect recipes uploaded by users so that I can create a book to sell. 
 10. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
-11. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
+11. I am a site user and would like to be able to search the site, so that I can quickly and easily locate recipes.
+12. I have forgotten my password, and would like to be able to reset my password easily so that I can continue accessing my account.
 
 ### Design: 
 

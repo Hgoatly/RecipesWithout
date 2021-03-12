@@ -302,7 +302,9 @@ The fact that the recipes will be used to create a book is explained in the welc
     - **Pass/Fail**: Pass.
 
 
-## User story 10 is concerned with being able to contact the site owner:
+## Contact: user story 10 is concerned with being able to contact the site owner:
+
+10. I want to be able to get in touch with the site owner so that I can share any comments or criticisms about the site.
 
 - Navigate to the contact page, by clicking the link on the navbar or the footer.
 - **Test Case 19:** 
@@ -313,7 +315,26 @@ The fact that the recipes will be used to create a book is explained in the welc
     recieves an email from the site, and a flash message on the contact page confirms that an email has been sent.
     - **Pass/Fail**: Pass.
 
+![Screenshot of filled contact form](assets/readme-images/filled-contact-form.jpg)
+
+- Screenshot of email account inbox where the email has been received.
+
+![Screenshot of email inbox](assets/readme-images/email-inbox.jpg)
 
 
+## Search: user story 11 is concerned with being able to search the site.
 
+11. I am a site user and would like to be able to search the site, so that I can quickly and easily locate recipes.
 
+- Navigate to the home page, by clicking the link on the navbar or the footer, or by clicking the site logo.
+
+- **Test Case 20:** 
+    - Ensure that when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
+    If no results are found, then the user is informed by text saying
+    - **Expected Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
+    If no result is found, the user is informed that that is the case.
+    - **Actual Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
+    If no result is found, the user is informed that that is the case.
+    - **Pass/Fail**: Pass.
+
+![Screenshot of no recipes](assets/readme-images/no-recipes.jpg)
