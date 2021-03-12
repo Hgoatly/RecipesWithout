@@ -66,41 +66,50 @@
                 {% endif %}
                 <div class="row">
                     <div class="col s12 center-align">
-                {% if session.user %}
-                {% if recipes._id in user_upvotes %}
-                    <button class="btn teal lighten-3 vote-buttons col s12"><a
-                            href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i
-                                class="fas fa-thumbs-down"></i></a></button>
-                    {% elif recipes._id in user_downvotes%}
-                    <button class="btn teal lighten-3 vote-buttons"><a
-                            href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i
-                                class="fas fa-thumbs-up"></i></a></button>
-                    {% else %}
-                    <button class="btn teal lighten-3 vote-buttons"><a
-                            href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i
-                                class="fas fa-thumbs-up"></i></a></button>
-                    <button class="btn teal lighten-3 vote-buttons"><a
-                            href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i
-                                class="fas fa-thumbs-down"></i></a></button>
-                
-                {% endif %}
-                {% endif %}
-</div>
-              </div>
-               <div class="row">
-                    <div class="col s12 center-align">
-                {% if session['user'] %}
-                <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">My
-                    Recipes</a>
-                <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
-                {% else %}
-                <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
-                {% endif %}
+                        {% if session.user %}
+                        {% if recipes._id in user_upvotes %}
+                        <button class="btn teal lighten-3 vote-buttons col s12"><a
+                                href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                    class="fas fa-thumbs-down"></i></a></button>
+                        {% elif recipes._id in user_downvotes%}
+                        <button class="btn teal lighten-3 vote-buttons"><a
+                                href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                    class="fas fa-thumbs-up"></i></a></button>
+                        {% else %}
+                        <button class="btn teal lighten-3 vote-buttons"><a
+                                href="{{ url_for('upvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                    class="fas fa-thumbs-up"></i></a></button>
+                        <button class="btn teal lighten-3 vote-buttons"><a
+                                href="{{ url_for('downvotes', recipe_id=recipes._id) }}" class="white-text"><i
+                                    class="fas fa-thumbs-down"></i></a></button>
+
+                        {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-              </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        {% if session['user'] %}
+                        <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn teal lighten-3">My
+                            Recipes</a>
+                        <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
+                        {% else %}
+                        <a href="{{ url_for('home') }}" class="btn teal lighten-3">Home</a>
+                        {% endif %}
+                        {% if session.user == "admin" %}
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <a href="{{ url_for('admin', username=['admin']) }}" class="btn teal lighten-3">Admin
+                                    Section</a>
+
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
