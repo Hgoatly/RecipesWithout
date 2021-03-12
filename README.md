@@ -41,6 +41,10 @@ Visit [Recipes Without](https://recipes-without.herokuapp.com/)
   - [Frameworks, Libraries and Other Sources Used](#frameworks,-libraries-and-other-sources-used)
   - [Application Programming Interfaces Used (APIs)](#application-programming-interfaces-used-(APIs))
 - [Information Architecture](#information-architecture)
+    - [Database Choice](#database-choice)
+    - [Categories Collection](#categories-collection)
+    - [Users Collection](#users-collection)
+    - [Recipes Collection](#recipes-collection)
 - [Testing](#testing)
   - [Known Bugs and Fixes](#known-bugs-and-fixes)
 - [Deployment](#deployment)
@@ -401,6 +405,52 @@ speed up their load time.
 Information about tests carried out can be found in a separate [testing.md](testing.md) file.
 
 ### Known Bugs and Fixes:
+
+- **Upvote/Downvote:** The upvote/downvote buttons increment values to an array in the database when they are clicked.
+I was trying to write code that would decrement the value of 'upvotes' when the user clicked 'downvote' **if** they had already 
+clicked on 'upvote', and vice versa, using the $pull method. This doesn't currently work how it should, and users are able to upvote/downvote
+recipes as many times as they like. I have spent a very long time trying to make this work, and will come back to it when I have more 
+knowledge. I have left the code in place that doesn't work in order to help me debug it in future.
+
+- **Upvote/Downvote:** The upvote/downvote feature was originally situated on the recipe cards on the homepage. I decided that this
+was poor UX, as the page reloads when upvote or downvote is clicked. As the homepage displays a random selection of 9 recipes, the chances
+are that the recipe that has been voted for will not be displayed again on the reload, which would be really annoying for the user.
+I decided to add this feature to the 'recipe.html' page instead.
+
+- **Upvote/Downvote:** If a user has clicked the upvote or downvote button, that button should disappear, so that they can't click it multiple times.
+This was to be effected by a jinja 'if/else' statement. This feature worked perfectly when it was on the homepage, but not now it's on 'recipe.html' it 
+doesn't. I consider this to be poor UX. However, I consider it to be less poor UX than having it on the homepage, and causing the issues it caused there.
+As I am short of time, I will come back to this feature in a future release and make sure that it works. I have left the code in place in order to 
+make it easier to debug in future.
+
+- **Responsive Images:** I tried adding the 'responsive-img' class to the recipe images. It worked well with all the images that 
+had been copied from the same source, and that were all the same size. However, different sized images from other sources elongated or
+shortened the cards - which is poor UX.
+
+![Screenshot of completed elongated recipe card](assets/readme-images/responsive-image-fail.jpg)
+
+- **Password Reset:** If the user didn't have an email address stored in the DB, when trying to send a reset password link, the page
+would display a flash message to say that the message had been sent even though it hadn't. This was fixed by ensuring there is an 'email'
+field on the 'register' form, so that all users have a password stored in the database.
+
+- **Contact Form:** The 'message' area of the contact form has a minlength="10" attribute. Despite spending a lot of time trying to figure it out, 
+this is not working, and I'm not sure why. It works on all other fields it is applied to on the site, so I think it could be to do with how I'm sending 
+the email from the back end, and the formatting it's applying from there.
+
+- **Edit Recipe:** On the edit recipe form, whitespace appears in the input fields and text areas after the edit has been submitted. I have spent some time trying to
+figure out why this is happening, and I have not managed to work it out.
+
+- **Scroll to Top Button:** The scroll to top button that is present on all pages is supposed to be invisible unless the user is scrolling. After
+applying some CSS styling to the Footer, the button became invisible all the time. I 'fixed' the issue by making it visible all the time. 
+However, I believe it to be better UX for it to be invisible until the user scrolls, so I left the Javascript code in place in order for 
+me to be able to debug it at a later date.
+
+- **Scroll to Top Button:** When the site is viewed on iOs 14.4, the scroll to top button is visible until it's clicked. Once clicked, it 
+disappears. I fixed this by adding a media query that disables the scroll to top button on iOs devices.
+
+
+
+
 
 ## Deployment: 
 

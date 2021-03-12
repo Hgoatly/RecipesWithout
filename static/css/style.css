@@ -442,4 +442,8 @@ h1 {
 }
 }   
 
-
+/*--- Scroll to top botton hidden for iOs devices--- */
+@supports (-webkit-touch-callout: none) {
+    #myBtn {
+  display: none;
+    }
