@@ -434,8 +434,7 @@ shortened the cards - which is poor UX.
 would display a flash message to say that the message had been sent even though it hadn't. This was fixed by ensuring there is an 'email'
 field on the 'register' form, so that all users have a password stored in the database.
 
-- **Contact Form:** The 'message' area of the contact form has a minlength="10" attribute. Despite spending a lot of time trying to figure it out, 
-this is not working, and I'm not sure why. It works on all other fields it is applied to on the site, so I think it could be to do with how I'm sending 
+- **Contact Form:** The form validation doesn't work. It works on all other fields it is applied to on the site, so I think it could be to do with how I'm sending 
 the email from the back end, and the formatting it's applying from there.
 
 - **Edit Recipe:** On the edit recipe form, whitespace appears in the input fields and text areas after the edit has been submitted. I have spent some time trying to
