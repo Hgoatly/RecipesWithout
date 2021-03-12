@@ -1,77 +1,116 @@
-{% extends "base.html" %} {% block content %}
-	<section>
-		{% with messages=get_flashed_messages()%} {% if messages %} {% for message in messages %}
-		<div class="row flash-messages">
-			<div class="col s12 m6 offset-m3 center-align">
-				<div class="card-panel title-panel teal lighten-4">
-					<h4 class="center-align brown-text">{{ message }}</h4>
-				</div>
-			</div>
-		</div>{% endfor %} {% endif %} {% endwith%}
-	</section>
-	<div class="row add-recipes brown-text">
-		<div class="col s12 m6 offset-m3">
-			<!--form copied and adapted from Materialize and 'Task Manager' mini project-->
-			<form action="{{url_for('add_recipes')}}" method="post">
-				<div class="card-panel add-recipes-panel">
-					<!-- recipe category -->
-					<h3 class="center-align">Add Your Recipe</h3>
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="fas fa-folder-open prefix"></i> <select class="validate" id="category-name" name="category-name" required="">
-								<option disabled selected value="">
-									Choose category
-								</option>
-								<option value="{{ category.category_name }}">
-									{{ category.category_name }}
-								</option>
-							</select> <label for="category-name"></label>
-						</div>
-					</div><!-- recipe name -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="fas fa-pencil-alt prefix"></i> <input class="validate" id="recipe-name" maxlength="50" name="recipe-name" required="" type="text"> <label for="recipe-name">Recipe Name</label>
-						</div>
-					</div><!-- equipment needed -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="fas fa-utensils prefix"></i> 
-							<textarea class="materialize-textarea validate" id="equipment-needed" name="equipment-needed" required=""></textarea> <label for="equipment-needed">Equipment needed. Separate items with commas.</label>
-						</div>
-					</div><!-- number of portions -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="fas fa-pizza-slice prefix"></i> <input class="validate" id="portions" maxlength="30" name="portions" required="" type="text"> <label for="portions">Number of portions</label>
-						</div>
-					</div><!-- recipe ingredients -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="fas fa-seedling prefix"></i> 
-							<textarea class="materialize-textarea validate" id="ingredients" name="ingredients" required=""></textarea> <label for="ingredients">Ingredients. Separate items with commas.</label>
-						</div>
-					</div><!-- recipe method -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="fas fa-align-left prefix"></i> 
-							<textarea class="materialize-textarea validate" id="method" maxlength="2000" name="method" required=""></textarea> <label for="method">Method</label>
-						</div>
-					</div><!-- image -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class=" fas fa-camera prefix" id="add-image"></i> <!--regex for the pattern copied from an answer in Stack Overflow: https://stackoverflow.com/questions/40687546/html-input-require-url-to-end-in-specific-filetype--> <input id="image-url" name="image-url" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required="" type="url"> <label for="image-url">Add an image url</label>
-						</div>
-					</div><!-- alt image -->
-					<div class="row">
-						<div class="input-field col s12">
-							<i class=" fas fa-pencil-alt prefix" id="add-image-description"></i> <input id="image-description" name="image-description" required="" type="text"> <label for="image-description">Describe your image</label>
-						</div>
-					</div><!-- submit button -->
-					<div class="row">
-						<div class="col s12 center-align">
-							<button class="btn-large teal lighten-3" type="submit">Add Recipe <i class="fas fa-plus-square-right"></i></button> <a class="btn-large teal lighten-3" href="{{%20url_for('my_recipes',%20username=session['user'])%20}}">Cancel</a>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+
+            <section>
+        {% with messages=get_flashed_messages()%}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flash-messages">
+            <div class="col s12 m6 offset-m3 center-align">
+                <div class="card-panel title-panel teal lighten-4">
+                    <h4 class="center-align brown-text">{{ message }}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+                {% endif %}
+        {% endwith%}
+    </section>
+
+<div class="row add-recipes brown-text">
+    <div class="col s12 m6 offset-m3">
+        <!--form copied and adapted from Materialize and 'Task Manager' mini project-->
+        <form method="POST" action="{{ url_for('add_recipes') }}">
+            <div class="card-panel add-recipes-panel">
+                <!-- recipe category -->
+                <h3 class="center-align">Add Your Recipe</h3>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix"></i>
+                        <select id="category-name" name="category-name" class="validate" required>
+                            <option value="" disabled selected>Choose category</option>
+                            {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category-name"></label>
+                    </div>
+                </div>
+                <!-- recipe name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix"></i>
+                        <input id="recipe-name" name="recipe-name" minlength="5" maxlength="50" type="text"
+                            class="validate" required>
+                        <label for="recipe-name">Recipe Name</label>
+                    </div>
+                </div>
+                <!-- equipment needed -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-utensils prefix"></i>
+                        <textarea id="equipment-needed" name="equipment-needed" minlength="10"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="equipment-needed">Equipment needed. Separate items with commas.</label>
+                    </div>
+                </div>
+                <!-- number of portions -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pizza-slice prefix"></i>
+                        <input id="portions" name="portions" minlength="1" maxlength="30" type="text" class="validate"
+                            required>
+                        <label for="portions">Number of portions</label>
+                    </div>
+                </div>
+                <!-- recipe ingredients -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-seedling prefix"></i>
+                        <textarea id="ingredients" name="ingredients" minlength="10"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="ingredients">Ingredients. Separate items with commas.</label>
+                    </div>
+                </div>
+                <!-- recipe method -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix"></i>
+                        <textarea id="method" name="method" minlength="20" maxlength="2000"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="method">Method</label>
+                    </div>
+                </div>
+                <!-- image -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i id="add-image" class=" fas fa-camera prefix"></i>
+                <!--regex for the pattern copied from an answer in Stack Overflow: https://stackoverflow.com/questions/40687546/html-input-require-url-to-end-in-specific-filetype-->        
+                        <input id="image-url" name="image-url" type="url" minlength="5" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required>
+                        <label for="image-url">Add an image url</label>
+                    </div>
+                </div>
+                <!-- alt image -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i id="add-image-description" class=" fas fa-pencil-alt prefix"></i>
+                        <input id="image-description" name="image-description" type="text" minlength="5"
+                            required>
+                        <label for="image-description">Describe your image</label>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large teal lighten-3">
+                            Add Recipe <i class="fas fa-plus-square-right"></i>
+                        </button>
+                        <a href="{{ url_for('my_recipes', username=session['user']) }}"
+                            class="btn-large teal lighten-3">Cancel</a>
+                    </div>
+                </div>
+           </div> 
+        </form>
+    </div>
+</div>
+    {% endblock %}

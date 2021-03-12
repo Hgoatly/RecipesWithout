@@ -155,7 +155,7 @@ so that I can access them from anywhere.
     - **Actual Result**: register.html page renders as described above.
     - **Pass/Fail**: Pass.
 
-![Screenshot of register card panel on egg register.html](assets/readme-images/register-card-panel.jpg)
+![Screenshot of register card panel on register.html](assets/readme-images/register-card-panel.jpg)
 
 - Complete the 'Register' form.
     - **Test Case 6**
@@ -167,10 +167,20 @@ so that I can access them from anywhere.
 
 - Navigate to 'Add Recipes' by clicking on the navbar link, or on the 'Add Recipe' button that is displayed when the 'My Recipes' page shows no recipes.
 
+- **Test Case 7**
+    - Ensure that the the Add Recipes card panel is rendered in front of the background image. The following fields should be displayed:
+    username, email address, memorable name, password, and compare password.
+    - **Expected Result**: register.html page should render as described above.
+    - **Actual Result**: register.html page renders as described above.
+    - **Pass/Fail**: Pass.
+
+![Screenshot of top half of 'Add Recipes' card panel on add_recipes.html](assets/readme-images/add-recipe-top-screenshot.jpg)
+![Screenshot of top half of 'Add Recipes' card panel on add_recipes.html](assets/readme-images/add-recipe-bottom-screenshot.jpg)
+
 - Complete the 'Add Recipe' form.
-    - **Test Case 7**
-    - Ensure that submit button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
-    is not followed.
+    - **Test Case 8**
+    - Ensure that submit ('Add Recipe') button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
+    is not followed, and that the 'Add Recipe' button takes the user to the 'my recipes' page, where the newly added recipe is displayed.
     - **Expected Result**: 'add_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
     where the newly uploaded recipe is displayed.
     - **Actual Result**: 'add_recipes.html' page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked, 
