@@ -416,6 +416,9 @@ h1 {
     position: relative;
     }
 
+.recipe {
+    background-image: none;
+}
 /*--- Margins and Padding ---*/
 
 .admin_section {
@@ -437,6 +440,10 @@ h1 {
     font-size: 1 rem;
 }
 
+}
+
+@media only screen and (min-width : 768px) {
+    
 }
 
 @media only screen and (min-width : 768px) and (max-width : 1024px) {

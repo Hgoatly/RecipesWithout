@@ -449,10 +449,15 @@ been able to fix this bug.
 - **My Recipes and User Recipes:** When fewer than 3 recipe cards are displayed on these pages, they are aligned to the left. If I had more
 time available, I would add the same conditional formatting as on 'search_results.html'. This will be added in due course.
 
-## **Defensive Programming:** To ensure that no sensitive material is visible to the public, all sensitive data is stored in an 'env.py' file 
+### **Defensive Programming:** 
+- To ensure that no sensitive material is visible to the public, all sensitive data is stored in an env file 
 that is not pushed to github. The following code has been added to the 'edit_recipe' and 'delete_recipe' routes so that these pages can't be accessed
 by unauthorised users. I plan to add the same checks to 'delete account' and 'admin_delete' routes,  but the code I have written for these routes 
 is different, so I will need to spend more time working on it to acheive this.
+
+```
+if recipe['added_by'] == session.get("user", None):
+```
 
 ## Deployment: 
 
