@@ -246,8 +246,9 @@ Although some of the image is cut off on mobile and tablet screens, the develope
 The alternative of reducing the size of the image was not acceptable, because in order to make the whole image fit the screen, it was either too small to look good, or it became squashed and elongated.
 - **Background Images:**
 Background images were added to all pages except those that display recipe cards (with the exception of "recipe.html", which displays one entire recipe on the page). 
-This was because the developer considered that those pages were already visually stimulating, so needed no more images. The other pages were considered to be quite bland
-by the developer, so inspirational food-related background images were added to beautify the site.
+This was because the developer considered that those pages were already visually stimulating, so needed no more images. It was decided to leave them with no background image, even when the user 
+has not uploaded any recipes, as a visual metaphor for there being nothing there, and to encourage the user to add content. The other pages were considered to be quite bland
+by the developer, so inspirational food-related background images were added to beautify the site. Some of the images are repeated on different pages.
 
 Even though some of the images are barely visible when viewed on a mobile site, because they are behind cards, the decision was made to include them on the mobile site as well
 so that they add some colour and interest to the background.
