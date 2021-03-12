@@ -347,7 +347,8 @@ When clicked, ensure that the user is taken to 'reset_password.html.'
 
 - **Test Case 20:** 
     - Ensure that When the form has been filled out and submitted, ensure that a flash message is 
-displayed confirming that the email has been sent. Check email inbox to ensure that email has been received.
+displayed confirming that the email has been sent. Check email inbox to ensure that email has been received. Click link, and be directed to 
+Recipes Without 'reset_password.html'.Once form has been filled in and submitted, the MongoDB 'users' collection will be updated. 
     - **Expected Result:** Email will have been sent by recipetest579@gmail.com email account, and received by the user's email account. 
     Don't forget to check your junk or spam folder.
     - **Actual Result:**Email will have been sent by recipetest579@gmail.com email account, and received by the user's email account
@@ -356,3 +357,8 @@ displayed confirming that the email has been sent. Check email inbox to ensure t
 
 ![Screenshot of completed reset password form](assets/readme-images/completed-reset-password-form.jpg)
 ![Screenshot of confirmation of password reset link sent](assets/readme-images/confirm-reset-sent.jpg)
+![Screenshot of email received](assets/readme-images/recieved-email-link.jpg)
+![Screenshot of the reset password form](assets/readme-images/reset-password.jpg)
+
+Screenshots will not be added to show the updated values in the MongoDB collection, because it contains sensitive password information. 
+
