@@ -175,12 +175,32 @@ so that I can access them from anywhere.
     - **Pass/Fail**: Pass.
 
 ![Screenshot of top half of 'Add Recipes' card panel on add_recipes.html](assets/readme-images/add-recipe-top-screenshot.jpg)
-![Screenshot of top half of 'Add Recipes' card panel on add_recipes.html](assets/readme-images/add-recipe-bottom-screenshot.jpg)
+![Screenshot of bottom half of 'Add Recipes' card panel on add_recipes.html](assets/readme-images/add-recipe-bottom-screenshot.jpg)
 
 - Complete the 'Add Recipe' form.
     - **Test Case 8**
     - Ensure that submit ('Add Recipe') button takes the user to 'my_recipes.html' when clicked. Ensure that form validation is present when the expected format
     is not followed, and that the 'Add Recipe' button takes the user to the 'my recipes' page, where the newly added recipe is displayed.
+    - **Expected Result**: 'add_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
+    where the newly uploaded recipe is displayed.
+    - **Actual Result**: 'add_recipes.html' page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked, 
+    where the newly uploaded recipe is displayed.
+    - **Pass/Fail**: Pass.
+
+- Navigate to 'My Recipes' by submitting the 'Add Recipes' form, registering, logging in, or by clicking the navbar link:
+     - **Test Case 9**
+    - Ensure that if the user has uploaded any recipes, all user recipe cards render as expected, with title, image, date recipe was added, 'view recipe', 'edit recipe' and 'delete' button, number of upvotes, 
+    and number of downvotes displayed on them.
+    - **Expected Result**: my_recipes.html page should render as described above.
+    - **Actual Result**: my_recipes.html page renders as described above.
+    - **Pass/Fail**: Pass.
+
+![Screenshot of recipe cards on my_recipes.html](assets/readme-images/my-recipes-cards-screenshot.jpg)
+
+- Navigate to 'Edit Recipe' by clicking on one of the 'edit recipe' buttons located on recipe cards on the 'My Recipes' page.
+     - **Test Case 10**
+    - Ensure that the 'Edit Recipe' on the recipe cards button take the user to 'edit_recipes.html' when clicked. Ensure that form validation is present when the expected format
+    is not followed, and that the 'Edit Recipe' button displays the flash message ' the user to the 'my recipes' page, where the newly added recipe is displayed.
     - **Expected Result**: 'add_recipes.html' page should render as described above, form validation should be present, and submit button should take the user to 'my_recipes.html' when clicked, 
     where the newly uploaded recipe is displayed.
     - **Actual Result**: 'add_recipes.html' page renders as described above, form validation is present, and submit button takes the user to 'my_recipes.html' when clicked, 
