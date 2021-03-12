@@ -34,7 +34,6 @@ Visit [Recipes Without](https://recipes-without.herokuapp.com/)
     - [Mobile Design Features](#mobile-design-features)
     - [Tablet Design Features](#tablet-design-features)
     - [Desktop Design Features](#desktop-design-features)
-    - [How The Features Relate To The User Stories](#how-the-features-relate-to-the-user-stories)
     - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
@@ -47,6 +46,7 @@ Visit [Recipes Without](https://recipes-without.herokuapp.com/)
     - [Recipes Collection](#recipes-collection)
 - [Testing](#testing)
   - [Known Bugs and Fixes](#known-bugs-and-fixes)
+  - [Defensive Programming](#defensive-programming)
 - [Deployment](#deployment)
   - [Github Pages](#github-pages)
   - [Forking The Repository](#forking-the-repository)
@@ -443,8 +443,16 @@ However, I believe it to be better UX for it to be invisible until the user scro
 me to be able to debug it at a later date.
 
 - **Scroll to Top Button:** When the site is viewed on iOs 14.4, the scroll to top button is visible until it's clicked. Once clicked, it 
-disappears. I fixed this by adding a media query that disables the scroll to top button on iOs devices, as it didn't look very visually 
-appealing on a smaller screen anyway.
+disappears. I tried to fix this by adding a media query that disables the scroll to top button on iOs devices, but it made no difference, so I have not 
+been able to fix this bug.
+
+- **My Recipes and User Recipes:** When fewer than 3 recipe cards are displayed on these pages, they are aligned to the left. If I had more
+time available, I would add the same conditional formatting as on 'search_results.html'. This will be added in due course.
+
+## **Defensive Programming:** To ensure that no sensitive material is visible to the public, all sensitive data is stored in an 'env.py' file 
+that is not pushed to github. The following code has been added to the 'edit_recipe' and 'delete_recipe' routes so that these pages can't be accessed
+by unauthorised users. I plan to add the same checks to 'delete account' and 'admin_delete' routes,  but the code I have written for these routes 
+is different, so I will need to spend more time working on it to acheive this.
 
 ## Deployment: 
 
