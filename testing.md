@@ -322,7 +322,7 @@ The fact that the recipes will be used to create a book is explained in the welc
 ![Screenshot of email inbox](assets/readme-images/email-inbox.jpg)
 
 
-## Search: user story 11 is concerned with being able to search the site.
+## **Search:** user story 11 is concerned with being able to search the site.
 
 11. I am a site user and would like to be able to search the site, so that I can quickly and easily locate recipes.
 
@@ -338,3 +338,20 @@ The fact that the recipes will be used to create a book is explained in the welc
     - **Pass/Fail**: Pass.
 
 ![Screenshot of no recipes](assets/readme-images/no-recipes.jpg)
+![Screenshot of search results](assets/readme-images/search-results.jpg)
+
+## **Reset Password:** user story 12 is concerned with a user being able to reset their password if they have forgotten it:
+
+- Navigate to the login page, by clicking the link on the navbar. Click the 'reset' button under the text that says 'Forgotten Password?'
+When clicked, 
+
+- **Test Case 20:** 
+    - Ensure that when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
+    If no results are found, then the user is informed by text saying
+    - **Expected Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
+    If no result is found, the user is informed that that is the case.
+    - **Actual Result:** when a search item is entered into the search box and submitted, the resuts are displayed on 'search results.html'. 
+    If no result is found, the user is informed that that is the case.
+    - **Pass/Fail**: Pass.
+
+
