@@ -40,6 +40,7 @@ Visit [Recipes Without](https://recipes-without.herokuapp.com/)
   - [Languages Used](#languages-used)
   - [Frameworks, Libraries and Other Sources Used](#frameworks,-libraries-and-other-sources-used)
   - [Application Programming Interfaces Used (APIs)](#application-programming-interfaces-used-(APIs))
+- [Information Architecture](#information-architecture)
 - [Testing](#testing)
   - [Known Bugs and Fixes](#known-bugs-and-fixes)
 - [Deployment](#deployment)
@@ -320,6 +321,8 @@ In future I would like to add the following features:
 still couldn't get it to work. When I have more time I will do some more research and add it to the project.
 - **Image Upload:** For improved UX, I would like to add the ability for site users to upload images as files, rather than URLs.
 - **Back Button:** For improved UX, I would like to be able to have different 'back' buttons appear according to 
+- **Advanced Search:** This was attempted for a considerable amount of time, but I couldn't get it to work. I will come back to this feature 
+when I am more skilled in this area.
 
 ## Technologies Used:
 
