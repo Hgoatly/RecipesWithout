@@ -443,10 +443,6 @@ h1 {
 
 }
 
-@media only screen and (min-width : 768px) {
-    
-}
-
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
 
 .manage-account-panel {
@@ -459,4 +455,8 @@ h1 {
 #myBtn {
   display: none;
     }
+
+.recipe {
+    background-image: none;
+}
 }

@@ -426,7 +426,7 @@ make it easier to debug in future.
 
 - **Responsive Images:** I tried adding the 'responsive-img' class to the recipe images. It worked well with all the images that 
 had been copied from the same source, and that were all the same size. However, different sized images from other sources elongated or
-shortened the cards - which is poor UX.
+shortened the cards - which is poor UX, so I removed that class from all recipe cards.
 
 ![Screenshot of completed elongated recipe card](assets/readme-images/responsive-image-fail.jpg)
 
@@ -443,8 +443,14 @@ However, I believe it to be better UX for it to be invisible until the user scro
 me to be able to debug it at a later date.
 
 - **Scroll to Top Button:** When the site is viewed on iOs 14.4, the scroll to top button is visible until it's clicked. Once clicked, it 
-disappears. I tried to fix this by adding a media query that disables the scroll to top button on iOs devices, but it made no difference, so I have not 
-been able to fix this bug.
+disappears. I fixed this by adding a media query that disables the scroll to top button on iOs devices.
+```
+@supports (-webkit-touch-callout: none) {
+#myBtn {
+  display: none;
+    }
+}
+```
 
 - **My Recipes and User Recipes:** When fewer than 3 recipe cards are displayed on these pages, they are aligned to the left. If I had more
 time available, I would add the same conditional formatting as on 'search_results.html'. This will be added in due course.
