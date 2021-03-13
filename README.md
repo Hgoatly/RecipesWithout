@@ -268,6 +268,13 @@ Original wireframes from the 17/01/2021 can be found here:
 - <a href="assets/wireframes/tablet-wireframes-recipes-without.pdf" target="_blank">For Tablet</a>
 - <a href="assets/wireframes/smartphone-wireframes-recipes-without.pdf" target="_blank">For Smartphone</a>
 
+Final Wireframes can be found here. Please note that not all pages with forms on them have been included as they all look much the same:
+- <a href="assets/wireframes/final-smartphone-wireframes-recipes-without.pdff" target="_blank">Sitemap</a>
+- <a href="assets/wireframes/final-desktop-wireframes-recipes-without.pdf" target="_blank">For Desktop</a>
+- <a href="assets/wireframes/final-tablet-wireframes-recipes-without.pdf" target="_blank">For Tablet</a>
+- <a href="assets/wireframes/final-smartphone-wireframes-recipes-without.pdf" target="_blank">For Smartphone</a>
+
+
 ### Mobile Design Features: 
 
 The main features of the mobile version of the 'Recipes Without' website are detailed below:
