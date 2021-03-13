@@ -92,10 +92,10 @@ be suitable for diners with intolerances to gluten, dairy or eggs.
     - **Actual Result**: recipe.html page renders as described above.
     - **Pass/Fail**: Pass.
 
-![Screenshot of top section of recipe card on recipe.html](assets/readme-images/recipepage-top-section.jpg)
-![Screenshot of middle section of recipe card on recipe.html](assets/readme-images/recipepage-middle-section.jpg)
-![Screenshot of lower middle section of recipe card on recipe.html](assets/readme-images/recipepage-lower-middle-section.jpg)
-![Screenshot of bottom section of recipe card on recipe.html](assets/readme-images/recipepage-bottom-section.jpg)
+![Screenshot of top section of recipe card on recipe.html](assets/readme-images/recipe-page-top-section.jpg)
+![Screenshot of middle section of recipe card on recipe.html](assets/readme-images/recipe-page-middle-section.jpg)
+![Screenshot of lower middle section of recipe card on recipe.html](assets/readme-images/recipe-page-lower-middle-section.jpg)
+![Screenshot of bottom section of recipe card on recipe.html](assets/readme-images/recipe-page-bottom-section.jpg)
 
 - Navigate to 'gluten-free.html' by clicking the link on the 'recipes' navbar link, and choosing 'Gluten Free' from the dropdown. 
 
