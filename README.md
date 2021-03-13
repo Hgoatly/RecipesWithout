@@ -245,13 +245,46 @@ The hero image was chosen as a visual metaphor, as it is a picture of an empty s
 Although some of the image is cut off on mobile and tablet screens, the developer considers this acceptable because it still looks visually appealing, and the metaphor still works well. 
 The alternative of reducing the size of the image was not acceptable, because in order to make the whole image fit the screen, it was either too small to look good, or it became squashed and elongated.
 - **Background Images:**
-Background images were added to all pages except those that display recipe cards (with the exception of "recipe.html", which displays one entire recipe on the page). 
+Background images were added to all pages except those that display recipe cards (with the exception of "recipe.html", "gluten_free_recipe.html", "dairy_free_recipe.html" and "egg_free_recipe.html", 
+which display one entire recipe on the page). 
 This was because the developer considered that those pages were already visually stimulating, so needed no more images. It was decided to leave them with no background image, even when the user 
 has not uploaded any recipes, as a visual metaphor for there being nothing there, and to encourage the user to add content. The other pages were considered to be quite bland
 by the developer, so inspirational food-related background images were added to beautify the site. Some of the images are repeated on different pages.
 
+On small screens, the background image was removed from: "recipe.html", "gluten_free_recipe.html", "dairy_free_recipe.html" and "egg_free_recipe.html" as it didn't render correctly.
+
 Even though some of the images are barely visible when viewed on a mobile site, because they are behind cards, the decision was made to include them on the mobile site as well
 so that they add some colour and interest to the background. They were removed on pages where whole recipes are shown, because otherwise the images became elongated.
+
+The background images used are as follows:
+
+- **Add Recipe, Contact, Send Password Reset:**
+
+![Platter image](static/images/platter.jpg)
+
+- **Login:**
+
+![Flowers, cookies and raspberries image](static/images/raspberry.jpg)
+
+- **Register, Reset Password:**
+
+![Cookies and coffee image](static/images/cookies.jpg)
+
+- **Manage Account, Admin Section:**
+
+![Cookies and coffee image](static/images/cake.jpg)
+
+- **Recipe, Gluten Free Recipe, Dairy Free Recipe, and Egg Free Recipe:**
+
+![Table WIth a Vegetable Border](static/images/table-vegetable-border.jpg)
+
+- **Edit Recipe:**
+
+![Table with herbs and a knife](static/images/herbs.jpg)
+
+- **404 and 500 Error Pages:**
+
+![Table with herbs and a knife](static/images/cover.jpg)
 
 ### Layout: 
 
@@ -464,6 +497,10 @@ disappears. I fixed this by adding a media query that disables the scroll to top
 - **My Recipes and User Recipes:** When fewer than 3 recipe cards are displayed on these pages, they are aligned to the left. If I had more
 time available, I would add the same conditional formatting as on 'search_results.html'. This will be added in due course.
 
+- **Upload Image URL** A Regex was added to 'Add Recipes' to ensure that users can only add urls with image file extensions. This, however, does not stop someone
+uploading a non food related image, or from adding a 'required' file extension to any link, so I removed it. I don't currently know how to solve this, 
+but I look forward to finding out how in the future. As the admin has the ability to delete any inappropriate links or images, I consider this to be the best workaround at the moment.
+
 ### **Defensive Programming:** 
 - To ensure that no sensitive material is visible to the public, all sensitive data is stored in an env file 
 that is not pushed to github. The following code has been added to the 'edit_recipe' and 'delete_recipe' routes so that these pages can't be accessed
@@ -612,6 +649,8 @@ python3 app.py
 
 - The 'Welcome Text' was written by the developer.
 - All recipes and their images that were added by the developer are from [BBC-Good-Food](https://www.bbcgoodfood.com/)
+- Please note that since adding the regex in 'Add Recipes', in order to make sure that only image links are uploaded, images from 
+BBC Good Food are no longer able to be uploaded as they do not have any of the required file extensions.
 
 ### Media:
 
