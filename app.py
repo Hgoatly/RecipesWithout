@@ -33,6 +33,7 @@ def home():
     return render_template("home.html", recipes=recipes)
 
 
+# Search 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     if request.method == "POST":
@@ -42,6 +43,7 @@ def search():
             "search_results.html", recipes=recipes)
 
 
+# Register
 # code copied and adapted from 'Task Manager' mini project.
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -95,6 +97,7 @@ def register():
     return render_template("register.html")
 
 
+# Login
 # code copied from 'Task Manager' mini project
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -128,6 +131,7 @@ def login():
     return render_template("login.html")
 
 
+# Contact
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -154,6 +158,7 @@ def contact():
     return render_template("contact.html")
 
 
+# Send password reset link
 # This section copied and adapted from
 # https://realpython.com/lessons/sending-plaintext-emails-python/
 @app.route("/send_password_reset", methods=["GET", "POST"])
@@ -195,6 +200,7 @@ def send_password_reset():
     return render_template("send_password_reset.html")
 
 
+# Reset Password
 @app.route("/reset_password", methods=["GET", "POST"])
 def reset_password():
     if request.method == "POST":
@@ -229,12 +235,14 @@ def reset_password():
     return render_template("reset_password.html")
 
 
+# Reset Password Form
 @app.route("/reset_password_form", methods=["GET", "POST"])
 def reset_password_form():
     if request.method == "POST":
         return render_template("reset_password")
 
 
+# Manage Account
 @app.route("/manage_account/<username>")
 def manage_account(username):
     if "user" in session:
@@ -244,6 +252,7 @@ def manage_account(username):
         return render_template("manage_account.html", username=username)
 
 
+# My Recipes
 # code copied and adapted from 'Task Manager' mini project
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
@@ -256,6 +265,7 @@ def my_recipes(username):
     return redirect(url_for("login"))
 
 
+# User Recipes
 @app.route("/user_recipes/<username>", methods=["GET", "POST"])
 def user_recipes(username):
     if "user" in session:
@@ -267,6 +277,7 @@ def user_recipes(username):
     return redirect(url_for("login"))
 
 
+# Edit Recipe
 # This section referenced and adapted from 'Tak Manager' walkthrough project.
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
@@ -297,6 +308,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for("home"))
 
 
+# Delete Recipe
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -310,6 +322,7 @@ def delete_recipe(recipe_id):
         return redirect(url_for("home"))
 
 
+# Delete User
 @app.route("/delete_user/<username>")
 def delete_user(username):
     username = mongo.db.users.find_one(
@@ -324,6 +337,7 @@ def delete_user(username):
         return redirect(url_for("login"))
 
 
+# Admin Section
 @app.route("/admin/<username>")
 def admin(username):
     username = mongo.db.users.find_one(
@@ -335,6 +349,7 @@ def admin(username):
             "admin.html", username=username, users=users, recipe=recipe)
 
 
+# Allow Admin to delete user account
 @app.route("/admin_delete/<username>/<user_id>")
 def admin_delete(username, user_id):
     username = mongo.db.users.find_one(
@@ -348,6 +363,7 @@ def admin_delete(username, user_id):
         return redirect(url_for("admin", username=username, users=users))
 
 
+# Logout
 # code copied from 'Task Manager' mini project
 @app.route("/logout")
 def logout():
@@ -391,6 +407,7 @@ def recipe(recipe_id):
         "recipe.html", recipes=recipes)
 
 
+# Upvotes
 # This code copied and adapted from an example posted on
 # CI Slack by ShaneMuir_Alumni.
 # Help was also received from Tim Nelson at Tutor Support
@@ -421,6 +438,7 @@ def upvotes(recipe_id):
     return redirect(url_for("recipe"))
 
 
+# Downvotes
 # This code copied and adapted from an example posted on
 # CI Slack by ShaneMuir_Alumni.
 # Help was also received from Tim Nelson at Tutor Support
@@ -448,6 +466,7 @@ def downvotes(recipe_id):
     return redirect(url_for("recipe"))
 
 
+# Gluten Free Recipe
 @app.route("/gluten_free_recipe/<recipe_id>")
 def gluten_free_recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -455,6 +474,7 @@ def gluten_free_recipe(recipe_id):
         "gluten_free_recipe.html", recipes=recipes)
 
 
+# Dairy Free Recipe
 @app.route("/dairy_free_recipe/<recipe_id>")
 def dairy_free_recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -462,6 +482,7 @@ def dairy_free_recipe(recipe_id):
         "dairy_free_recipe.html", recipes=recipes)
 
 
+# Egg Free Recipe
 @app.route("/egg_free_recipe/<recipe_id>")
 def egg_free_recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -469,6 +490,7 @@ def egg_free_recipe(recipe_id):
         "egg_free_recipe.html", recipes=recipes)
 
 
+# Add Recipes
 # code copied and adapted from 'Task Manager' mini project
 @app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
