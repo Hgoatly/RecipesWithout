@@ -53,7 +53,7 @@ or in the case of the '$' sign, necessary for jquery - which has been used exten
 
 - Screenshot of JSHint with /*jshint esversion: 6 */ added to the top of the file, and with no warnings.
 
-![Screenshot of JSHint with no warnings](assets/images/readme-images/jshint-no-warning.jpg)
+![Screenshot of JSHint with no warnings](assets/readme-images/jshint-no-warning.jpg)
 
 ## Testing the User Stories:
 
