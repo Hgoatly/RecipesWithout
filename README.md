@@ -282,7 +282,8 @@ is clicked, the Materialize 'sidenav' element appears with all relevent elements
 - All of the card elements have been collapsed into 'accordions', whereby each collapsed element needs to be clicked on in 
 order to be viewed. Only one card is visible at a time, as multiple cards next to each other would have been inappropriate for 
 the screen size. The decision to collapse the card elements was made to provide better UX, as otherwise the site visitor would 
-have to scroll past too much content, and it would have been poor UX.
+have to scroll past too much content, and it would have been poor UX. On the left hand side of the collapsible, I have added a font awesome 
+'concierge-bell' as it looks like a cloche.
 
 ### Tablet Design Features:
 
@@ -343,6 +344,7 @@ when I am more skilled in this area.
 - [JQuery](https://jquery.com/) was used to enable the Materialize elements and grid system.
 - [Gitpod](https://gitpod.io/workspaces/) and [Github](https://github.com/). All code was written in Gitpod, and pushed to Github for storage and version control. 
 - [Balsamiq](https://balsamiq.com/) was used to create wireframes for the project.
+- [Font Awesome](https://fontawesome.com/) provides icons for the site.
 - [Unsplash](https://unsplash.com/) was used to download images for the site.
 - [Pixabay](https://pixabay.com/) was used to download images for the site.
 - [Favicon.cc]( https://www.favicon.cc/?action=icon&file_id=793468) was used to generate the favicon - which is a knife, fork and spoon.
