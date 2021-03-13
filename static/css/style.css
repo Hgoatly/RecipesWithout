@@ -304,7 +304,7 @@ img {
     min-width: 100vw;
     margin-bottom: 0px; 
     margin-top: 0px;
-    padding-right: 15px;
+    padding-right: 0px;
     position: relative;
     } 
 
@@ -421,10 +421,6 @@ h1 {
 }
 
 /*--- Margins and Padding ---*/
-
-.admin_section {
-    padding-right: 0px;
-}
 
 .my-recipes {
     padding-right: 0px;
