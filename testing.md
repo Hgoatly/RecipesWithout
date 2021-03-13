@@ -353,7 +353,7 @@ Recipes Without 'reset_password.html'.Once form has been filled in and submitted
 
 ![Screenshot of completed reset password form](assets/readme-images/completed-reset-password-form.jpg)
 ![Screenshot of confirmation of password reset link sent](assets/readme-images/confirm-reset-sent.jpg)
-![Screenshot of email received](assets/readme-images/recieved-email-link.jpg)
+![Screenshot of email received](assets/readme-images/received-email-link.jpg)
 ![Screenshot of the reset password form](assets/readme-images/reset-password.jpg)
 
 Screenshots will not be added to show the updated values in the MongoDB collection, because it contains sensitive password information. 
