@@ -262,13 +262,13 @@ or offensive.
 
 ![Screenshot of card panels on admin.html](assets/readme-images/admin-section.jpg)
 
-    - **Test Case 16:**
+- **Test Case 16:**
     - Ensure that when clicked, the 'Admin's Recipes' and 'User Recipes' cards navigate the user to 'user_recipes.html' 
     - **Expected Result:** 'Admin's Recipes' and 'User Recipes' buttons navigate the user to 'user_recipes.html'
     - **Actual Result:** ''Admin's Recipes' and 'User Recipes' buttons navigate the user to 'user_recipes.html'.
     - **Pass/Fail**: Pass.
 
-    - **Test Case 17:** 
+- **Test Case 17:** 
     - Ensure that when clicked, the 'delete account' button opens a modal that says: 'Confirm Delete Are you sure you want to delete this account?'
     Ensure that 'yes I'm sure' and 'cancel' buttons are displayed. Ensure that when 'yes I'm sure' is clicked, the account is deleted, and that when 
     'cancel' is clicked, the modal will close, and return the site owner to 'admin.html'.
