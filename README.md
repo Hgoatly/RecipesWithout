@@ -74,7 +74,7 @@ The main objectives are as follows:
 9. To allow the site owner (admin) to create, read, update and delete recipes added by any user - including themselves.
 10. To allow the site owner (admin) to view and delete user recipes and user accounts.
 
-The site uses CRUD (create, Read, Update, Delete) functionality in order to create an interactive user experience. 
+The site uses CRUD (Create, Read, Update, Delete) functionality in order to create an interactive user experience. 
 
 The site is based around a multi-page layout, with access to different pages and features available according to whether or 
 not you are a logged in registered user, or whether you are the site owner (admin).
@@ -251,7 +251,7 @@ has not uploaded any recipes, as a visual metaphor for there being nothing there
 by the developer, so inspirational food-related background images were added to beautify the site. Some of the images are repeated on different pages.
 
 Even though some of the images are barely visible when viewed on a mobile site, because they are behind cards, the decision was made to include them on the mobile site as well
-so that they add some colour and interest to the background.
+so that they add some colour and interest to the background. They were removed on pages where whole recipes are shown, because otherwise the images became elongated.
 
 ### Layout: 
 
@@ -453,7 +453,8 @@ time available, I would add the same conditional formatting as on 'search_result
 - To ensure that no sensitive material is visible to the public, all sensitive data is stored in an env file 
 that is not pushed to github. The following code has been added to the 'edit_recipe' and 'delete_recipe' routes so that these pages can't be accessed
 by unauthorised users. I plan to add the same checks to 'delete account' and 'admin_delete' routes,  but the code I have written for these routes 
-is different, so I will need to spend more time working on it to acheive this.
+is different, so I will need to spend more time working on it to acheive this. Conditional statements were also used in jinja to render the correct 
+dtat for different users.
 
 ```
 if recipe['added_by'] == session.get("user", None):
