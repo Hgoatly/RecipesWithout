@@ -358,6 +358,9 @@ Recipes Without 'reset_password.html'.Once form has been filled in and submitted
 
 Screenshots will not be added to show the updated values in the MongoDB collection, because it contains sensitive password information. 
 
+## **404 Error Page:** A custom error page has been added for in the event of a 404 error. It is an image of an empty plate on a table, and
+provides a link back to the Recipes Without homepage.
+
 ## **Manual Browser Compatibility Testing:**
 
 Functionality was tested on a variety of browsers. The results are detailed below. 
